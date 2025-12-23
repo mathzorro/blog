@@ -33,7 +33,7 @@ flowchart LR
 
 The core of the structure relies on the flow polytope equation:
 
-$$\mathcal{F}_G = \left{ x \in \mathbb{R}^E : \sum{e \in \text{in}(v)} x_e = \sum_{e \in \text{out}(v)} x_e \right}$$
+$$\mathcal{F}_G = \left\{ x \in \mathbb{R}^E : \sum{e \in \text{in}(v)} x_e = \sum_{e \in \text{out}(v)} x_e \right\}$$
 
 :::{.callout-note}
 Note that there are five types of callouts, including: 
