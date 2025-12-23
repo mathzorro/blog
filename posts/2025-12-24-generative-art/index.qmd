@@ -11,11 +11,15 @@ I have been working on a new project that combines knot theory with music.
 We are looking for a way to visualize the "interface" between geometric forms and organic forms.
 
 ## The Code
-Here is a snippet of the Wolfram Language code I am using:
+Here is a snippet of the Wolfram Language[^1] code I am using:
 
-```{=wolfram}
+```{wolfram}
 Table[Style[k, Hue[k/20]], {k, 1, 20}]
 ```
+
+[^1]: Hey wait I can make a footnote!
+
+    And if I want the footnote to be multiple lines I can do that too.
 
 ```{mermaid}
 flowchart LR
@@ -55,3 +59,4 @@ Note that there are five types of callouts, including:
 Note that there are five types of callouts, including: 
 `note`, `tip`, `warning`, `caution`, and `important`.
 :::
+
