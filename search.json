@@ -32,7 +32,7 @@
     "href": "posts/2025-12-24-generative-art/index.html#the-math",
     "title": "Experiments in Generative Art",
     "section": "The Math",
-    "text": "The Math\nThe core of the structure relies on the flow polytope equation:\n\\[\\mathcal{F}_G = \\left\\{ x \\in \\mathbb{R}^E : \\sum{e \\in \\text{in}(v)} x_e = \\sum_{e \\in \\text{out}(v)} x_e \\right\\}\\]\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important."
+    "text": "The Math\nThe core of the structure relies on the flow polytope equation:\n\\[\\mathcal{F}_G = \\left\\{ x \\in \\mathbb{R}^E : \\sum_{e \\in \\text{in}(v)} x_e = \\sum_{e \\in \\text{out}(v)} x_e \\right\\}\\]\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nTip\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important."
   },
   {
     "objectID": "posts/2025-12-24-generative-art/index.html#footnotes",
@@ -46,7 +46,7 @@
     "href": "index.html",
     "title": "My Recent Writings",
     "section": "",
-    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExperiments in Generative Art\n\n\nThis is the description that appears on the list of posts. It can include \\( aTeX\\).\n\n\n\n\n\nDec 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExperiments in Generative Art\n\n\nThis is the description that appears on the list of posts. It cannot include LaTeX.\n\n\n\n\n\nDec 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/first-post/index.html",
