@@ -13,7 +13,7 @@ We are looking for a way to visualize the "interface" between geometric forms an
 ## The Code
 Here is a snippet of the Wolfram Language[^1] code I am using:
 
-```{wolfram}
+```
 Table[Style[k, Hue[k/20]], {k, 1, 20}]
 ```
 
