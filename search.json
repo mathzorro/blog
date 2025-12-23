@@ -1,16 +1,23 @@
 [
   {
-    "objectID": "posts/first-post/index.html",
-    "href": "posts/first-post/index.html",
-    "title": "My First Quarto Post",
+    "objectID": "posts/second-post/index.html",
+    "href": "posts/second-post/index.html",
+    "title": "My Second Quarto Post",
     "section": "",
-    "text": "This is a test post.\nHere is a flow polytope equation: \\[K_G(t) = \\sum_{i=0}^{d} c_i t^i\\]\nI did not have to write HTML to make that math work."
+    "text": "I am getting the hang of this, perhaps. What do you mean?"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Recent Writings",
     "section": "",
-    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Quarto Post\n\n\n\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/first-post/index.html",
+    "href": "posts/first-post/index.html",
+    "title": "My First Quarto Post",
+    "section": "",
+    "text": "This is a test post.\nHere is a flow polytope equation: \\[K_G(t) = \\sum_{i=0}^{d} c_i t^i\\]\nI did not have to write HTML to make that math work."
   }
 ]
