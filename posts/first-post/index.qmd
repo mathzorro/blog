@@ -1,0 +1,12 @@
+---
+title: "My First Quarto Post"
+date: "2025-12-23"
+categories: [misc, math]
+---
+
+This is a test post.
+
+Here is a flow polytope equation:
+$$K_G(t) = \sum_{i=0}^{d} c_i t^i$$
+
+I did not have to write HTML to make that math work.
