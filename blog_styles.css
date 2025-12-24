@@ -1,5 +1,5 @@
 /* Increase the logo size */
 .navbar-brand img {
-  max-height: 30px;  /* Default is usually around 30px */
+  max-height: 40px;  /* Default is usually around 30px */
   width: auto;       /* Maintains aspect ratio */
 }
