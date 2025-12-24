@@ -3,16 +3,16 @@ project:
   output-dir: _site
 
 website:
-  title: "MathZorro Blog"  # Text in top left corner
+#  title: "MathZorro Blog"  # Text in top left corner
   navbar:
-    background: "#222222"  # You can change this hex color to match your site
-    foreground: "white"    # Text color
+    background: "white"  # You can change this hex color to match your site
+    foreground: "#222222"    # Text color
     search: true           # Enables the search magnifying glass
     
     # "left" items appear next to the title
     left:
-      - text: "Main Site"
-        href: https://mathzorro.github.io/
+#      - text: "Main Site"
+#        href: https://mathzorro.github.io/
       
       # A drop-down menu for your Blog Categories
       - text: "Blog Categories"
@@ -25,14 +25,21 @@ website:
             href: art.qmd
           - text: "Misc"
             href: misc.qmd
-
+      - icon: search
+        href: search.qmd
+        
     # "right" items appear on the far right side
     right:
       - text: "Research"
         href: https://hanusa.xyz/research.html
+      - text: "Portfolio"
+        href: https://hanusa.xyz/portfolio.html
       - text: "Teaching"
         href: https://hanusa.xyz/teaching.html
-      - text: "Artworks"
-        href: https://mathzorro.github.io/art.html
-      - icon: github
-        href: https://github.com/mathzorro
+      - text: "Leadership"
+        href: https://hanusa.xyz/leadership.html
+      - text: "Blog"
+        href: https://hanusa.xyz/blog.html
+      - text: "Contact"
+        href: https://hanusa.xyz/contact.html
+
