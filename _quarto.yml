@@ -30,6 +30,7 @@ website:
         href: https://hanusa.xyz/contact.html
 
   sidebar:
+    logo: false 
     search: true
               
 format:
