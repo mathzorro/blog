@@ -5,7 +5,7 @@ project:
 website:
   search:
     location: sidebar
-    type: overlay
+    type: textbox
     
   navbar:
     logo: "hanusa-xyz.png"       
@@ -30,7 +30,6 @@ website:
         href: https://hanusa.xyz/contact.html
 
   sidebar:
-    logo: false 
     search: true
               
 format:
