@@ -3,18 +3,18 @@ project:
   output-dir: _site
 
 website:
-#  title: "MathZorro Blog"  # Text in top left corner
+  search: 
+    location: navbar
+    type: textbox
+
   navbar:
     background: "white"  # You can change this hex color to match your site
     foreground: "#666666"    # Text color
-    search: false           # Enables the search magnifying glass
     
     # "left" items appear next to the title
-    left:
-      - text: "Blog"
-        href: "."
-      - search: true
-      
+#    left:
+#      - text: "Blog"
+#        href: "."      
         
     # "right" items appear on the far right side
     right:
@@ -26,10 +26,10 @@ website:
         href: https://hanusa.xyz/teaching.html
       - text: "Leadership"
         href: https://hanusa.xyz/leadership.html
-      - text: "Blog"
-        href: https://hanusa.xyz/blog.html
       - text: "Contact"
         href: https://hanusa.xyz/contact.html
+      - text: "Blog Search"
+        href: https://hanusa.xyz/blog.html
 
 format:
   html:
