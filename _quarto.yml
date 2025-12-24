@@ -3,7 +3,11 @@ project:
   output-dir: _site
 
 website:
-
+  logo-href: https://hanusa.xyz
+  search:
+    location: sidebar
+    type: overlay
+    
   navbar:
     background: "white"  # You can change this hex color to match your site
     foreground: "#666666"    # Text color
@@ -22,16 +26,9 @@ website:
         href: https://hanusa.xyz/blog/
       - text: "Contact"
         href: https://hanusa.xyz/contact.html
-        
-sidebar:
-    search: true       # Turn it on in the side menu
-    contents:
-      - index.qmd
-      
+              
 format:
   html:
-    grid:
-      sidebar-width: 100px
-    toc: true           # Turns on the Table of Contents
-    toc-location: right # Ensures it stays on the right
+    toc: true          
+    toc-location: left 
     toc-title: "On this page"
