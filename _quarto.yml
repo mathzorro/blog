@@ -32,3 +32,4 @@ format:
     toc: true          
     toc-location: left 
     toc-title: "On this page"
+    css: blog_styles.css  
