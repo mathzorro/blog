@@ -1,6 +1,6 @@
 /* Increase the logo size */
 .navbar-brand img {
   max-height: 45px;  /* Default is usually around 30px */
-  margin-left: 20px;      /* <--- This adds the indent */
+  margin-left: 40px;      /* <--- This adds the indent */
   width: auto;       /* Maintains aspect ratio */
 }
