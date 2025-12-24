@@ -4,11 +4,6 @@ project:
 
 website:
 #  title: "MathZorro Blog"  # Text in top left corner
-  margin-header: 
-    - text: "Blog Categories"
-      menu:
-        - text: "All Posts"
-          href: "index.qmd"
   navbar:
     background: "white"  # You can change this hex color to match your site
     foreground: "#666666"    # Text color
