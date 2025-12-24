@@ -9,14 +9,6 @@ website:
       menu:
         - text: "All Posts"
           href: "index.qmd"
-        - text: "Math"
-          href: "index.html#category=math"
-        - text: "Art"
-          href: "index.html#category=art"
-        - text: "Leadership"
-          href: "index.html#category=leadership"
-        - text: "Misc"
-          href: "index.html#category=misc"
   navbar:
     background: "white"  # You can change this hex color to match your site
     foreground: "#666666"    # Text color
@@ -26,6 +18,7 @@ website:
     left:
       - text: "Blog"
         href: "."
+      - search: true
       
         
     # "right" items appear on the far right side
