@@ -4,10 +4,14 @@ project:
 
 website:
 #  title: "MathZorro Blog"  # Text in top left corner
+  sidebar:
+    search: true       # Turn it on in the side menu
+    contents:
+      - index.qmd
   navbar:
     background: "white"  # You can change this hex color to match your site
     foreground: "#222222"    # Text color
-    search: true           # Enables the search magnifying glass
+    search: false           # Enables the search magnifying glass
     
     # "left" items appear next to the title
     left:
@@ -20,11 +24,13 @@ website:
           - text: "All Posts"
             href: index.qmd
           - text: "Math"
-            href: math.qmd
+            href: index.html#category=math
           - text: "Art"
-            href: art.qmd
+            href: index.html#category=art
+          - text: "Leadership"
+            href: index.html#category=leadership
           - text: "Misc"
-            href: misc.qmd
+            href: index.html#category=misc
       - icon: search
         href: search.qmd
         
