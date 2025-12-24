@@ -8,7 +8,9 @@ website:
     type: overlay
     
   navbar:
-    background: "white"  # You can change this hex color to match your site
+    logo: "hanusa-xyz.png"       
+    logo-href: https://hanusa.xyz 
+    background: "white"  
     foreground: "#666666"    # Text color
 
 
