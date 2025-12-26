@@ -9,6 +9,10 @@
   min-height: 80px !important; 
 }
 
+.navbar-container {
+  min-height: 50px !important; 
+}
+
 /* Customize Navbar Text */
 .navbar-nav .nav-link {
   font-size: 18px !important;  /* Adjust this number for size */
