@@ -21,6 +21,14 @@
   padding-bottom: 0px;
 }
 
+.navbar-brand {
+  min-height: 60px !important; 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .navbar-brand-container {
   min-height: 60px !important; 
   margin-top: 0px;
@@ -32,6 +40,6 @@
 /* Customize Navbar Text */
 .navbar-nav .nav-link {
   font-size: 17px !important;  /* Adjust this number for size */
-  margin-left: 10px;           /* Adds space between words */
-  margin-right: 10px;          /* Adds space between words */
+  margin-left: 0px;           /* Adds space between words */
+  margin-right: 20px;          /* Adds space between words */
 }
