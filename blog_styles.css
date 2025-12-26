@@ -1,5 +1,5 @@
 /* Increase the logo size */
-.navbar-logo light-content img {
+.navbar-logo img {
   height: 50px !important;  /* Default is usually around 30px */
   width: auto;       /* Maintains aspect ratio */
 }
