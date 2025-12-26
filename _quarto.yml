@@ -7,7 +7,6 @@ listing:
   feed: true
   
 website:
-website:
   title: "My Blog"
   site-url: "https://hanusa.xyz" # <--- This is required for RSS
   description: "A blog about stuff"
