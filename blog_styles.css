@@ -6,12 +6,5 @@
 
 /* Optional: Adjust the navbar height to fit the larger logo */
 .navbar {
-  min-height: 100px; 
-}
-
-/* 1. Add a line at the bottom of the sidebar navigation area */
-.sidebar-nav {
-  border-bottom: 1px solid #666666 !important; /* Matches your text color */
-  padding-bottom: 20px !important;
-  margin-bottom: 20px !important;
+  min-height: 80px !important; 
 }
