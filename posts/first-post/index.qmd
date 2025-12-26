@@ -1,6 +1,8 @@
 ---
 title: "My First Quarto Post"
 date: "2025-12-23"
+toc-title: "First Post" # <--- Match your title here
+toc: true
 categories: [misc, math]
 ---
 
