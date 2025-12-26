@@ -1,11 +1,6 @@
 ---
 title: "My Recent Writings"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  feed: true
-  fields: [date, title, description, categories, image]
+listing: default
 ---
 Welcome to the test version of my blog.
 
