@@ -4,11 +4,13 @@ project:
 
 listing:
   contents: posts
-  feed: true
-  
+  categories: true
+  feed:
+    categories:     
+      - "News"
+      - "R"  
 website:
-  title: "My Blog"
-  site-url: "https://hanusa.xyz" # <--- This is required for RSS
+  site-url: "https://hanusa.xyz"  # <--- This is required for RSS
   description: "A blog about stuff"
   
   search:
