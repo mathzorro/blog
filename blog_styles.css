@@ -3,3 +3,8 @@
   height: 50px;  /* Default is usually around 30px */
   width: auto;       /* Maintains aspect ratio */
 }
+
+/* Optional: Adjust the navbar height to fit the larger logo */
+.navbar {
+  min-height: 100px; 
+}
