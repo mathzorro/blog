@@ -9,14 +9,9 @@
   min-height: 100px; 
 }
 
-/* Add a horizontal line below the sidebar navigation links */
-#quarto-margin-sidebar .sidebar-menu-container {
-  border-bottom: 1px solid #eeeeee; /* Light grey line */
-  padding-bottom: 15px;            /* Space between links and the line */
-  margin-bottom: 15px;             /* Space between the line and the TOC */
-}
-
-/* Ensure the TOC title (On this page) doesn't have an extra top margin */
-#quarto-toc-toggle {
-  margin-top: 0;
+/* 1. Add a line at the bottom of the sidebar navigation area */
+.sidebar-nav {
+  border-bottom: 1px solid #666666 !important; /* Matches your text color */
+  padding-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
