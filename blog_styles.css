@@ -6,7 +6,7 @@
 
 /* Optional: Adjust the navbar height to fit the larger logo */
 .navbar {
-  min-height: 67px !important; 
+  min-height: 57px !important; 
 }
 
 .navbar-container {
@@ -23,7 +23,7 @@
 
 /* Customize Navbar Text */
 .navbar-nav .nav-link {
-  font-size: 17px !important;  /* Adjust this number for size */
+  font-size: 18px !important;  /* Adjust this number for size */
   margin-left: 0px;           /* Adds space between words */
-  margin-right: 15px;          /* Adds space between words */
+  margin-right: 12px;          /* Adds space between words */
 }
