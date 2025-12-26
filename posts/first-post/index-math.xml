@@ -8,8 +8,8 @@
 <title>My Blog</title>
 <link>https://hanusa.xyz/posts/first-post/#category=math</link>
 <atom:link href="https://hanusa.xyz/posts/first-post/index-math.xml" rel="self" type="application/rss+xml"/>
-<description>A blog about stuff</description>
+<description>This is a description of my first post.</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Fri, 26 Dec 2025 15:51:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 26 Dec 2025 19:02:51 GMT</lastBuildDate>
 </channel>
 </rss>
