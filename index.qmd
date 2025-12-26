@@ -4,6 +4,11 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
-  feed: true
+  categories: true
+  feed: 
+    type: [rss, json]     # <--- This generates both index.xml AND index.json
+    items: 30             # Optional: limit to 10 most recent
+  fields: [date, title, description, categories, image]
 ---
 Welcome to the test version of my blog.
+
