@@ -19,16 +19,20 @@
 
 
 
-<section id="new-year-new-site" class="level1">
-<h1>New Year, New Site</h1>
-<p>Welcome to the new hanusa.xyz. In 2025, Queens College transitioned all its webpages away from the college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I’ve taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job.</p>
+<section id="welcome" class="level2">
+<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
+<p>Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at <a href="https://www.qc.cuny.edu">Queens College</a> of the City University of New York.</p>
+<p>In 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the <img src="https://latex.codecogs.com/png.latex?(x,y,z)"> coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the <a href="https://christopherhanusa.com">mathematical art</a> and <a href="https://hanusadesign.com">mathematical jewelry</a> that I design is designed in the computer and made physical through a 3D printing process.</p>
+</section>
 <section id="the-vision" class="level2">
 <h2 class="anchored" data-anchor-id="the-vision">The Vision</h2>
+<p>In late 2025 and early 2026, I’ve taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job, and allow for updating the website through a blog interface, as you’re reading right now. I’ve gained skills in conveying ideas through regular updates as I took on my role as the Faculty Liaison for Evaluation and Assessment and built communication infrastructure to keep the campus informed about the accreditation process.</p>
+<p>My goal in writing is to provide additional context for the work that I do as a professor, to increase transparency about all the facets of the job, and share the good work that happens amongst my collaborators and colleagues.</p>
 </section>
 <section id="coding-the-site" class="level2">
 <h2 class="anchored" data-anchor-id="coding-the-site">Coding the Site</h2>
 <p>The site is hosted on Github Pages, and was developed with the help of Google Gemini.</p>
-<p>Furthermore, the blog feature is built on Quarto, which allows for built in <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> code <img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5E%5Cinfty%20%5Ctextup%7BWow_i!%7D."></p>
+<p>The blog feature is built using Quarto, which allows for built in <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> code: <img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5E%5Cinfty%20%5Ctextup%7BWow%7D_i!."></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -45,7 +49,6 @@ Note
 
 
 
-</section>
 </section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">

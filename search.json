@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "My Recent Writings",
     "section": "",
-    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExperiments in Generative Art\n\n\n\nart\n\ncode\n\n\n\nThis is the description that appears on the list of posts. It cannot include LaTeX.\n\n\n\n\n\nDec 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\nmisc\n\nmath\n\n\n\nThis is a description of my first post.\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Quarto Post\n\n\n\nmath\n\n\n\nThis is a description of my second Quarto post.\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNew Year, New Site\n\n\n\nmisc\n\nmeta\n\n\n\nI’ve renewed my website for 2026, including a refreshed feel and an integrated blog.\n\n\n\n\n\nJan 1, 2026\n\n\n\n\n\nNo matching items",
+    "text": "Welcome to the test version of my blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExperiments in Generative Art\n\n\n\nart\n\ncode\n\n\n\nThis is the description that appears on the list of posts. It cannot include LaTeX.\n\n\n\n\n\nDec 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Quarto Post\n\n\n\nmisc\n\nmath\n\n\n\nThis is a description of my first post.\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Quarto Post\n\n\n\nmath\n\n\n\nThis is a description of my second Quarto post.\n\n\n\n\n\nDec 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nNew Year, New Site\n\n\n\nmisc\n\nmeta\n\n\n\nI’ve renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update?\n\n\n\n\n\nJan 1, 2026\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Blog",
       "All posts"
@@ -64,13 +64,27 @@
     "href": "posts/2026-01-01-new-site/index.html",
     "title": "New Year, New Site",
     "section": "",
-    "text": "Welcome to the new hanusa.xyz. In 2025, Queens College transitioned all its webpages away from the college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I’ve taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job.\n\n\n\n\n\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini.\nFurthermore, the blog feature is built on Quarto, which allows for built in \\(\\LaTeX\\) code \\[\\sum_{i=1}^\\infty \\textup{Wow_i!}.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these callouts!"
+    "text": "Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
+  },
+  {
+    "objectID": "posts/2026-01-01-new-site/index.html#welcome",
+    "href": "posts/2026-01-01-new-site/index.html#welcome",
+    "title": "New Year, New Site",
+    "section": "",
+    "text": "Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
+  },
+  {
+    "objectID": "posts/2026-01-01-new-site/index.html#the-vision",
+    "href": "posts/2026-01-01-new-site/index.html#the-vision",
+    "title": "New Year, New Site",
+    "section": "The Vision",
+    "text": "The Vision\nIn late 2025 and early 2026, I’ve taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job, and allow for updating the website through a blog interface, as you’re reading right now. I’ve gained skills in conveying ideas through regular updates as I took on my role as the Faculty Liaison for Evaluation and Assessment and built communication infrastructure to keep the campus informed about the accreditation process.\nMy goal in writing is to provide additional context for the work that I do as a professor, to increase transparency about all the facets of the job, and share the good work that happens amongst my collaborators and colleagues."
   },
   {
     "objectID": "posts/2026-01-01-new-site/index.html#coding-the-site",
     "href": "posts/2026-01-01-new-site/index.html#coding-the-site",
     "title": "New Year, New Site",
-    "section": "",
-    "text": "The site is hosted on Github Pages, and was developed with the help of Google Gemini.\nFurthermore, the blog feature is built on Quarto, which allows for built in \\(\\LaTeX\\) code \\[\\sum_{i=1}^\\infty \\textup{Wow_i!}.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these callouts!"
+    "section": "Coding the Site",
+    "text": "Coding the Site\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini.\nThe blog feature is built using Quarto, which allows for built in \\(\\LaTeX\\) code: \\[\\sum_{i=1}^\\infty \\textup{Wow}_i!.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these callouts!"
   }
 ]
