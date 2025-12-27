@@ -5,3 +5,4 @@ listing:
   feed: 
     items: 10
 ---
+The blog to accompany [hanusa.xyz](https://hanusa.xyz).
