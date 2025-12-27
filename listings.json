@@ -4,7 +4,7 @@
     "items": []
   },
   {
-    "listing": "/posts/2025-12-24-generative-art/index.html",
+    "listing": "/posts/first-post/index.html",
     "items": []
   },
   {
@@ -12,11 +12,16 @@
     "items": [
       "/posts/2025-12-24-generative-art/index.html",
       "/posts/first-post/index.html",
-      "/posts/second-post/index.html"
+      "/posts/second-post/index.html",
+      "/posts/2026-01-01-new-site/index.html"
     ]
   },
   {
-    "listing": "/posts/first-post/index.html",
+    "listing": "/posts/2025-12-24-generative-art/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/2026-01-01-new-site/index.html",
     "items": []
   }
 ]

@@ -10,7 +10,55 @@
 <atom:link href="https://hanusa.xyz/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog about stuff</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 24 Dec 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 01 Jan 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>New Year, New Site</title>
+  <link>https://hanusa.xyz/posts/2026-01-01-new-site/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="new-year-new-site" class="level1">
+<h1>New Year, New Site</h1>
+<p>Welcome to the new hanusa.xyz. In 2025, Queens College transitioned all its webpages away from the college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I’ve taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job.</p>
+<section id="the-vision" class="level2">
+<h2 class="anchored" data-anchor-id="the-vision">The Vision</h2>
+</section>
+<section id="coding-the-site" class="level2">
+<h2 class="anchored" data-anchor-id="coding-the-site">Coding the Site</h2>
+<p>The site is hosted on Github Pages, and was developed with the help of Google Gemini.</p>
+<p>Furthermore, the blog feature is built on Quarto, which allows for built in <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> code <img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5E%5Cinfty%20%5Ctextup%7BWow_i!%7D."></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto has a lot of built in features, including these callouts!</p>
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div> ]]></description>
+  <category>misc</category>
+  <category>meta</category>
+  <guid>https://hanusa.xyz/posts/2026-01-01-new-site/</guid>
+  <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Experiments in Generative Art</title>
   <link>https://hanusa.xyz/posts/2025-12-24-generative-art/</link>
