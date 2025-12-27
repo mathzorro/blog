@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>hanusa.xyz blog</title>
-<link>https://hanusa.xyz/blog/#category=art</link>
-<atom:link href="https://hanusa.xyz/blog/index-art.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/#category=art</link>
+<atom:link href="https://hanusa.xyz/index-art.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Wed, 24 Dec 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Experiments in Generative Art</title>
-  <link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</link>
+  <link>https://hanusa.xyz/posts/2025-12-24-generative-art/</link>
   <description><![CDATA[ 
 
 
@@ -134,7 +134,7 @@ Important
 </section></div> ]]></description>
   <category>art</category>
   <category>code</category>
-  <guid>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</guid>
+  <guid>https://hanusa.xyz/posts/2025-12-24-generative-art/</guid>
   <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>

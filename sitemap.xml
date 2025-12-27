@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hanusa.xyz/blog/posts/second-post/index.html</loc>
-    <lastmod>2025-12-27T21:37:54.999Z</lastmod>
+    <loc>https://hanusa.xyz/posts/second-post/index.html</loc>
+    <lastmod>2025-12-27T21:44:07.605Z</lastmod>
   </url>
   <url>
-    <loc>https://hanusa.xyz/blog/posts/first-post/index.html</loc>
-    <lastmod>2025-12-27T21:37:54.999Z</lastmod>
+    <loc>https://hanusa.xyz/posts/first-post/index.html</loc>
+    <lastmod>2025-12-27T21:44:07.605Z</lastmod>
   </url>
   <url>
-    <loc>https://hanusa.xyz/blog/index.html</loc>
-    <lastmod>2025-12-27T21:37:54.998Z</lastmod>
+    <loc>https://hanusa.xyz/index.html</loc>
+    <lastmod>2025-12-27T21:44:07.604Z</lastmod>
   </url>
   <url>
-    <loc>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/index.html</loc>
-    <lastmod>2025-12-27T21:37:54.998Z</lastmod>
+    <loc>https://hanusa.xyz/posts/2025-12-24-generative-art/index.html</loc>
+    <lastmod>2025-12-27T21:44:07.604Z</lastmod>
   </url>
   <url>
-    <loc>https://hanusa.xyz/blog/posts/2026-01-01-new-site/index.html</loc>
-    <lastmod>2025-12-27T21:37:54.998Z</lastmod>
+    <loc>https://hanusa.xyz/posts/2026-01-01-new-site/index.html</loc>
+    <lastmod>2025-12-27T21:44:07.604Z</lastmod>
   </url>
 </urlset>

@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>hanusa.xyz blog</title>
-<link>https://hanusa.xyz/blog/</link>
-<atom:link href="https://hanusa.xyz/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/</link>
+<atom:link href="https://hanusa.xyz/index.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Thu, 01 Jan 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>New Year, New Site</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</link>
+  <link>https://hanusa.xyz/posts/2026-01-01-new-site/</link>
   <description><![CDATA[ 
 
 
@@ -59,16 +59,16 @@ Note
 <div class="listing-no-matching d-none">No matching items</div>
 </div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2026" class="csl-entry quarto-appendix-citeas">
 Hanusa, Christopher R. H. 2026. <span>“New Year, New Site.”</span>
-January 1, 2026. <a href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/">https://hanusa.xyz/blog/posts/2026-01-01-new-site/</a>.
+January 1, 2026. <a href="https://hanusa.xyz/posts/2026-01-01-new-site/">https://hanusa.xyz/posts/2026-01-01-new-site/</a>.
 </div></div></section></div> ]]></description>
   <category>misc</category>
   <category>meta</category>
-  <guid>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</guid>
+  <guid>https://hanusa.xyz/posts/2026-01-01-new-site/</guid>
   <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Experiments in Generative Art</title>
-  <link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</link>
+  <link>https://hanusa.xyz/posts/2025-12-24-generative-art/</link>
   <description><![CDATA[ 
 
 
@@ -189,12 +189,12 @@ Important
 </section></div> ]]></description>
   <category>art</category>
   <category>code</category>
-  <guid>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</guid>
+  <guid>https://hanusa.xyz/posts/2025-12-24-generative-art/</guid>
   <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My First Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/first-post/</link>
+  <link>https://hanusa.xyz/posts/first-post/</link>
   <description><![CDATA[ 
 
 
@@ -215,12 +215,12 @@ Important
 </div> ]]></description>
   <category>misc</category>
   <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
+  <guid>https://hanusa.xyz/posts/first-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My Second Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/second-post/</link>
+  <link>https://hanusa.xyz/posts/second-post/</link>
   <description><![CDATA[ 
 
 
@@ -238,7 +238,7 @@ Important
 <div class="listing-no-matching d-none">No matching items</div>
 </div> ]]></description>
   <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
+  <guid>https://hanusa.xyz/posts/second-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>

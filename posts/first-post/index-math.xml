@@ -6,10 +6,10 @@
       version="2.0">
 <channel>
 <title>hanusa.xyz blog</title>
-<link>https://hanusa.xyz/blog/posts/first-post/#category=math</link>
-<atom:link href="https://hanusa.xyz/blog/posts/first-post/index-math.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/posts/first-post/#category=math</link>
+<atom:link href="https://hanusa.xyz/posts/first-post/index-math.xml" rel="self" type="application/rss+xml"/>
 <description>This is a description of my first post.</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sat, 27 Dec 2025 21:38:07 GMT</lastBuildDate>
+<lastBuildDate>Sat, 27 Dec 2025 21:44:22 GMT</lastBuildDate>
 </channel>
 </rss>

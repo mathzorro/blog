@@ -6,10 +6,10 @@
       version="2.0">
 <channel>
 <title>hanusa.xyz blog</title>
-<link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</link>
-<atom:link href="https://hanusa.xyz/blog/posts/2025-12-24-generative-art/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/posts/2025-12-24-generative-art/</link>
+<atom:link href="https://hanusa.xyz/posts/2025-12-24-generative-art/index.xml" rel="self" type="application/rss+xml"/>
 <description>This is the description that appears on the list of posts. It cannot include LaTeX.</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sat, 27 Dec 2025 21:38:07 GMT</lastBuildDate>
+<lastBuildDate>Sat, 27 Dec 2025 21:44:21 GMT</lastBuildDate>
 </channel>
 </rss>
