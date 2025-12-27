@@ -13,6 +13,7 @@
 <lastBuildDate>Thu, 01 Jan 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>New Year, New Site</title>
+  <dc:creator>Christopher Hanusa</dc:creator>
   <link>https://hanusa.xyz/posts/2026-01-01-new-site/</link>
   <description><![CDATA[ 
 
@@ -56,7 +57,10 @@ Note
 
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+</div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2026" class="csl-entry quarto-appendix-citeas">
+Hanusa, Christopher. 2026. <span>“New Year, New Site.”</span> January 1,
+2026. <a href="https://hanusa.xyz/posts/2026-01-01-new-site/">https://hanusa.xyz/posts/2026-01-01-new-site/</a>.
+</div></div></section></div> ]]></description>
   <category>misc</category>
   <category>meta</category>
   <guid>https://hanusa.xyz/posts/2026-01-01-new-site/</guid>
