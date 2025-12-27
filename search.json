@@ -85,6 +85,6 @@
     "href": "posts/2026-01-01-new-site/index.html#coding-the-site",
     "title": "New Year, New Site",
     "section": "Coding the Site",
-    "text": "Coding the Site\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini.\nThe blog feature is built using Quarto, which allows for built in \\(\\LaTeX\\) code: \\[\\sum_{i=1}^\\infty \\textup{Wow}_i!.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these callouts!"
+    "text": "Coding the Site\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini.\nThe blog feature is built using Quarto, which allows for built in \\(\\LaTeX\\) code: \\[\\sum_{i=1}^\\infty \\textup{Wow}_i!.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these fun callouts!"
   }
 ]
