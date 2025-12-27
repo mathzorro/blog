@@ -4,7 +4,7 @@ project:
 
 listing:
   contents: posts
-  sort: "date"
+  sort: "date desc"
   categories: true
   feed:
     categories:     
