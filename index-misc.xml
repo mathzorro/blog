@@ -5,16 +5,16 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>My Blog</title>
-<link>https://hanusa.xyz/#category=misc</link>
-<atom:link href="https://hanusa.xyz/index-misc.xml" rel="self" type="application/rss+xml"/>
-<description>A blog about stuff</description>
+<title>hanusa.xyz blog</title>
+<link>https://hanusa.xyz/blog/#category=misc</link>
+<atom:link href="https://hanusa.xyz/blog/index-misc.xml" rel="self" type="application/rss+xml"/>
+<description>Writings about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Thu, 01 Jan 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>New Year, New Site</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/posts/2026-01-01-new-site/</link>
+  <link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</link>
   <description><![CDATA[ 
 
 
@@ -59,16 +59,16 @@ Note
 <div class="listing-no-matching d-none">No matching items</div>
 </div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2026" class="csl-entry quarto-appendix-citeas">
 Hanusa, Christopher R. H. 2026. <span>“New Year, New Site.”</span>
-January 1, 2026. <a href="https://hanusa.xyz/posts/2026-01-01-new-site/">https://hanusa.xyz/posts/2026-01-01-new-site/</a>.
+January 1, 2026. <a href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/">https://hanusa.xyz/blog/posts/2026-01-01-new-site/</a>.
 </div></div></section></div> ]]></description>
   <category>misc</category>
   <category>meta</category>
-  <guid>https://hanusa.xyz/posts/2026-01-01-new-site/</guid>
+  <guid>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</guid>
   <pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My First Quarto Post</title>
-  <link>https://hanusa.xyz/posts/first-post/</link>
+  <link>https://hanusa.xyz/blog/posts/first-post/</link>
   <description><![CDATA[ 
 
 
@@ -89,7 +89,7 @@ January 1, 2026. <a href="https://hanusa.xyz/posts/2026-01-01-new-site/">https:/
 </div> ]]></description>
   <category>misc</category>
   <category>math</category>
-  <guid>https://hanusa.xyz/posts/first-post/</guid>
+  <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>

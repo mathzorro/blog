@@ -5,15 +5,15 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>My Blog</title>
-<link>https://hanusa.xyz/#category=math</link>
-<atom:link href="https://hanusa.xyz/index-math.xml" rel="self" type="application/rss+xml"/>
-<description>A blog about stuff</description>
+<title>hanusa.xyz blog</title>
+<link>https://hanusa.xyz/blog/#category=math</link>
+<atom:link href="https://hanusa.xyz/blog/index-math.xml" rel="self" type="application/rss+xml"/>
+<description>Writings about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Tue, 23 Dec 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>My First Quarto Post</title>
-  <link>https://hanusa.xyz/posts/first-post/</link>
+  <link>https://hanusa.xyz/blog/posts/first-post/</link>
   <description><![CDATA[ 
 
 
@@ -34,12 +34,12 @@
 </div> ]]></description>
   <category>misc</category>
   <category>math</category>
-  <guid>https://hanusa.xyz/posts/first-post/</guid>
+  <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>My Second Quarto Post</title>
-  <link>https://hanusa.xyz/posts/second-post/</link>
+  <link>https://hanusa.xyz/blog/posts/second-post/</link>
   <description><![CDATA[ 
 
 
@@ -57,7 +57,7 @@
 <div class="listing-no-matching d-none">No matching items</div>
 </div> ]]></description>
   <category>math</category>
-  <guid>https://hanusa.xyz/posts/second-post/</guid>
+  <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>

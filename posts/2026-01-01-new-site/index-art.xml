@@ -5,11 +5,11 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>My Blog</title>
-<link>https://hanusa.xyz/posts/2026-01-01-new-site/#category=art</link>
-<atom:link href="https://hanusa.xyz/posts/2026-01-01-new-site/index-art.xml" rel="self" type="application/rss+xml"/>
+<title>hanusa.xyz blog</title>
+<link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/#category=art</link>
+<atom:link href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/index-art.xml" rel="self" type="application/rss+xml"/>
 <description>I&#39;ve renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update?</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sat, 27 Dec 2025 21:22:31 GMT</lastBuildDate>
+<lastBuildDate>Sat, 27 Dec 2025 21:25:49 GMT</lastBuildDate>
 </channel>
 </rss>

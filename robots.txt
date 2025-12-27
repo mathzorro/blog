@@ -1,1 +1,1 @@
-Sitemap: https://hanusa.xyz/sitemap.xml
+Sitemap: https://hanusa.xyz/blog/sitemap.xml
