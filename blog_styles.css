@@ -6,19 +6,19 @@
 
 /* Optional: Adjust the navbar height to fit the larger logo */
 .navbar {
-  min-height: 57px !important; 
+  min-height: 57px; 
 }
 
 .navbar-container {
-  min-height: 60px !important; 
+  min-height: 57px; 
 }
 
 .navbar-brand {
-  min-height: 60px !important; 
+  min-height: 57px; 
 }
 
 .navbar-brand-container {
-  min-height: 60px !important; 
+  min-height: 57px; 
 }
 
 /* Customize Navbar Text */
