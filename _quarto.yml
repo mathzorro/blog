@@ -16,7 +16,7 @@ listing:
       
 website:
   title: "hanusa.xyz blog"
-  site-url: "https://hanusa.xyz/"  # <--- This is required for RSS
+  site-url: "https://hanusa.xyz/blog/"  # <--- This is required for RSS
   description: "Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics"
   
   search:
