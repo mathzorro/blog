@@ -15,9 +15,9 @@ listing:
       - "misc"
       
 website:
-  title: "My Blog"
-  site-url: "https://hanusa.xyz"  # <--- This is required for RSS
-  description: "A blog about stuff"
+  title: "hanusa.xyz blog"
+  site-url: "https://hanusa.xyz/blog/"  # <--- This is required for RSS
+  description: "Writings about math, art, coding, teaching, leadership, academia, and other miscellaneous topics"
   
   search:
     location: sidebar
