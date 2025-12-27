@@ -3,20 +3,26 @@ title: "New Year, New Site"
 date: "2026-01-01"
 categories: [misc,meta]
 toc: true
-description: "I've renewed my website for 2026, including a refreshed feel and an integrated blog."
+description: "I've renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update?"
 ---
 
-# New Year, New Site
+## Welcome!
 
-Welcome to the new hanusa.xyz. In 2025, Queens College transitioned all its webpages away from the college infrastructure. So I set up hanusa.xyz to be my index.html away from home. 
-I've taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job.
+Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at [Queens College](https://www.qc.cuny.edu) of the City University of New York.
+
+In 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the $(x,y,z)$ coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the [mathematical art](https://christopherhanusa.com) and [mathematical jewelry](https://hanusadesign.com) that I design is designed in the computer and made physical through a 3D printing process.
 
 ## The Vision
 
+In late 2025 and early 2026, I've taken the time to redevelop the site to be more reflective of the breadth of the work that I do in my job, and allow for updating the website through a blog interface, as you're reading right now. I've gained skills in conveying ideas through regular updates as I took on my role as the Faculty Liaison for Evaluation and Assessment and built communication infrastructure to keep the campus informed about the accreditation process.
+
+My goal in writing is to provide additional context for the work that I do as a professor, to increase transparency about all the facets of the job, and share the good work that happens amongst my collaborators and colleagues.
+
 ## Coding the Site
+
 The site is hosted on Github Pages, and was developed with the help of Google Gemini. 
 
-Furthermore, the blog feature is built on Quarto, which allows for built in $\LaTeX$ code $$\sum_{i=1}^\infty \textup{Wow_i!}.$$
+The blog feature is built using Quarto, which allows for built in $\LaTeX$ code: $$\sum_{i=1}^\infty \textup{Wow}_i!.$$
 
 :::{.callout-note}
 Quarto has a lot of built in features, including these callouts!
