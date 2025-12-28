@@ -30,6 +30,7 @@ website:
     background: "white"  
     foreground: "#666666"    # Text color
     collapse: false
+    collapse-below: sm
 
     left:
      - text: "Blog"
