@@ -64,14 +64,14 @@
     "href": "posts/2026-01-01-new-site/index.html",
     "title": "New Year, New Site",
     "section": "",
-    "text": "Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
+    "text": "Welcome to hanusa.xyz, the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that the xyz domain would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
   },
   {
     "objectID": "posts/2026-01-01-new-site/index.html#welcome",
     "href": "posts/2026-01-01-new-site/index.html#welcome",
     "title": "New Year, New Site",
     "section": "",
-    "text": "Welcome to hanusa.xyz. This is the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that xyz would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
+    "text": "Welcome to hanusa.xyz, the webpage of Christopher R. H. Hanusa, professor of mathematics at Queens College of the City University of New York.\nIn 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that the xyz domain would be suitable since it evokes the \\((x,y,z)\\) coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the mathematical art and mathematical jewelry that I design is designed in the computer and made physical through a 3D printing process."
   },
   {
     "objectID": "posts/2026-01-01-new-site/index.html#the-vision",
@@ -85,6 +85,6 @@
     "href": "posts/2026-01-01-new-site/index.html#coding-the-site",
     "title": "New Year, New Site",
     "section": "Coding the Site",
-    "text": "Coding the Site\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini.\nThe blog feature is built using Quarto, which allows for built in \\(\\LaTeX\\) code: \\[\\sum_{i=1}^\\infty \\textup{Wow}_i!.\\]\n\n\n\n\n\n\nNote\n\n\n\nQuarto has a lot of built in features, including these fun callouts!"
+    "text": "Coding the Site\nThe site is hosted on Github Pages, and was developed with the help of Google Gemini. I used Visual Studio Code to code the webpages.\nThe blog feature is built using Quarto, which I developed using the github interface.\nQuarto has a number of nice built-in features, like \\(\\LaTeX\\) code: \\[\\sum_{i=1}^\\infty \\textup{Wow}_i!,\\]\n\n\n\n\n\n\nNote\n\n\n\nfun callouts like these,\n\n\nRSS feeds that allow for direct integration with the webpages on hanusa.xyz.\nand a way to streamline the citation of these posts. (See below.)\nQuarto also has nice extensions, including lightbox to allow users to zoom in on images and and open social comments, which will allow for comments that get posted as replies to my posts on Bluesky (and Mastodon if there’s interest).\nI’m excited to add this additional flexibility and functionality into my website. Thanks for following along."
   }
 ]
