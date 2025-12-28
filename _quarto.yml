@@ -28,7 +28,7 @@ website:
     logo: "hanusa-xyz.png"       
     logo-href: https://hanusa.xyz 
     background: "white"  
-    foreground: "#888888"    # Text color
+    foreground: "#777777"    # Text color
 
     left:
      - text: "Blog"
