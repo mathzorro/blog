@@ -29,6 +29,7 @@ website:
     logo-href: https://hanusa.xyz 
     background: "white"  
     foreground: "#666666"    # Text color
+    collapse: false
 
     left:
      - text: "Blog"
