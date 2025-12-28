@@ -10,6 +10,16 @@ author:
       family: Hanusa
 citation: true
 appendix-cite-as: display
+lightbox: auto  # allows images to be put into lightbox mode.
+# Update the below to integrate bluesky and mathstodon comments on this post.
+# filters:
+#   - open-social-comments
+# mastodon_comments:
+#   user: "mathzorro"
+#   host: "mathstodon.xyz"
+#   toot_id: "*****"
+# bluesky_comments:
+#   post_uri: "https://bsky.app/profile/mathzorro.bsky.social/post/*****"
 ---
 
 ## Welcome!
