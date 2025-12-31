@@ -6,8 +6,8 @@ listing:
   contents: posts
   sort: "date desc"
   categories: true
-  type: metadata  # makes it so that the feed includes the metadata and not the full posts. 
   feed:
+    type: metadata  # makes it so that the feed includes the metadata and not the full posts. 
     categories:     
       - "math"
       - "art"  
