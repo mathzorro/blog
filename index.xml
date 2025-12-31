@@ -15,57 +15,7 @@
   <title>New Year, New Site</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="welcome" class="level2">
-<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
-<p>Welcome to hanusa.xyz, the webpage of Christopher R. H. Hanusa, professor of mathematics at <a href="https://www.qc.cuny.edu">Queens College</a> of the City University of New York.</p>
-<p>In 2025, Queens College decided to transition all its webpages away from college infrastructure. So I set up hanusa.xyz to be my index.html away from home. I thought that the xyz domain would be suitable since it evokes the <img src="https://latex.codecogs.com/png.latex?(x,y,z)"> coordinate system, my mathematical research is in the combinatorics of high dimensional geometry, and the <a href="https://christopherhanusa.com">mathematical art</a> and <a href="https://hanusadesign.com">mathematical jewelry</a> that I design is designed in the computer and made physical through a 3D printing process.</p>
-</section>
-<section id="the-vision" class="level2">
-<h2 class="anchored" data-anchor-id="the-vision">The Vision</h2>
-<p>In late 2025 and early 2026, I took the time to redevelop the site to be more reflective of the breadth of the work that I do in my job, and allow for updating the website through a blog interface, as you’re reading right now. I’ve gained skills in conveying ideas through regular updates as I took on my role as the Faculty Liaison for Evaluation and Assessment and built communication infrastructure to keep the campus informed as it undergoes its regular reaffirmation of accreditation process.</p>
-<p>My goal in writing is to provide additional context for the work that I do as a professor, to increase transparency about all the facets of the job, and share the good work that happens amongst my collaborators and colleagues.</p>
-</section>
-<section id="coding-the-site" class="level2">
-<h2 class="anchored" data-anchor-id="coding-the-site">Coding the Site</h2>
-<p>The site is hosted on Github Pages, and was developed with the help of Google Gemini. I used Visual Studio Code to code the webpages.</p>
-<p>The blog feature is built using Quarto, which I developed using the github interface.</p>
-<p>Quarto has a number of nice built-in features, like <img src="https://latex.codecogs.com/png.latex?%5CLaTeX"> code: <img src="https://latex.codecogs.com/png.latex?%5Csum_%7Bi=1%7D%5E%5Cinfty%20%5Ctextup%7BWow%7D_i!,"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>fun callouts like these,</p>
-</div>
-</div>
-<p>RSS feeds that allow for direct integration with the webpages on <a href="https://hanusa.xyz">hanusa.xyz</a>.</p>
-<p>and a way to streamline the citation of these posts. (See below.)</p>
-<p>Quarto also has nice extensions, including <a href="https://github.com/quarto-ext/lightbox">lightbox</a> to allow users to zoom in on images and and <a href="https://andreasthinks.me/posts/quarto_comments/open-social.html">open social comments</a>, which will allow for comments that get posted as replies to my posts on Bluesky (and Mastodon if there’s interest).</p>
-<p>I’m excited to add this additional flexibility and functionality into my website. Thanks for following along.</p>
-
-
-
-</section>
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2026" class="csl-entry quarto-appendix-citeas">
-Hanusa, Christopher R. H. 2026. <span>“New Year, New Site.”</span>
-January 1, 2026. <a href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/">https://hanusa.xyz/blog/posts/2026-01-01-new-site/</a>.
-</div></div></section></div> ]]></description>
+  <description><![CDATA[ I’ve renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update? ]]></description>
   <category>misc</category>
   <category>meta</category>
   <guid>https://hanusa.xyz/blog/posts/2026-01-01-new-site/</guid>
@@ -74,124 +24,7 @@ January 1, 2026. <a href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/">ht
 <item>
   <title>Experiments in Generative Art</title>
   <link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I have been working on a new project that combines knot theory with music.</p>
-<section id="the-concept" class="level2">
-<h2 class="anchored" data-anchor-id="the-concept">The Concept</h2>
-<p>We are looking for a way to visualize the “interface” between geometric forms and organic forms.</p>
-</section>
-<section id="the-code" class="level2">
-<h2 class="anchored" data-anchor-id="the-code">The Code</h2>
-<p>Here is a snippet of the Wolfram Language<sup>1</sup> code I am using:</p>
-<pre><code>Table[Style[k, Hue[k/20]], {k, 1, 20}]</code></pre>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Hard edge] --&gt; B(Round edge)
-  B --&gt; C{Decision}
-  C --&gt; D[Result one]
-  C --&gt; E[Result two]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="the-math" class="level2">
-<h2 class="anchored" data-anchor-id="the-math">The Math</h2>
-<p>The core of the structure relies on the flow polytope equation:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BF%7D_G%20=%20%5Cleft%5C%7B%20x%20%5Cin%20%5Cmathbb%7BR%7D%5EE%20:%20%5Csum_%7Be%20%5Cin%20%5Ctext%7Bin%7D(v)%7D%20x_e%20=%20%5Csum_%7Be%20%5Cin%20%5Ctext%7Bout%7D(v)%7D%20x_e%20%5Cright%5C%7D"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-
-
-
-</section>
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Hey wait I can make a footnote!</p>
-<p>And if I want the footnote to be multiple lines I can do that too.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
+  <description><![CDATA[ This is the description that appears on the list of posts. It cannot include LaTeX. ]]></description>
   <category>art</category>
   <category>code</category>
   <guid>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</guid>
@@ -200,24 +33,7 @@ Important
 <item>
   <title>My First Quarto Post</title>
   <link>https://hanusa.xyz/blog/posts/first-post/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>This is a test post.</p>
-<p>Here is a flow polytope equation: <img src="https://latex.codecogs.com/png.latex?K_G(t)%20=%20%5Csum_%7Bi=0%7D%5E%7Bd%7D%20c_i%20t%5Ei"></p>
-<p>I did not have to write HTML to make that math work.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+  <description><![CDATA[ This is a description of my first post. ]]></description>
   <category>misc</category>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
@@ -226,22 +42,7 @@ Important
 <item>
   <title>My Second Quarto Post</title>
   <link>https://hanusa.xyz/blog/posts/second-post/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I am getting the hang of this, perhaps. <strong>What do you mean?</strong></p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+  <description><![CDATA[ This is a description of my second Quarto post. ]]></description>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>

@@ -14,24 +14,7 @@
 <item>
   <title>My First Quarto Post</title>
   <link>https://hanusa.xyz/blog/posts/first-post/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>This is a test post.</p>
-<p>Here is a flow polytope equation: <img src="https://latex.codecogs.com/png.latex?K_G(t)%20=%20%5Csum_%7Bi=0%7D%5E%7Bd%7D%20c_i%20t%5Ei"></p>
-<p>I did not have to write HTML to make that math work.</p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+  <description><![CDATA[ This is a description of my first post. ]]></description>
   <category>misc</category>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
@@ -40,22 +23,7 @@
 <item>
   <title>My Second Quarto Post</title>
   <link>https://hanusa.xyz/blog/posts/second-post/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I am getting the hang of this, perhaps. <strong>What do you mean?</strong></p>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+  <description><![CDATA[ This is a description of my second Quarto post. ]]></description>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
   <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
