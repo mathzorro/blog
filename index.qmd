@@ -3,6 +3,7 @@ title: "Recent Writings"
 listing: 
   contents: posts
   feed: 
+    type: [rss, json]   
     items: 10
   fields: [date, title, description, categories, image]
 ---
