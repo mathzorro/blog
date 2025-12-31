@@ -15,7 +15,7 @@ listing:
       - "misc"
       
 website:
-  title: "hanusa.xyz blog"
+  title: "Insights by Christopher R. H. Hanusa"
   site-url: "https://hanusa.xyz/blog"  # <--- This is required for RSS
   description: "Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics"
   
@@ -31,20 +31,20 @@ website:
     foreground: "#777777"    # Text color
 
     left:
-     - text: "Blog"
+     - text: "Insights"
        href: https://hanusa.xyz/blog/
 
     # "right" items appear on the far right side
     right:
       - text: "Research"
         href: https://hanusa.xyz/research.html
-      - text: "Portfolio"
-        href: https://hanusa.xyz/portfolio.html
-      - text: "Teaching"
-        href: https://hanusa.xyz/teaching.html
-      - text: "Leadership"
-        href: https://hanusa.xyz/leadership.html
-      - text: "Blog"
+      - text: "Design"
+        href: https://hanusa.xyz/design.html
+      - text: "Education"
+        href: https://hanusa.xyz/education.html
+      - text: "Strategy"
+        href: https://hanusa.xyz/strategy.html
+      - text: "Insights"
         href: https://hanusa.xyz/blog/
       - text: "Contact"
         href: https://hanusa.xyz/contact.html
