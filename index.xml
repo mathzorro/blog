@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>hanusa.xyz blog</title>
+<title>Insights by Christopher R. H. Hanusa</title>
 <link>https://hanusa.xyz/blog/</link>
 <atom:link href="https://hanusa.xyz/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>

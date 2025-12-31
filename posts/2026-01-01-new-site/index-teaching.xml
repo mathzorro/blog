@@ -5,11 +5,11 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>hanusa.xyz blog</title>
+<title>Insights by Christopher R. H. Hanusa</title>
 <link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/#category=teaching</link>
 <atom:link href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/index-teaching.xml" rel="self" type="application/rss+xml"/>
 <description>I&#39;ve renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update?</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Wed, 31 Dec 2025 08:10:47 GMT</lastBuildDate>
+<lastBuildDate>Wed, 31 Dec 2025 08:13:06 GMT</lastBuildDate>
 </channel>
 </rss>
