@@ -6,10 +6,10 @@
       version="2.0">
 <channel>
 <title>hanusa.xyz blog</title>
-<link>https://hanusa.xyz/blog/#category=leadership</link>
-<atom:link href="https://hanusa.xyz/blog/index-leadership.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/blog/#category=admin</link>
+<atom:link href="https://hanusa.xyz/blog/index-admin.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Sun, 28 Dec 2025 12:46:57 GMT</lastBuildDate>
+<lastBuildDate>Wed, 31 Dec 2025 08:10:45 GMT</lastBuildDate>
 </channel>
 </rss>
