@@ -63,32 +63,28 @@
   transform: translateY(0) !important;
 }
 
-/* Hamburger: three bars in the logo colors, like the main site */
+/* Toggler: the text "Insights ☰" in magenta, on the RIGHT.
+   (Quarto places the toggler left of the brand on mobile; flex
+   order overrides put logo left, toggler right.) */
+.navbar .navbar-container { display: flex; align-items: center; }
+.navbar-brand-container {
+  order: 0;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
 .navbar-toggler {
+  order: 9 !important;
+  margin-left: auto !important;
   border: none;
   box-shadow: none !important;
-  display: flex;
-  align-items: center;
 }
-.navbar-toggler-icon {
-  width: 28px;
-  height: 22px;
-  background-image:
-    linear-gradient(#e7210e, #e7210e),
-    linear-gradient(#13b272, #13b272),
-    linear-gradient(#1d5adc, #1d5adc) !important;
-  background-position: 0 0, 0 9px, 0 18px;
-  background-size: 28px 4px;
-  background-repeat: no-repeat;
-}
-/* section name beside the hamburger, like the main site's mobile bar */
+.navbar-toggler-icon { display: none; }
 .navbar-toggler::before {
-  content: "Insights";
+  content: "Insights \2630";
   font-family: Fenix, serif;
   font-weight: bold;
   font-size: 1.25rem;
   color: #d81b8c;
-  margin-right: 12px;
 }
 
 /* Collapsed (mobile) menu: right-adjusted, hairline-separated */
