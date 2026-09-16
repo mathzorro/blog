@@ -29,11 +29,7 @@ website:
     logo: "hanusa-xyz.png"       
     logo-href: https://hanusa.xyz 
     background: "white"  
-    foreground: "#777777"    # Text color
-
-    left:
-     - text: "Insights"
-       href: https://hanusa.xyz/blog/
+    pinned: true             # fixed to the top, like the main site
 
     # "right" items appear on the far right side
     right:

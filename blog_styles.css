@@ -1,17 +1,43 @@
-/* Increase the logo size */
-#.navbar-brand-container img {
-#  width: 148px !important;  /* Default is usually around 30px */
-#  height: auto;
-#}
+/* ============================================================
+   Navbar styled to match hanusa.xyz (see styles.css #main-nav)
+   ============================================================ */
 
-/* Optional: Adjust the navbar height to fit the larger logo */
+/* Translucent white bar with blur, like the main site's fixed nav */
 .navbar {
-  min-height: 67px; 
+  min-height: 60px;
+  background: rgba(255, 255, 255, 0.85) !important;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: none;
 }
 
-/* Customize Navbar Text */
+/* Logo at the main site's 50px height */
+.navbar-brand img,
+.navbar-logo {
+  max-height: 50px !important;
+  height: 50px;
+  width: auto;
+}
+
+/* Links: Fenix (via _brand.yml), dark, 70% opacity until hover */
 .navbar-nav .nav-link {
-  font-size: 17px !important;  /* Adjust this number for size */
-  margin-left: 0px;           /* Adds space between words */
-  margin-right: 12px;          /* Adds space between words */
+  font-size: 17.6px !important;   /* main site: 1.1em */
+  margin-left: 12px;
+  color: #2c3e50 !important;
+  opacity: 0.7;
+  transition: opacity 0.3s, color 0.3s;
+}
+.navbar-nav .nav-link:hover { opacity: 1; }
+
+/* Each link hovers in its own section color (matches the main site) */
+.navbar-nav .nav-link[href="https://hanusa.xyz/research.html"]:hover  { color: #e7210e !important; }
+.navbar-nav .nav-link[href="https://hanusa.xyz/design.html"]:hover    { color: #13b272 !important; }
+.navbar-nav .nav-link[href="https://hanusa.xyz/education.html"]:hover { color: #1d5adc !important; }
+.navbar-nav .nav-link[href="https://hanusa.xyz/strategy.html"]:hover  { color: #b8860b !important; }
+.navbar-nav .nav-link[href="https://hanusa.xyz/contact.html"]:hover   { color: #7a2fc2 !important; }
+
+/* Insights is this site's active section: magenta, full opacity */
+.navbar-nav .nav-link[href="https://hanusa.xyz/blog/"] {
+  color: #d81b8c !important;
+  opacity: 1;
 }
