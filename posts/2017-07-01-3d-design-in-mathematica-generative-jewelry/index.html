@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2017-07-01">
+<meta name="description" content="Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And…">
+
+<title>3D Design in Mathematica: Generative Jewelry – Insights by Christopher R. H. Hanusa</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script data-goatcounter="https://hanusaxyz.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../blog_styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://hanusa.xyz" class="navbar-brand navbar-brand-logo">
+    <img src="../../hanusa-xyz.png" alt="" class="navbar-logo light-content">
+    <img src="../../hanusa-xyz.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/design.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/education.html"> 
+<span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/strategy.html"> 
+<span class="menu-text">Strategy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/blog/"> 
+<span class="menu-text">Insights</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">3D Design in Mathematica: Generative Jewelry</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All posts</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#generative-jewelry" id="toc-generative-jewelry" class="nav-link active" data-scroll-target="#generative-jewelry">Generative jewelry</a></li>
+  <li><a href="#the-final-result" id="toc-the-final-result" class="nav-link" data-scroll-target="#the-final-result">The Final Result</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">3D Design in Mathematica: Generative Jewelry</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">art</div>
+    <div class="quarto-category">Mathematica</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And…
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 1, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some <em>ordered randomness</em> to my art and jewelry. And we’ll design a new piece of generative jewelry!</p>
+<p>Before that, let me share something else I’ve been working on. This June I gave myself a goal to share with the public each day one piece of jewelry I designed. Designing, refining, and posting took some effort, and I have completed my goal! In the process I designed some new jewelry that I really like, and I will be working over the coming months to develop them into coherent jewelry collections. I have been sharing on various social media accounts: <span class="citation" data-cites="hanusadesign">@hanusadesign</span> on <a href="http://instagram.com/hanusadesign/">instagram</a>, <a href="https://www.facebook.com/hanusadesign/">facebook</a>, <a href="https://www.twitter.com/hanusadesign/">twitter</a>, and <a href="https://www.pinterest.com/hanusadesign/">pinterest</a>. Be sure to follow me to see my latest work!</p>
+<p>Now on to the Mathematica tutorial. What do I mean by ordered randomness? Compare the following sets of 100 random points:</p>
+<p><a href="img01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.png" class="img-fluid"></a></p>
+<p>While the points seem rather “random” in both sets, you can see that the points on the left often land rather close to each other while the points on the right are pretty regularly spaced. This last observation should tell you that the points on the right are not actually “random”!</p>
+<p>Indeed, the points on the left are chosen randomly using Mathematica’s <code>[RandomReal](https://reference.wolfram.com/language/ref/RandomReal.html)</code> command. (Even though the numbers are generated by a deterministic process in a computer program and thus inherently not completely random, we will say that pseudorandom is close enough for our purposes.) The command</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ptlist <span class="ex">=</span> <span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">100</span><span class="op">,</span> <span class="dv">2</span><span class="op">}]</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>generates 100 pairs of real numbers that all fall between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>. On the other hand, the points on the right are chosen by a selection process in which we grow a list of points, starting with any point in the square. Then when we want to add a new point to the list, we generate a random point in the square and see if it is greater than a specified distance to any of the points already in our list. If so, it is added to our list; otherwise it is thrown out! Here is the code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ptlist <span class="ex">=</span> <span class="op">{</span><span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="dv">2</span><span class="op">]}</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">While</span><span class="op">[</span><span class="fu">Length</span><span class="op">[</span>ptlist<span class="op">]</span> &lt; <span class="dv">100</span><span class="op">,</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    newpt <span class="ex">=</span> <span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="dv">2</span><span class="op">]</span>; </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">If</span><span class="op">[</span><span class="fu">Min</span><span class="op">[</span><span class="fu">Map</span><span class="op">[</span><span class="fu">Norm</span><span class="op">[</span>newpt <span class="sc">-</span> #<span class="op">]</span> &amp;<span class="op">,</span> ptlist<span class="op">]]</span> &gt; .<span class="dv">1</span><span class="op">,</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       ptlist <span class="ex">=</span> <span class="fu">Append</span><span class="op">[</span>ptlist<span class="op">,</span> newpt<span class="op">]]]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Running the same code multiple times gives different sets of points.</p>
+<section id="generative-jewelry" class="level2">
+<h2 class="anchored" data-anchor-id="generative-jewelry">Generative jewelry</h2>
+<p>Let’s take this idea and turn it into a nice piece of <a href="https://en.wikipedia.org/wiki/Generative_art">generative jewelry</a>, in that we don’t actually know what it is going to look like before our program completes!</p>
+<p>My goal is to create a piece of jewelry that is a collection of overlapping rings. We’ll first generate a set of points and then construct rings centered at those points. We will work to complete three tasks to improve the aesthetic appeal of the final product:</p>
+<ul>
+<li><p>The points should be lie in a circle instead of a square.</p></li>
+<li><p>The points should be generously spaced.</p></li>
+<li><p>The rings should be different sizes</p></li>
+</ul>
+<p>For Task 1, we will specify a shape and ensure that each point that we consider is a member of that region. (Here we choose a circle, but you can easily modify it to be ANY region.) For Task 2, we will modify our selection process from above to add more distance between the points (radius .21 instead of .1) and have fewer points (50 instead of 100). By using our selection process, the rings won’t overlap too awkwardly and it will be pleasing to the eye. The values I have chosen are purely by trial and error with a view toward making the proportions of the final product look good.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>shape <span class="ex">=</span> <span class="fu">Disk</span><span class="op">[{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="dv">1</span><span class="op">]</span>;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ptlist <span class="ex">=</span> <span class="op">{</span><span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="dv">2</span><span class="op">]}</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">While</span><span class="op">[</span>! RegionMember<span class="op">[</span>shape<span class="op">,</span> ptlist<span class="op">[[</span><span class="dv">1</span><span class="op">]]],</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ptlist <span class="ex">=</span> <span class="op">{</span><span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="dv">2</span><span class="op">]}]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">While</span><span class="op">[</span><span class="fu">Length</span><span class="op">[</span>ptlist<span class="op">]</span> &lt; <span class="dv">50</span><span class="op">,</span> newpt <span class="ex">=</span> <span class="fu">RandomReal</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="dv">2</span><span class="op">]</span>;</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">If</span><span class="op">[</span><span class="fu">Min</span><span class="op">[</span><span class="fu">Map</span><span class="op">[</span><span class="fu">Norm</span><span class="op">[</span>newpt <span class="sc">-</span> #<span class="op">]</span> &amp;<span class="op">,</span> ptlist<span class="op">]]</span> &gt; .<span class="dv">21</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       &amp;&amp; RegionMember<span class="op">[</span>shape<span class="op">,</span> newpt<span class="op">],</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>       ptlist <span class="ex">=</span> <span class="fu">Append</span><span class="op">[</span>ptlist<span class="op">,</span> newpt<span class="op">]]]</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Graphics</span><span class="op">[{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>     <span class="op">{</span><span class="fu">Lighter</span><span class="op">[</span><span class="fu">Blue</span><span class="op">,</span> .<span class="dv">8</span><span class="op">],</span> <span class="fu">Rectangle</span><span class="op">[{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]},</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">EdgeForm</span><span class="op">[{</span><span class="fu">Black</span><span class="op">,</span> <span class="fu">Thick</span><span class="op">}],</span> <span class="fu">White</span><span class="op">,</span> shape<span class="op">},</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">Purple</span><span class="op">,</span> <span class="fu">Point</span><span class="op">[</span>ptlist<span class="op">]}</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">}]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Notice that we have also ensured that the first point is also in the circular region. The result of this code looks like this:</p>
+<p><a href="img02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.png" class="img-fluid"></a></p>
+<p>Now we want to build a ring centered at each point. A basic torus that has an outer radius of .14 and tube radius of .03 looks like this:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>torus<span class="op">[</span><span class="at">coords_</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">Module</span><span class="op">[{</span><span class="fu">thickness</span> <span class="ex">=</span> .<span class="dv">14</span><span class="op">,</span> innerradius <span class="ex">=</span> .<span class="dv">03</span><span class="op">},</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ParametricPlot3D</span><span class="op">[{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            ( <span class="fu">thickness</span> <span class="sc">+</span> innerradius  <span class="fu">Cos</span><span class="op">[</span><span class="fu">v</span><span class="op">]</span>) <span class="fu">Cos</span><span class="op">[</span><span class="fu">u</span><span class="op">],</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            ( <span class="fu">thickness</span> <span class="sc">+</span> innerradius  <span class="fu">Cos</span><span class="op">[</span><span class="fu">v</span><span class="op">]</span>) <span class="fu">Sin</span><span class="op">[</span><span class="fu">u</span><span class="op">],</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            innerradius  <span class="fu">Sin</span><span class="op">[</span><span class="fu">v</span><span class="op">]}</span> <span class="sc">+</span> <span class="fu">Append</span><span class="op">[</span>coords<span class="op">,</span> <span class="dv">0</span><span class="op">],</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">},</span> <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">},</span> <span class="fu">Mesh</span> <span class="ot">-&gt;</span> <span class="cn">None</span><span class="op">,</span> <span class="fu">PlotPoints</span> <span class="ot">-&gt;</span> <span class="dv">50</span><span class="op">]]</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Mapping this function to the points in <code>ptlist</code> gives the following.</p>
+<p><a href="img03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img03.png" class="img-fluid"></a></p>
+<p>Now we need to attack Task 3, making the rings have different sizes. To do this we modify our <code>torus</code> function:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>torus<span class="op">[</span><span class="at">coords_</span><span class="op">,</span> <span class="at">thickness_</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">Module</span><span class="op">[{</span>innerradius <span class="ex">=</span> .<span class="dv">03</span><span class="op">},</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ParametricPlot3D</span><span class="op">[{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            ( <span class="fu">thickness</span> <span class="sc">+</span> innerradius  <span class="fu">Cos</span><span class="op">[</span><span class="fu">v</span><span class="op">]</span>) <span class="fu">Cos</span><span class="op">[</span><span class="fu">u</span><span class="op">],</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            ( <span class="fu">thickness</span> <span class="sc">+</span> innerradius  <span class="fu">Cos</span><span class="op">[</span><span class="fu">v</span><span class="op">]</span>) <span class="fu">Sin</span><span class="op">[</span><span class="fu">u</span><span class="op">],</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            innerradius  <span class="fu">Sin</span><span class="op">[</span><span class="fu">v</span><span class="op">]}</span> <span class="sc">+</span> <span class="fu">Append</span><span class="op">[</span>coords<span class="op">,</span> <span class="dv">0</span><span class="op">],</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">},</span> <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="fu">Pi</span><span class="op">},</span> <span class="fu">Mesh</span> <span class="ot">-&gt;</span> <span class="cn">None</span><span class="op">,</span> <span class="fu">PlotPoints</span> <span class="ot">-&gt;</span> <span class="dv">50</span><span class="op">]]</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>and generate a set of random outer radii. I first chose the outer radii to be between .1 and .15, but when I displayed the rings, they were disconnected, which is not what we wanted</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>thicknesses <span class="ex">=</span> <span class="fu">RandomReal</span><span class="op">[{</span>.<span class="dv">1</span><span class="op">,</span> .<span class="dv">15</span><span class="op">},</span> <span class="dv">50</span><span class="op">]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span><span class="fu">MapThread</span><span class="op">[</span>torus<span class="op">,</span> <span class="op">{</span>ptlist<span class="op">,</span> thicknesses<span class="op">}],</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="cn">All</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="img04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img04.png" class="img-fluid"></a></p>
+<p>So I modified the the outer radii to be between .09 and .17. I definitely re-ran the code multiple times until I was happy with the final product. Here you go:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>thicknesses <span class="ex">=</span> <span class="fu">RandomReal</span><span class="op">[{</span>.<span class="dv">09</span><span class="op">,</span> .<span class="dv">17</span><span class="op">},</span> <span class="dv">50</span><span class="op">]</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span><span class="fu">MapThread</span><span class="op">[</span>torus<span class="op">,</span> <span class="op">{</span>ptlist<span class="op">,</span> thicknesses<span class="op">}],</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="cn">All</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="img05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img05.png" class="img-fluid"></a></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pro Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Pro Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Re-running the code always gives you a new arrangement. When you get a random arrangement that you like, you need to <strong>save the data</strong> that created it, so you can recreate it next time!</p>
+</div>
+</div>
+<p>In essence, when working to create a piece of generative art, you impose randomness until you find something that you like, at which time you need to save this input so that this data will not change again — which seems to be the opposite of random! It was a revelation when I realized that adding randomness to my art involved saving the random data I generated.</p>
+</section>
+<section id="the-final-result" class="level2">
+<h2 class="anchored" data-anchor-id="the-final-result">The Final Result</h2>
+<p>After exporting our final work to an STL, here is a rendering of our new piece of generative jewelry on Sketchfab:</p>
+<iframe allowfullscreen="" allowvr="" frameborder="0" height="300" mozallowfullscreen="true" onmousewheel="" src="https://sketchfab.com/models/affe8a0915e14f55b8723ec3cd339092/embed" webkitallowfullscreen="true" width="420">
+</iframe>
+<p>And Shapeways gives the following beautiful rendering of <a href="http://shpws.me/OIrD">our pendant in Raw Bronze</a>:</p>
+<p><a href="img06.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="img06.jpg" class="img-fluid"></a></p>
+<p>And now you have the tools to make your own! If you have suggestions for how to modify this in an interesting way or for something else I should tackle, let me know. Happy July everyone!</p>
+<div style="font-size: 110%; text-align: center;">
+<p>Christopher Hanusa’s portfolio is available online at</p>
+<p><a href="http://hanusadesign.com"><img src="img07.png" class="img-fluid"></a></p>
+<p>Purchase a copy of this and other 3D printed artwork</p>
+<p>at <a href="https://www.shapeways.com/shops/mathartshop">Math Art Shop by Hanusa ≀ Design on Shapeways</a>.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hanusa\.xyz\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page">
+<p>← All posts</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz">
+<p>hanusa.xyz</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

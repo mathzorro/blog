@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2013-08-27">
+<meta name="description" content="In this post I hope to share insights into an article that Brant Jones , +Drew Armstrong , and I wrote up this year and submitted for publication at…">
+
+<title>Simultaneous core partitions – Insights by Christopher R. H. Hanusa</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-97ed3be3a3cc77cbb443220d95cea0bd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script data-goatcounter="https://hanusaxyz.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../blog_styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://hanusa.xyz" class="navbar-brand navbar-brand-logo">
+    <img src="../../hanusa-xyz.png" alt="" class="navbar-logo light-content">
+    <img src="../../hanusa-xyz.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/design.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/education.html"> 
+<span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/strategy.html"> 
+<span class="menu-text">Strategy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/blog/"> 
+<span class="menu-text">Insights</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Simultaneous core partitions</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All posts</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#partitions" id="toc-partitions" class="nav-link active" data-scroll-target="#partitions">Partitions</a></li>
+  <li><a href="#pictures" id="toc-pictures" class="nav-link" data-scroll-target="#pictures">Pictures</a></li>
+  <li><a href="#core-partitions" id="toc-core-partitions" class="nav-link" data-scroll-target="#core-partitions">Core partitions</a></li>
+  <li><a href="#abacus-diagrams" id="toc-abacus-diagrams" class="nav-link" data-scroll-target="#abacus-diagrams">Abacus diagrams</a></li>
+  <li><a href="#stopping-for-now" id="toc-stopping-for-now" class="nav-link" data-scroll-target="#stopping-for-now">Stopping for now</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Simultaneous core partitions</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">math</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    In this post I hope to share insights into an article that Brant Jones , +Drew Armstrong , and I wrote up this year and submitted for publication at…
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 27, 2013</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this post I hope to share insights into an article that <a href="http://educ.jmu.edu/~jones3bc/">Brant Jones</a>, <a href="http://plus.google.com/103061162497127117651">+Drew Armstrong</a>, and I wrote up this year and submitted for publication at the beginning of August named “Results and conjectures on simultaneous core partitions”—it is available online at <a href="http://arxiv.org/abs/1308.0572">http://arxiv.org/abs/1308.0572</a>. As <a href="../../posts/2013-08-09-why-blog-about-mathematics/index.html">I mentioned earlier</a>, I aim to write informally about these topics but what I write may still be hard to follow. Be assured that your questions are welcomed in the comments. And DO let me know what you think of this writeup! What is the best part? What can be improved?</p>
+<p>I would suggest trying to read at least the introduction of the article because I think Drew did a really great job motivating the beauty of the subject and setting the stage for the main results of the paper. While Brant and I did help implement a few modifications to Drew’s exposition, the introduction is for the most part Drew’s handiwork.</p>
+<p>Let me now try to go into more details for the uninitiated. In this first post, I’ll introduce the objects that are the focus of the article—core partitions and related objects called abacus diagrams.</p>
+<section id="partitions" class="level3">
+<h3 class="anchored" data-anchor-id="partitions">Partitions</h3>
+<p>A <strong>partition</strong> (of an integer <span class="math inline">\(n\)</span>) is a way to break down <span class="math inline">\(n\)</span> into smaller integral parts. For example, <span class="math inline">\(5+4+2+1+1=13\)</span>, so we would say that <span class="math inline">\((5,4,2,1,1)\)</span> is a partition of <span class="math inline">\(13\)</span>. The order of the parts doesn’t matter, which means that <span class="math inline">\(3+1+1\)</span> and <span class="math inline">\(1+1+3\)</span> would be considered the same partition of <span class="math inline">\(5\)</span>. (When the order of the parts <em>does matter</em>, we would be talking about <strong>compositions</strong> instead of partitions.) For this reason, we can and we will always write the numbers in decreasing (really non-increasing) order.</p>
+<p>We often use greek letters to represent partitions (especially lambda <span class="math inline">\(\lambda\)</span>, mu <span class="math inline">\(\mu\)</span>, and nu <span class="math inline">\(\nu\)</span>). So if we want to talk about an arbitrary partition, we might say “Let <span class="math inline">\(\lambda=(\lambda_1,\lambda_2,\dots,\lambda_k)\)</span>”. Inherent to this notation are that <span class="math inline">\(\lambda\)</span> is broken down into exactly <span class="math inline">\(k\)</span> parts, that <span class="math inline">\(\lambda_1\)</span> is the largest part, and that <span class="math inline">\(\lambda_k\)</span> is the smallest part (and not equal to zero).</p>
+<p>My favorite thing about partitions has to do with the generating function for the number <span class="math inline">\(p_n\)</span> of partitions of <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[\sum_{n=0}^\infty p_nx^n=\prod_{i=1}^\infty \frac{1}{1-x^i}.\]</span></p>
+<p>Understanding this is a bit involved so I’ll delay that for a future post. However, even if the answer is complicated, the question is very natural since if you are stranded on a desert island (or otherwise have nothing else to do) and in front of you you have a pile of 10 similar-looking rocks, you might start playing around and divide the rocks into piles. (A partition of 10!) You may even find all <strong><a href="http://en.wikipedia.org/wiki/Answer_to_the_Ultimate_Question_of_Life,_the_Universe,_and_Everything">42</a></strong> partitions of 10, starting with one pile of ten and ending with ten piles of one rock each.</p>
+<p>Since partitions arise naturally when you break down a discrete set of indistinguishable objects, one would expect partitions to appear in multiple areas of mathematics, and they do. There are entire books devoted to <a href="http://www.cambridge.org/us/academic/subjects/mathematics/number-theory/integer-partitions">integer partitions</a> and the <a href="http://www.cambridge.org/us/academic/subjects/mathematics/algebra/theory-partitions">mathematics arising from them</a>. Many famous mathematicians have worked on partitions including the amazing <a href="http://en.wikipedia.org/wiki/Srinivasa_Ramanujan">Srinivasa Ramanujan</a>.</p>
+</section>
+<section id="pictures" class="level3">
+<h3 class="anchored" data-anchor-id="pictures">Pictures</h3>
+<p>A nice way to represent a partition is by using a Young diagram, where we use up- and left- adjusted boxes with <span class="math inline">\(\lambda_i\)</span> boxes in row <span class="math inline">\(i\)</span>. For example, the Young diagram for <span class="math inline">\(\lambda=(5,4,2,1,1)\)</span> is:</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img01.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Young diagram of (5,4,2,1,1)" border="0" src="img01.gif" title=""></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+Young diagram of (5,4,2,1,1)
+</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, there are <span class="math inline">\(5\)</span> boxes in the first row, <span class="math inline">\(4\)</span> boxes in the second row, <span class="math inline">\(2\)</span> boxes in the third row, and <span class="math inline">\(1\)</span> box in each of the fourth and fifth rows. By representing a partition in this way, we see that the number of boxes in the diagram is the number <span class="math inline">\(n\)</span> that <span class="math inline">\(\lambda\)</span> is partitioning.</p>
+<p>A partition <span class="math inline">\(\lambda\)</span> is called <strong>self-conjugate</strong> if its diagram is symmetric about its main diagonal. The picture above is not self-conjugate because the second row has more boxes than the second column does.</p>
+<p>With this visualization, each box now has a physical location, and we can assign a number to each box based on this location. For each box <span class="math inline">\(B\)</span>, we will define its <strong>hook length</strong> to be the number of boxes to the right of <span class="math inline">\(B\)</span> plus the number of boxes below <span class="math inline">\(B\)</span> plus <span class="math inline">\(1\)</span> (for <span class="math inline">\(B\)</span> itself). By connecting these boxes, this creates a “hook” shape, hence the name hook length. Check that this definition makes sense by verifying the hook lengths for each box in this figure:</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img02.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Young diagram with hook lengths of each box inserted" border="0" src="img02.jpg" title=""></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+Young diagram with hook lengths of each box inserted
+</td>
+</tr>
+</tbody>
+</table>
+<p>The most amazing thing related to hook lengths is the <em>hook length formula</em>, which (among other things) counts the number of ways in which you can fill the boxes of a partition’s Young diagram from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span> satisfying that numbers increase as you move right and as you move down. These fillings are called <strong><a href="http://www.ams.org/notices/200702/whatis-yong.pdf">standard Young tableaux</a></strong>. The theorem of Frame-Robinson-Thrall states that:</p>
+<div style="text-align: center;">
+<p>The number of standard Young Tableaux of shape <span class="math inline">\(\lambda=\displaystyle\frac{n!}{\displaystyle\prod_{\text{boxes } B} h(B)}\)</span>.</p>
+</div>
+<p>For example, if we wanted to fill the partition above with numbers from <span class="math inline">\(1\)</span> to <span class="math inline">\(13\)</span> so that the numbers increase to the right and increase downward, there would be <span class="math inline">\(\frac{13!}{9\cdot7\cdot6\cdot4^3\cdot3\cdot2^2\cdot1^4}=193050\)</span> ways to do so. First, I’m amazed that this value is always an integer, no matter what the shape of the diagram is. And second, I’m even more amazed that it counts standard Young tableaux!</p>
+</section>
+<section id="core-partitions" class="level3">
+<h3 class="anchored" data-anchor-id="core-partitions">Core partitions</h3>
+<p>We now have enough information to define a core partition. A partition <span class="math inline">\(\lambda\)</span> is an <strong><span class="math inline">\(a\)</span>-core partition</strong> if its Young diagram contains no boxes with hook length <span class="math inline">\(a\)</span>. (I may call them simply <strong><span class="math inline">\(a\)</span>-cores</strong> below.) You can check that the partition from above is both a <span class="math inline">\(5\)</span>-core partition and an <span class="math inline">\(8\)</span>-core partition since there are no boxes of hook length <span class="math inline">\(5\)</span> or <span class="math inline">\(8\)</span>.</p>
+<p>Every partition is either an <span class="math inline">\(a\)</span>-core or it is not. For <span class="math inline">\(a\geq 2\)</span>, there are infinitely many <span class="math inline">\(a\)</span>-core partitions so it does not make sense to “count” them. But as a combinatorist that is always just the beginning of the story; there are always many further questions we can ask.</p>
+<p><strong>Question 1.</strong> Is it possible to characterize which partitions are <span class="math inline">\(a\)</span>-core partitions for a given value of <span class="math inline">\(a\)</span>?</p>
+<p>**</p>
+<p><strong> </strong>(Barely useful) Answer 1:** Interestingly, the only partitions that are <span class="math inline">\(2\)</span>-core partitions are the staircase partitions <span class="math inline">\(\lambda=(n,n-1,\dots,1)\)</span> for all <span class="math inline">\(n\)</span>.</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img03.jpg" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Staircase partitions" border="0" height="97" src="img03.jpg" title="" width="320"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+Staircase partitions
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question 2.</strong> For which values of <span class="math inline">\(n\)</span> does there exist a partition of <span class="math inline">\(n\)</span> that is an <span class="math inline">\(a\)</span>-core?</p>
+<p>(Notice that Answer 1 tells us that not every value of <span class="math inline">\(n\)</span> has an <span class="math inline">\(a\)</span>-core because only the triangular numbers 1, 3, 6, 10, etc. will have a <span class="math inline">\(2\)</span>-core.)</p>
+<p><strong>Answer 2.</strong> <a href="http://www.mathcs.emory.edu/~ono">Ken Ono</a> <a href="http://www.mathcs.emory.edu/~ono/publications-cv/pdfs/003.pdf">proved</a> that when <span class="math inline">\(a\)</span> is at least four, there will always exist a partition of <span class="math inline">\(n\)</span> that is an <span class="math inline">\(a\)</span>-core. So you can sleep well at night knowing that there exists a partition of 1000 that is a 42-core.</p>
+<p>Rishi Nath and I asked questions like this about self-conjugate core partitions and published our results in <a href="http://arxiv.org/abs/1201.6629">The number of self-conjugate core partitions</a>, which appeared in the <a href="http://dx.doi.org/10.1016/j.jnt.2012.08.017">Journal of Number Theory</a>.</p>
+<p><strong>Question 3.</strong> How many <span class="math inline">\(a\)</span>-core partitions are also <span class="math inline">\(b\)</span>-core partitions?</p>
+<p><strong>Answer 3.</strong> Notice that we might expect the answer to be infinitely many (there are infinitely many <span class="math inline">\(a\)</span>-cores and infinitely many <span class="math inline">\(b\)</span>-cores!), but instead we have the following theorem, <a href="http://www.sciencedirect.com/science/article/pii/S0012365X01003430">proved</a> by Jaclyn Anderson: When <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are relatively prime, there are only finitely many partitions that are both <span class="math inline">\(a\)</span>-core and <span class="math inline">\(b\)</span>-core. Moreover and more impressively, she proved that the exact number is <span class="math inline">\(\displaystyle\frac{1}{a+b}\binom{a+b}{a}\)</span>.</p>
+<p>We simplify our terminology by saying that a partition <span class="math inline">\(\lambda\)</span> is a <strong>simultaneous <span class="math inline">\((a,b)\)</span>-core partition</strong> (or simply an <span class="math inline">\((a,b)\)</span>-core) if it is an <span class="math inline">\(a\)</span>-core and a <span class="math inline">\(b\)</span>-core at the same time.</p>
+</section>
+<section id="abacus-diagrams" class="level3">
+<h3 class="anchored" data-anchor-id="abacus-diagrams">Abacus diagrams</h3>
+<p>My favorite thing about core partitions (and simultaneous core partitions) is the wealth of related combinatorial interpretations. In other words, there are other discrete objects that act like cores in some ways and by studying these alternate objects we learn more about cores, and vice versa. I know of over a dozen related combinatorial interpretations and my personal long-term goal is to write up an illustrated dictionary/thesaurus about them. I am always on the lookout for more, so feel free to contact me about this project! The remainder of this blog post will be about abacus diagrams.</p>
+<p>An <strong>abacus diagram</strong> (or simply an <strong>abacus</strong>, plural abaci) is an infinite sequence of beads and gaps, one for each integer, that starts with only beads and ends with only gaps. We can represent this visually by placing the integers on a number line and circling the beads and not circling the gaps:</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img04.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="An abacus diagram" border="0" height="30" src="img04.gif" title="" width="400"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+An abacus diagram
+</td>
+</tr>
+</tbody>
+</table>
+<p>In this picture, there are beads for every integer less than or equal to <span class="math inline">\(-5\)</span>, for <span class="math inline">\(-2\)</span>, <span class="math inline">\(-1\)</span>, <span class="math inline">\(2\)</span>, <span class="math inline">\(3\)</span>, and <span class="math inline">\(6\)</span>, while every other integer corresponds to a gap. The essential part about an abacus is the <strong><em>sequence</em></strong> of beads and gaps, not the numbers. In particular, if we shifted all the numbers by four, we would have the same abacus diagram with a different labeling, represented visually here:</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img05.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="The SAME abacus diagram" border="0" height="30" src="img05.gif" title="" width="400"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+The SAME abacus diagram
+</td>
+</tr>
+</tbody>
+</table>
+<p>I claim that every abacus diagram corresponds to a unique partition, and that every partition corresponds to a unique abacus diagram. To prove this claim, we can construct a bijection—a systematic rule that pairs up one object of type A with one and exactly one object of type B. (♥♥♥ I looove bijections! ♥♥♥) This bijection comes from James and Kerber’s book <a href="http://www.cambridge.org/us/academic/subjects/mathematics/algebra/representation-theory-symmetric-group">The Representation Theory of the Symmetric Group</a>. We first show how to find an abacus diagram from a partition.</p>
+<p><strong>Key bijection.</strong> Given a partition <span class="math inline">\(\lambda\)</span>, draw its Young diagram. Next, follow the South-East boundary of the partition from bottom to top, recording a gap for each horizontal step and recording a bead for each vertical step. Fill out the rest of the infinite sequence by padding this sequence with infinitely many initial beads and infinitely many terminal gaps. This gives an abacus diagram.</p>
+<p>Finding a partition from an abacus diagram is the simple reverse of this process. Start with an infinite sequence of beads and gaps, then starting from the first gap until the last bead, record a horizontal step for a gap and a vertical step for a bead.</p>
+<p>Check that the partition that matches the abacus diagram from above is <span class="math inline">\((6,3,3,1,1,1)\)</span>, shown here with red horizontal steps (corresponding to gaps) and blue vertical steps (corresponding to beads).</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img06.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="The partition corresponding to the above abacus diagram" border="0" height="200" src="img06.gif" title="" width="167"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+The partition corresponding to the above abacus diagram
+</td>
+</tr>
+</tbody>
+</table>
+<p>The power of abacus diagrams comes when we stack the sequence of beads and gaps into columns. For example, if we took our abacus from above and arranged the beads and gaps into four columns, we would have the following picture (with the understanding that all smaller numbers are beads and all larger numbers are gaps).</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img07.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="Our abacus arranged into four columns IS 4-flush" border="0" height="200" src="img07.gif" title="" width="113"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+Our abacus arranged into four columns IS <span class="math inline">\(4\)</span>-flush
+</td>
+</tr>
+</tbody>
+</table>
+<p>This does not seem like much of a change, except that we notice something special: no gap appears <em>above</em> a bead. We will say that this abacus is <strong><span class="math inline">\(4\)</span>-flush</strong>, because when the beads and gaps are arranged into four columns, all the beads are flush-upward in each column. If we had instead used six columns, the diagram would <em>not</em> be <span class="math inline">\(6\)</span>-flush because (for example) there is a bead in position <span class="math inline">\(10\)</span> and a gap in position <span class="math inline">\(4\)</span>.</p>
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+<tbody>
+<tr>
+<td style="text-align: center;">
+<a href="img08.gif" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img alt="" border="0" height="166" src="img08.gif" title="Our abacus arranged into six columns is NOT $6$-flush" width="200"></a>
+</td>
+</tr>
+<tr>
+<td class="tr-caption" style="text-align: center;">
+Our abacus arranged into six columns is NOT <span class="math inline">\(6\)</span>-flush
+</td>
+</tr>
+</tbody>
+</table>
+<p>We align the abaci into columns because:</p>
+<p>**</p>
+<p><strong> </strong>Amazing Fact: **A partition <span class="math inline">\(\lambda\)</span> is <span class="math inline">\(n\)</span>-core if and only if its corresponding abacus is <span class="math inline">\(n\)</span>-flush!</p>
+<p>The reason for this is that a hook of length <span class="math inline">\(n\)</span> in a Young diagram corresponds exactly to a bead-gap pair where the bead occurs <span class="math inline">\(n\)</span> entries earlier than the gap in the abacus diagram, which is why a gap would occur above a bead in the stacked abacus diagram. We can infer that the above blue-red rimmed partition is a <span class="math inline">\(4\)</span>-core partition and not a <span class="math inline">\(6\)</span>-core partition because the corresponding abacus is <span class="math inline">\(4\)</span>-flush and not <span class="math inline">\(6\)</span>-flush.</p>
+<p><strong>Consequence: </strong>A simultaneous <span class="math inline">\((a,b)\)</span>-core corresponds to an abacus diagram that is simultaneously <span class="math inline">\(a\)</span>-flush and <span class="math inline">\(b\)</span>-flush.</p>
+<p>While the article I wrote with Brant and Drew has as its subject simultaneous core partitions, it turns out to be much easier to work with these “simultaneous abacus diagrams”, and they form the basis for the arguments in the article. In fact, a working title for the article was once “Applications of abacus diagrams to simultaneous core partitions”.</p>
+</section>
+<section id="stopping-for-now" class="level3">
+<h3 class="anchored" data-anchor-id="stopping-for-now">Stopping for now</h3>
+<p>In Part 2 (which I hope I continue to have the energy for), I plan to talk about the beautiful geometry of simultaneous core partitions. Then Part 3 will deal with combinatorial statistics and <span class="math inline">\(q\)</span>-analogs of Catalan numbers. Although a new post is unlikely to appear for at least a month.</p>
+<p>Until then,</p>
+<p>The Mathematical Zorro</p>
+<p><a href="img09.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img09.png" class="img-fluid"></a></p>
+<!--(In fact, a working title for this paper was once "Applications of abacus diagrams to simultaneous core partitions".)
+
+-->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/hanusa\.xyz\/blog");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page">
+<p>← All posts</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz">
+<p>hanusa.xyz</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

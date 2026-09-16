@@ -21,6 +21,42 @@
   <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>3D Design in Mathematica: Generative Jewelry</title>
+  <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
+  <description><![CDATA[ Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And… ]]></description>
+  <category>art</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</guid>
+  <pubDate>Sat, 01 Jul 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>3D Design in Mathematica: Custom Dice</title>
+  <link>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</link>
+  <description><![CDATA[ Today we continue our series in 3D Design in Mathematica. I’ll teach you how to use the RegionPlot3D command to create custom dice. Let’s first start… ]]></description>
+  <category>art</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</guid>
+  <pubDate>Thu, 01 Jun 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>3D Design in Mathematica: Costa Rica Keychain</title>
+  <link>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</link>
+  <description><![CDATA[ Hi everyone Welcome back to another 3D Design in Mathematica Tutorial. Last time I showed how to create a polyhedral terrarium . Today I will use… ]]></description>
+  <category>art</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</guid>
+  <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>3D Design in Mathematica: Polyhedral Terrarium</title>
+  <link>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</link>
+  <description><![CDATA[ Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a custom-designed name ring . In this post I… ]]></description>
+  <category>art</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</guid>
+  <pubDate>Mon, 03 Apr 2017 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>3D Design in Mathematica: Creating a Name Ring</title>
   <link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
   <description><![CDATA[ In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the… ]]></description>
