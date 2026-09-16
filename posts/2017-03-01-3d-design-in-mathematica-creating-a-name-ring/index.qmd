@@ -31,7 +31,7 @@ Our next goal is to convert the drawing into a two-dimensional `Graphics` object
 
 When researching how to do this, I found a thread about [extruding along a path](http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path) on StackExchange, which led me to a [comment by J.M.](http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path#comment34740_3062) and a link in Mathematica's Documentation Center about how to [create a `BSplineCurve` that touches the control points](http://reference.wolfram.com/language/ref/BSplineCurve.html#968466).  I wrote a function to do this automatically, which I called `SplineIt`.
 
-```
+```{.mathematica}
 SplineIt[pts_] := 
  Module[
   {n = Length[pts], dist, param, knots, m, ctrlpts},
@@ -55,7 +55,7 @@ Then I wanted to move the control points (or add in new ones) and watch the shap
 
 This allowed me to create a streamlined process where I successively created piece after piece of the name plate.
 
-```
+```{.mathematica}
 allpts = {};
 pts = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 DynamicModule[{i = Length[pts], last},
@@ -88,7 +88,7 @@ The variable `pts` keeps track of the current set of points that I am moving and
 
 By the end of the process, my list of `allpts` includes all the pieces of the name plate, including the three parts of the R, the tail of the G, the circle of the I, and the two parts of the N.  This process involves much trial and error to get the points just right.
 
-```
+```{.mathematica}
 r1pts = {{-1.592, 0.86}, {-1.328, 1.05}, {-0.786, 0.98}, {-0.64, 
     0.67}, {-0.868, 0.225}, {-1.212, 0.15}, {-1.56, 0.215}};
 r2pts = {{-1.586, 0.87}, {-1.55, 
@@ -126,7 +126,7 @@ Now we need to take the two-dimensional `Graphics` object and make it into a thr
 
 First I use a technique from a [discussion on StackExchange](http://mathematica.stackexchange.com/questions/19229/convert-bsplinefunction-into-two-interpolating-functions?rq=1) to define the $x$- and $y$-components of the `BSplineCurve` commands we defined above.
 
-```
+```{.mathematica}
 xComponent[t_?NumericQ, f_] := 
    Module[{val}, val = f[t]; First@val];
 
@@ -136,7 +136,7 @@ yComponent[t_?NumericQ, f_] :=
 
 This means that we can recreate the two-dimensional curves shown above using `ParametricPlot` commands.  Note to do that we have to convert our `BSplineCurve` commands to `BSplineFunction` commands, as shown here.
 
-```
+```{.mathematica}
 fcns = Map[ BSplineFunction[SplineIt[#]] &, allpts];
 ParametricPlot[{
   Table[{
@@ -151,7 +151,7 @@ To wrap these two-dimensional functions around a three-dimensional cylinder of a
 
 We combine all the curves together using the `Table` command and use a technique I learned from [a very useful article](http://www.ms.unimelb.edu.au/~segerman/papers/3d_printed_visualisation.pdf) by [Henry Segerman](http://www.segerman.org/) to give these curves a specified thickness by way of the `Tube` command in the `PlotStyle` option.
 
-```
+```{.mathematica}
 xscale = 1.5; 
 radius = 1.1;
 thickness = .08; 
@@ -173,7 +173,7 @@ We now have a virtual three-dimensional version of the name plate from our origi
 
 You can add the strap in multiple ways depending on the style you are going for.  For example, the Sara ring above has two straps that cross in an X behind the finger.  For this ring, I have decided to make a single strap connecting the beginning and the end of the name plate.  All this requires is a part of a circle of given radius which I have placed at height $y=0.1$ to line up well.  The range on $t$ is determined by trial and error.
 
-```
+```{.mathematica}
 ParametricPlot3D[
   {radius*Sin[t + Pi], 0.1, radius*Cos[t + Pi]},
   {t, -Pi/2 - .46, Pi/2 + .45}, 
@@ -187,7 +187,7 @@ If we were to export the file right now, we would be in for an unwelcome surpris
 
 Luckily this is not too difficult with Mathematica's `Map` function.  We tell Mathematica to choose the first and last points of every letter piece, and then tell Mathematica to put a sphere at the transformed image of these points.  I also like to give the spheres a different color in order to see them distinctly on the image.
 
-```
+```{.mathematica}
 sphereposns = 
    Flatten[{ptslist[[All, 1]], ptslist[[All, -1]]}, 1];
 Graphics3D[{Blue, 
@@ -200,7 +200,7 @@ Graphics3D[{Blue,
 
 By combining all the pieces we have programmed, our virtual ring is complete!
 
-```
+```{.mathematica}
 SplineIt[pts_] := 
  Module[
   {n = Length[pts], dist, param, knots, m, ctrlpts},
@@ -279,7 +279,7 @@ Once you are happy with your virtual ring, you'll need to print it out.  I send 
 
 Mathematica 11 has built in the capability to upload your model directly to Shapeways using the command [`Printout3D`](https://www.wolfram.com/language/11/3d-printing/send-your-models-to-3d-printing-service-providers.html), but I still prefer using `Export` in order to have a copy of the exported .STL file on my own computer. I always like to put the STL file in the same directory as the Mathematica file I am working with, so I use the following command.
 
-```
+```{.mathematica}
 Export[NotebookDirectory[] <> "MetaRing.stl", %]
 ```
 
@@ -295,6 +295,8 @@ Order your ring, wait *VERY* patiently, and when it arrives check to see if it l
 
 **Good luck!  Let me know how it turns out.**
 
+:::: {style="text-align: center;font-size:110%;"}
+
 Christopher Hanusa's portfolio is available online at
 
 [![](img10.png)](http://hanusadesign.com)
@@ -304,3 +306,5 @@ Purchase a copy of this and other 3D printed artwork
 at [Hanusa ≀ Design on Shapeways](https://www.shapeways.com/shops/mathartshop).
 
 I also design custom jewelry.  Email (hanusadesign - AT - gmail.com) for more details.
+
+::::
