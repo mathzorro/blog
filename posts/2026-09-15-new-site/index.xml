@@ -6,10 +6,10 @@
       version="2.0">
 <channel>
 <title>Insights by Christopher R. H. Hanusa</title>
-<link>https://hanusa.xyz/blog/posts/2026-01-01-new-site/#category=math</link>
-<atom:link href="https://hanusa.xyz/blog/posts/2026-01-01-new-site/index-math.xml" rel="self" type="application/rss+xml"/>
+<link>https://hanusa.xyz/blog/posts/2026-09-15-new-site/</link>
+<atom:link href="https://hanusa.xyz/blog/posts/2026-09-15-new-site/index.xml" rel="self" type="application/rss+xml"/>
 <description>I&#39;ve renewed my website for 2026, including a refreshed feel and an integrated blog. How did it happen and what can you expect from the update?</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Wed, 16 Sep 2026 14:01:30 GMT</lastBuildDate>
+<lastBuildDate>Wed, 16 Sep 2026 14:05:28 GMT</lastBuildDate>
 </channel>
 </rss>
