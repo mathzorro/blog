@@ -10,24 +10,7 @@
 <atom:link href="https://hanusa.xyz/blog/index-math.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Tue, 23 Dec 2025 00:00:00 GMT</lastBuildDate>
-<item>
-  <title>My First Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/first-post/</link>
-  <description><![CDATA[ This is a description of my first post. ]]></description>
-  <category>misc</category>
-  <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
-  <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>My Second Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/second-post/</link>
-  <description><![CDATA[ This is a description of my second Quarto post. ]]></description>
-  <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
-  <pubDate>Tue, 23 Dec 2025 00:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Thu, 16 Jul 2015 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Announcing The MathZorro Podcast</title>
   <link>https://hanusa.xyz/blog/posts/2015-07-16-announcing-the-mathzorro-podcast/</link>
