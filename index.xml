@@ -22,61 +22,63 @@
   <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Experiments in Generative Art</title>
-  <link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</link>
-  <description><![CDATA[ This is the description that appears on the list of posts. It cannot include LaTeX. ]]></description>
-  <category>art</category>
-  <category>code</category>
-  <guid>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</guid>
-  <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
-</item>
-<item>
   <title>3D Design in Mathematica: Generative Jewelry</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
   <description><![CDATA[ Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And… ]]></description>
   <category>art</category>
   <category>Mathematica</category>
   <guid>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</guid>
   <pubDate>Sat, 01 Jul 2017 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/img06.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>3D Design in Mathematica: Custom Dice</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</link>
   <description><![CDATA[ Today we continue our series in 3D Design in Mathematica. I’ll teach you how to use the RegionPlot3D command to create custom dice. Let’s first start… ]]></description>
   <category>art</category>
   <category>Mathematica</category>
   <guid>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</guid>
   <pubDate>Thu, 01 Jun 2017 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/img13.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>3D Design in Mathematica: Costa Rica Keychain</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</link>
   <description><![CDATA[ Hi everyone Welcome back to another 3D Design in Mathematica Tutorial. Last time I showed how to create a polyhedral terrarium . Today I will use… ]]></description>
   <category>art</category>
   <category>Mathematica</category>
   <guid>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</guid>
   <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/img15.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>3D Design in Mathematica: Polyhedral Terrarium</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</link>
   <description><![CDATA[ Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a custom-designed name ring . In this post I… ]]></description>
   <category>art</category>
   <category>Mathematica</category>
   <guid>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</guid>
   <pubDate>Mon, 03 Apr 2017 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/img10.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>3D Design in Mathematica: Creating a Name Ring</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
   <description><![CDATA[ In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the… ]]></description>
   <category>art</category>
   <category>Mathematica</category>
   <guid>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</guid>
   <pubDate>Wed, 01 Mar 2017 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/img09.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>New TYPES of puzzles</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2016-04-06-new-types-of-puzzles/</link>
   <description><![CDATA[ We’re over halfway done with the semester and my Games and Puzzles class has been fascinating and rewarding in many… ]]></description>
   <category>teaching</category>
@@ -85,6 +87,7 @@
 </item>
 <item>
   <title>Announcing the Circular Teaching Squad</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2016-02-24-announcing-the-circular-teaching-squad/</link>
   <description><![CDATA[ Abstract: I discuss the rationale for changing the name of our lunch discussion group. Join us March… ]]></description>
   <category>teaching</category>
@@ -93,11 +96,23 @@
 </item>
 <item>
   <title>Student Forays into Pencil Puzzles</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</link>
   <description><![CDATA[ Abstract: In the first six days of my pencil puzzles class, my students have had to think deeply about solving and creating Battleships puzzles. This… ]]></description>
   <category>teaching</category>
   <guid>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</guid>
   <pubDate>Tue, 23 Feb 2016 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/img01.png" medium="image" type="image/png" height="222" width="144"/>
+</item>
+<item>
+  <title>Teaching Pencil Puzzles</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/</link>
+  <description><![CDATA[ This semester I am teaching Math 555: Games and Puzzles for the first time. The class does not serve as a prerequisite for any other class and it… ]]></description>
+  <category>teaching</category>
+  <guid>https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/</guid>
+  <pubDate>Mon, 22 Feb 2016 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/img01.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
