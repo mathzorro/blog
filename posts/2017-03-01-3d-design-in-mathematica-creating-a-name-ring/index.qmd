@@ -84,7 +84,9 @@ The variable `pts` keeps track of the current set of points that I am moving and
 
 ![](img04.png)
 
-**Pro Tip:** I always tell my students to never break anything that works!  If you get one piece of your code working, copy the whole working block of code into a new cell and modify the new cell.
+::: {.callout-tip title="Pro Tip"}
+I always tell my students to never break anything that works!  If you get one piece of your code working, copy the whole working block of code into a new cell and modify the new cell.
+:::
 
 By the end of the process, my list of `allpts` includes all the pieces of the name plate, including the three parts of the R, the tail of the G, the circle of the I, and the two parts of the N.  This process involves much trial and error to get the points just right.
 
@@ -196,7 +198,9 @@ Graphics3D[{Blue,
    sphereposns]}]
 ```
 
-**Pro Tip:** The `PlotStyle->Tube` option and `Sphere` command have acceptable resolution because a ring is a small object.  When you want to export a larger sphere (2 in / 5 cm) or a larger curved tube, instead you would need to use a `ParametricPlot3D` command involving multiple variables in order to specify the exporting resolution.
+::: {.callout-tip title="Pro Tip"}
+The `PlotStyle->Tube` option and `Sphere` command have acceptable resolution because a ring is a small object.  When you want to export a larger sphere (2 in / 5 cm) or a larger curved tube, instead you would need to use a `ParametricPlot3D` command involving multiple variables in order to specify the exporting resolution.
+:::
 
 By combining all the pieces we have programmed, our virtual ring is complete!
 

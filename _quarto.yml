@@ -58,7 +58,9 @@ format:
       text: |
         <script data-goatcounter="https://hanusaxyz.goatcounter.com/count"
                 async src="//gc.zgo.at/count.js"></script>
-    toc: true          
-    toc-location: left 
+    toc: true
+    toc-location: left
     toc-title: "Contents" # Fallback if title is missing
-    css: blog_styles.css  
+    css: blog_styles.css
+    code-copy: true       # always show the copy button on code blocks
+    lightbox: true        # click any image to view it in a lightbox
