@@ -1,5 +1,6 @@
 ---
 title: "Teaching students Mathematica"
+author: "Christopher R. H. Hanusa"
 date: 2015-04-02
 categories:
   - "teaching"

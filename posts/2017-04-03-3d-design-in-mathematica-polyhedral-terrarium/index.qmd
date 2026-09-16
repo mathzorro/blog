@@ -1,5 +1,7 @@
 ---
 title: "3D Design in Mathematica: Polyhedral Terrarium"
+author: "Christopher R. H. Hanusa"
+image: img10.jpg
 date: 2017-04-03
 categories:
   - "art"

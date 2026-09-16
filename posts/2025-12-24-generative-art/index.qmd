@@ -1,5 +1,7 @@
 ---
 title: "Experiments in Generative Art"
+draft: true
+author: "Christopher R. H. Hanusa"
 date: "2025-12-24"
 categories: [art, code]
 toc-title: "Experiments" # <--- Match your title here

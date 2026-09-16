@@ -1,5 +1,6 @@
 ---
 title: "Announcing The MathZorro Podcast"
+author: "Christopher R. H. Hanusa"
 date: 2015-07-16
 categories:
   - "teaching"

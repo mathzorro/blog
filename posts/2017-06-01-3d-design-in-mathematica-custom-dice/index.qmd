@@ -1,5 +1,7 @@
 ---
 title: "3D Design in Mathematica: Custom Dice"
+author: "Christopher R. H. Hanusa"
+image: img13.jpg
 date: 2017-06-01
 categories:
   - "art"

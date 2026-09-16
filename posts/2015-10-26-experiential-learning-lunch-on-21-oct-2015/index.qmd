@@ -1,5 +1,6 @@
 ---
 title: "Experiential Learning Lunch on 21 Oct 2015"
+author: "Christopher R. H. Hanusa"
 date: 2015-10-26
 categories:
   - "teaching"

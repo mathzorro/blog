@@ -1,5 +1,6 @@
 ---
 title: "Creative Writing is Experiential Learning!"
+author: "Christopher R. H. Hanusa"
 date: 2015-11-02
 categories:
   - "teaching"

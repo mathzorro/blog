@@ -7,6 +7,8 @@ website:
   favicon: favicon.png
   site-url: "https://hanusa.xyz/blog"  # <--- This is required for RSS
   description: "Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics"
+  open-graph: true    # social-preview cards (title/description/image)
+  twitter-card: true
   
   search:
     location: sidebar
