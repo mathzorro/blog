@@ -1,9 +1,0 @@
----
-title: "Hello World."
-date: 2013-08-09
-categories:
-  - "misc"
-description: "Do not expect..."
----
-
-Do not expect miracles.

@@ -221,9 +221,9 @@ This example is a great application of [generating functions](https://en.wikiped
 
 \[(x^1+x^2+x^3+x^4+x^5+x^6)^2=(x^0+2x^1+2x^2+x^3)(x^2+x^4+x^5+x^6+x^7+x^9).\]
 
-Since these modified Sicherman dice are not easy to find at your local store (or at ANY store), we'll design our own copies as our task for today.  If you're interested in dice, I suggest checking out [The Dice Lab](http://thedicelab.com/) by Henry Segerman and Robert Fathauer where they've taken a mathematician's view toward perfecting dice.
+Since these modified Sicherman dice are not easy to find at your local store (or at ANY store), we'll design our own copies as our task for today.  If you're interested in dice, I suggest checking out [The Dice Lab](https://www.mathartfun.com/thedicelab.com/index.html) by Henry Segerman and Robert Fathauer where they've taken a mathematician's view toward perfecting dice.
 
-Also, if you've missed an installment in the series, you can learn about designing a [name ring](http://blog.mathzorro.com/2017/03/Creating-a-Name-Ring.html), a [geometric terrarium](http://blog.mathzorro.com/2017/04/polyhedral-terrarium.html), or a [country keychain](http://blog.mathzorro.com/2017/05/costa-rica-keychain.html).
+Also, if you've missed an installment in the series, you can learn about designing a [name ring](../2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.qmd), a [geometric terrarium](../2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/index.qmd), or a [country keychain](../2017-05-01-3d-design-in-mathematica-costa-rica-keychain/index.qmd).
 
 Now on to the tutorial!
 
@@ -476,7 +476,7 @@ I printed them on the local Lulzbot Mini 3D printers that the Queens College Art
 
 ![](img13.jpg)
 
-You can buy your own pair of [modified Sicherman dice on Shapeways](http://shpws.me/Ozmd) or print your own copy of the [STL files](https://www.thingiverse.com/thing:2337535) I posted on Thingiverse. I don't guarantee that my modified Sicherman dice are unbiased because by removing material from the sides of the dice they no longer symmetrical.
+You can buy your own pair of modified Sicherman dice on Shapeways or print your own copy of the [STL files](https://www.thingiverse.com/thing:2337535) I posted on Thingiverse. I don't guarantee that my modified Sicherman dice are unbiased because by removing material from the sides of the dice they no longer symmetrical.
 
 The same technique above shows that a 4-sided die with sides (1,4,4,7) and a 9-sided die with (1,2,2,3,3,3,4,4,5) would also have the same distribution of sums—now THAT would be a unique pair of dice!  What other dice would you create?
 

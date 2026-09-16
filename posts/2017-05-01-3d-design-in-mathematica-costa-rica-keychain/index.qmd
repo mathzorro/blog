@@ -7,7 +7,7 @@ categories:
 description: "Hi everyone Welcome back to another 3D Design in Mathematica Tutorial. Last time I showed how to create a polyhedral terrarium . Today I will use..."
 ---
 
-Hi everyone!  Welcome back to another 3D Design in Mathematica Tutorial.  Last time I showed how to create a [polyhedral terrarium](http://blog.mathzorro.com/2017/04/polyhedral-terrarium.html).  Today I will use Mathematica's `MeshRegion` command to design a keychain shaped like a country.  I had the opportunity to visit Costa Rica in February and especially enjoyed my visit to the cloud forests of [Monteverde](https://en.wikipedia.org/wiki/Monteverde), so let's choose Costa Rica for our example.
+Hi everyone!  Welcome back to another 3D Design in Mathematica Tutorial.  Last time I showed how to create a [polyhedral terrarium](../2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/index.qmd).  Today I will use Mathematica's `MeshRegion` command to design a keychain shaped like a country.  I had the opportunity to visit Costa Rica in February and especially enjoyed my visit to the cloud forests of [Monteverde](https://en.wikipedia.org/wiki/Monteverde), so let's choose Costa Rica for our example.
 
 [![](img01.gif)](http://ian.macky.net/pat/map/cr/cr.html)
 
@@ -262,9 +262,9 @@ I chose the ring to have the same thickness as the body and played with the othe
 
 ## Step Six: Send to the printer!
 
-Now let's print out the model!  (Remember that there is more detail on the prototyping and printing processes at the bottom of the [name ring design post](http://blog.mathzorro.com/2017/03/Creating-a-Name-Ring.html).)  One thing we have to take into consideration is that stainless steel requires a 1 mm thickness everywhere, which may mean that you will have to change the thickness parameters above if you want to shrink the keychain much smaller.  Here is what Shapeways gives as a 3D rendering of the keychain
+Now let's print out the model!  (Remember that there is more detail on the prototyping and printing processes at the bottom of the [name ring design post](../2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.qmd).)  One thing we have to take into consideration is that stainless steel requires a 1 mm thickness everywhere, which may mean that you will have to change the thickness parameters above if you want to shrink the keychain much smaller.  Here is what Shapeways gives as a 3D rendering of the keychain
 
-[![](img15.jpg)](http://shpws.me/OuGM)
+![](img15.jpg)
 
 And here is a 3D rendering of the keychain by Sketchfab
 

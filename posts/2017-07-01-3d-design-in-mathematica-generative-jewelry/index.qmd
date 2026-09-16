@@ -9,7 +9,7 @@ description: "Happy July everyone. This month I'll share a bit of Mathematica co
 
 Happy July everyone.  This month I'll share a bit of Mathematica code that has helped me to add some *ordered randomness* to my art and jewelry.  And we'll design a new piece of generative jewelry!
 
-Before that, let me share something else I've been working on.  This June I gave myself a goal to share with the public each day one piece of jewelry I designed.  Designing, refining, and posting took some effort, and I have completed my goal!  In the process I designed some new jewelry that I really like, and I will be working over the coming months to develop them into coherent jewelry collections.  I have been sharing on various social media accounts: @hanusadesign on [instagram](http://instagram.com/hanusadesign/), [facebook](https://www.facebook.com/hanusadesign/), [twitter](https://www.twitter.com/hanusadesign/), and [pinterest](https://www.pinterest.com/hanusadesign/).  Be sure to follow me to see my latest work!
+Before that, let me share something else I've been working on.  This June I gave myself a goal to share with the public each day one piece of jewelry I designed.  Designing, refining, and posting took some effort, and I have completed my goal!  In the process I designed some new jewelry that I really like, and I will be working over the coming months to develop them into coherent jewelry collections.  I have been sharing on various social media accounts: @hanusadesign on [instagram](http://instagram.com/hanusadesign/), [facebook](https://www.facebook.com/hanusadesign/), [twitter](https://x.com/hanusadesign), and [pinterest](https://www.pinterest.com/hanusadesign/).  Be sure to follow me to see my latest work!
 
 Now on to the Mathematica tutorial.  What do I mean by ordered randomness?  Compare the following sets of 100 random points:
 
@@ -125,7 +125,7 @@ After exporting our final work to an STL, here is a rendering of our new piece o
 
 <iframe allowfullscreen="" allowvr="" frameborder="0" height="300" mozallowfullscreen="true" onmousewheel="" src="https://sketchfab.com/models/affe8a0915e14f55b8723ec3cd339092/embed" webkitallowfullscreen="true" width="420"></iframe>
 
-And Shapeways gives the following beautiful rendering of [our pendant in Raw Bronze](http://shpws.me/OIrD):
+And Shapeways gives the following beautiful rendering of our pendant in Raw Bronze:
 
 ![](img06.jpg)
 

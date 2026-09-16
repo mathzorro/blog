@@ -241,9 +241,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a <a href="http://blog.mathzorro.com/2017/03/Creating-a-Name-Ring.html">custom-designed name ring</a>. In this post I will discuss how to design a polyhedral terrarium. You may have noticed that geometric objects are very fashionable these days. A quick Google Image search for <a href="https://www.google.com/search?q=geometric+terrarium&amp;tbm=isch">Geometric Terrarium</a> gives a wide variety of styles and manufacturers.</p>
+<p>Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a <a href="../../posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.html">custom-designed name ring</a>. In this post I will discuss how to design a polyhedral terrarium. You may have noticed that geometric objects are very fashionable these days. A quick Google Image search for <a href="https://www.google.com/search?q=geometric+terrarium&amp;tbm=isch">Geometric Terrarium</a> gives a wide variety of styles and manufacturers.</p>
 <p><a href="img01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.png" class="img-fluid"></a></p>
-<p>We’re going to make our own terrarium using Mathematica. I’m inspired to write about this because I’m giving a talk in May at <a href="https://sites.duke.edu/construct3d/">Construct3D</a> about 3D printing techniques in Mathematica that I teach my students, and this is a case in point—my student Isaac Deonarine used similar techniques to create a Dodecahedral Terrarium. Click here to interact with a 3D rendering of his work:</p>
+<p>We’re going to make our own terrarium using Mathematica. I’m inspired to write about this because I’m giving a talk in May at <a href="https://www.construct3d.org/">Construct3D</a> about 3D printing techniques in Mathematica that I teach my students, and this is a case in point—my student Isaac Deonarine used similar techniques to create a Dodecahedral Terrarium. Click here to interact with a 3D rendering of his work:</p>
 <iframe allowfullscreen="" allowvr="" frameborder="0" height="300" mozallowfullscreen="true" onmousewheel="" src="https://sketchfab.com/models/50b8664da80b41dd9034740d359f58a0/embed" webkitallowfullscreen="true" width="420">
 </iframe>
 <p>or see the <a href="http://shpws.me/Od8w">Geometric Terrarium at Shapeways</a>. Now, on to the tutorial!</p>
@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">Length</span><span class="op">[</span>lostedges<span class="op">]}]]</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="op">]</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Just as when we constructed the <a href="http://blog.mathzorro.com/2017/03/Creating-a-Name-Ring.html">name ring</a>, we need to finish the cylinders with spheres at each endpoint. We need spheres of the same radius as the radius of the adjacent cylinders.</p>
+<p>Just as when we constructed the <a href="../../posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.html">name ring</a>, we need to finish the cylinders with spheres at each endpoint. We need spheres of the same radius as the radius of the adjacent cylinders.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>spheres <span class="ex">=</span> <span class="op">{</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Map</span><span class="op">[</span><span class="fu">Sphere</span><span class="op">[</span>#<span class="op">,</span> bigr<span class="op">]</span> &amp;<span class="op">,</span> </span>
@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-four-send-to-the-printer" class="level2">
 <h2 class="anchored" data-anchor-id="step-four-send-to-the-printer">Step Four: Send to the printer!</h2>
-<p>Now let’s print out the model! (Note that I provide much more detail on the prototyping and printing processes at the bottom of the <a href="http://blog.mathzorro.com/2017/03/Creating-a-Name-Ring.html">name ring design post</a>.)</p>
+<p>Now let’s print out the model! (Note that I provide much more detail on the prototyping and printing processes at the bottom of the <a href="../../posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.html">name ring design post</a>.)</p>
 <p>I highly suggest a final print of your terrarium in glazed ceramic because it will be able to withstand the elements and the cleaning required by dirt and plants. At the same time, I would also suggest prototyping on a local 3D printer instead of prototyping through Shapeways. At 4.5 inches by 4.5 inches by 3.5 inches, a basic print is already approaching $60! I printed it on the Lulzbot Mini printer that my colleague in the Queens College Art department is graciously loaning me, and, after 9 hours of printing, here is the stunning result: (click to zoom)</p>
 <p><a href="img09.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img09.jpg" class="img-fluid"></a></p>
 <p><a href="img10.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="img10.jpg" class="img-fluid"></a></p>
@@ -427,7 +427,7 @@ Pro Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The standard Cura software that comes with the Lulzbot was not able to correctly process my file—it either completely fills in the bottom half of the model or does not connect the edges together. So I needed to do some post-processing of the STL file. I uploaded it to <a href="https://service.netfabb.com/login.php">Netfabb’s online STL repair service</a> and the Lulzbot was able to print the STL output from there with no issues.</p>
+<p>The standard Cura software that comes with the Lulzbot was not able to correctly process my file—it either completely fills in the bottom half of the model or does not connect the edges together. So I needed to do some post-processing of the STL file. I uploaded it to Netfabb’s online STL repair service and the Lulzbot was able to print the STL output from there with no issues.</p>
 </div>
 </div>
 <p>Shapeways has produced a rendering of what it anticipates that a glazed ceramic version of my file will look like.</p>

@@ -34,4 +34,4 @@ The topic that generated the most amount of buzz was about technology in the cla
 
 I was especially pleased and proud that three of my math department colleagues came and participated. It's nice to be building a local network supporting innovation in mathematics instruction!
 
-*This blog post is part of the [Queens College Teaching Circle blog](http://teachingcircle.qwriting.qc.cuny.edu/); it is cross-posted on my personal teaching blog, [Math Razzle](http://mathrazzle.blogspot.com/).*
+*This blog post is part of the Queens College Teaching Circle blog; it is cross-posted on my personal teaching blog, [Math Razzle](../../index.qmd).*

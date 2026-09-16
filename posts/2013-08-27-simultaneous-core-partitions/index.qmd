@@ -6,7 +6,7 @@ categories:
 description: "In this post I hope to share insights into an article that Brant Jones , +Drew Armstrong , and I wrote up this year and submitted for publication at..."
 ---
 
-In this post I hope to share insights into an article that [Brant Jones](http://educ.jmu.edu/~jones3bc/), [+Drew Armstrong](http://plus.google.com/103061162497127117651), and I wrote up this year and submitted for publication at the beginning of August named "Results and conjectures on simultaneous core partitions"—it is available online at [http://arxiv.org/abs/1308.0572](http://arxiv.org/abs/1308.0572).  As [I mentioned earlier](../2013-08-09-why-blog-about-mathematics/index.qmd), I aim to write informally about these topics but what I write may still be hard to follow.  Be assured that your questions are welcomed in the comments.  And DO let me know what you think of this writeup!  What is the best part?  What can be improved?
+In this post I hope to share insights into an article that [Brant Jones](https://brant-jones.github.io/), [Drew Armstrong](https://www.math.miami.edu/~armstrong/), and I wrote up this year and submitted for publication at the beginning of August named "Results and conjectures on simultaneous core partitions"—it is available online at [http://arxiv.org/abs/1308.0572](http://arxiv.org/abs/1308.0572).  As [I mentioned earlier](../2013-08-09-why-blog-about-mathematics/index.qmd), I aim to write informally about these topics but what I write may still be hard to follow.  Be assured that your questions are welcomed in the comments.  And DO let me know what you think of this writeup!  What is the best part?  What can be improved?
 
 I would suggest trying to read at least the introduction of the article because I think Drew did a really great job motivating the beauty of the subject and setting the stage for the main results of the paper. While Brant and I did help implement a few modifications to Drew's exposition, the introduction is for the most part Drew's handiwork.
 
@@ -78,7 +78,7 @@ Every partition is either an $a$-core or it is not.  For $a\geq 2$, there are in
 
 (Notice that Answer 1 tells us that not every value of $n$ has an $a$-core because only the triangular numbers 1, 3, 6, 10, etc. will have a $2$-core.)
 
-**Answer 2.**   [Ken Ono](http://www.mathcs.emory.edu/~ono) [proved](http://www.mathcs.emory.edu/~ono/publications-cv/pdfs/003.pdf) that when $a$ is at least four, there will always exist a partition of $n$ that is an $a$-core.  So you can sleep well at night knowing that there exists a partition of 1000 that is a 42-core.
+**Answer 2.**   [Ken Ono](https://uva.theopenscholar.com/ken-ono) [proved](https://uva.theopenscholar.com/files/ken-ono/files/010.pdf) that when $a$ is at least four, there will always exist a partition of $n$ that is an $a$-core.  So you can sleep well at night knowing that there exists a partition of 1000 that is a 42-core.
 
 Rishi Nath and I asked questions like this about self-conjugate core partitions and published our results in [The number of self-conjugate core partitions](http://arxiv.org/abs/1201.6629), which appeared in the [Journal of Number Theory](http://dx.doi.org/10.1016/j.jnt.2012.08.017).
 

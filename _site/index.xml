@@ -31,23 +31,6 @@
   <pubDate>Wed, 24 Dec 2025 05:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>My First Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/first-post/</link>
-  <description><![CDATA[ This is a description of my first post. ]]></description>
-  <category>misc</category>
-  <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/first-post/</guid>
-  <pubDate>Tue, 23 Dec 2025 05:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>My Second Quarto Post</title>
-  <link>https://hanusa.xyz/blog/posts/second-post/</link>
-  <description><![CDATA[ This is a description of my second Quarto post. ]]></description>
-  <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/second-post/</guid>
-  <pubDate>Tue, 23 Dec 2025 05:00:00 GMT</pubDate>
-</item>
-<item>
   <title>3D Design in Mathematica: Generative Jewelry</title>
   <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
   <description><![CDATA[ Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And… ]]></description>
@@ -99,6 +82,22 @@
   <category>teaching</category>
   <guid>https://hanusa.xyz/blog/posts/2016-04-06-new-types-of-puzzles/</guid>
   <pubDate>Wed, 06 Apr 2016 04:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Announcing the Circular Teaching Squad</title>
+  <link>https://hanusa.xyz/blog/posts/2016-02-24-announcing-the-circular-teaching-squad/</link>
+  <description><![CDATA[ Abstract: I discuss the rationale for changing the name of our lunch discussion group. Join us March… ]]></description>
+  <category>teaching</category>
+  <guid>https://hanusa.xyz/blog/posts/2016-02-24-announcing-the-circular-teaching-squad/</guid>
+  <pubDate>Wed, 24 Feb 2016 05:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Student Forays into Pencil Puzzles</title>
+  <link>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</link>
+  <description><![CDATA[ Abstract: In the first six days of my pencil puzzles class, my students have had to think deeply about solving and creating Battleships puzzles. This… ]]></description>
+  <category>teaching</category>
+  <guid>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</guid>
+  <pubDate>Tue, 23 Feb 2016 05:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
