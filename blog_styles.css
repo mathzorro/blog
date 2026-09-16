@@ -139,3 +139,45 @@
 .quarto-secondary-nav .breadcrumb-item {
   color: #2c3e50 !important;
 }
+
+/* ============================================================
+   Category pills: magenta, with a hover fill so they read as links
+   ============================================================ */
+
+/* Pills under a post's title (quarto.js wraps these in links back
+   to the filtered listing) */
+.quarto-title .quarto-categories .quarto-category {
+  color: #d81b8c;
+  border: 1px solid #d81b8c;
+  opacity: 1;
+  transition: background-color 0.2s, color 0.2s;
+}
+.quarto-title .quarto-categories .quarto-category:hover {
+  background-color: #d81b8c;
+  color: #fff;
+}
+
+/* Pills on the listing cards on the blog index */
+.listing-categories .listing-category {
+  color: #d81b8c !important;
+  border: 1px solid #d81b8c !important;
+  opacity: 1;
+  transition: background-color 0.2s, color 0.2s;
+}
+.listing-categories .listing-category:hover {
+  background-color: #d81b8c;
+  color: #fff !important;
+}
+
+/* Categories sidebar on the blog index */
+.quarto-listing-category .category {
+  transition: color 0.2s;
+}
+.quarto-listing-category .category:hover {
+  color: #d81b8c;
+  cursor: pointer;
+}
+.quarto-listing-category .category.active {
+  color: #d81b8c;
+  font-weight: bold;
+}
