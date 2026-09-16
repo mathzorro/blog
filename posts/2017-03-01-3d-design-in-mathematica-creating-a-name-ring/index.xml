@@ -6,9 +6,9 @@
       version="2.0">
 <channel>
 <title>Insights by Christopher R. H. Hanusa</title>
-<link>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/#category=art</link>
-<atom:link href="https://hanusa.xyz/blog/posts/2025-12-24-generative-art/index-art.xml" rel="self" type="application/rss+xml"/>
-<description>This is the description that appears on the list of posts. It cannot include LaTeX.</description>
+<link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
+<atom:link href="https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/index.xml" rel="self" type="application/rss+xml"/>
+<description>In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the...</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Wed, 16 Sep 2026 15:40:59 GMT</lastBuildDate>
 </channel>

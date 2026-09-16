@@ -20,5 +20,14 @@
   <guid>https://hanusa.xyz/blog/posts/2025-12-24-generative-art/</guid>
   <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
 </item>
+<item>
+  <title>3D Design in Mathematica: Creating a Name Ring</title>
+  <link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
+  <description><![CDATA[ In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the… ]]></description>
+  <category>art</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</guid>
+  <pubDate>Wed, 01 Mar 2017 00:00:00 GMT</pubDate>
+</item>
 </channel>
 </rss>

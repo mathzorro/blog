@@ -6,9 +6,9 @@
       version="2.0">
 <channel>
 <title>Insights by Christopher R. H. Hanusa</title>
-<link>https://hanusa.xyz/blog/posts/first-post/#category=admin</link>
-<atom:link href="https://hanusa.xyz/blog/posts/first-post/index-admin.xml" rel="self" type="application/rss+xml"/>
-<description>This is a description of my first post.</description>
+<link>https://hanusa.xyz/blog/posts/2013-08-09-why-blog-about-mathematics/#category=teaching</link>
+<atom:link href="https://hanusa.xyz/blog/posts/2013-08-09-why-blog-about-mathematics/index-teaching.xml" rel="self" type="application/rss+xml"/>
+<description>Hi everyone! An important part of being a researcher is conveying what you learn to others. &amp;nbsp;The way mathematicians convey their results to...</description>
 <generator>quarto-1.10.18</generator>
 <lastBuildDate>Wed, 16 Sep 2026 15:40:58 GMT</lastBuildDate>
 </channel>
