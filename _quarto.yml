@@ -51,7 +51,21 @@ website:
     search: true
     contents:
       - text: "All posts"     # <--- This creates the link below search
-        href: index.qmd              
+        href: index.qmd
+      - auto: "posts/**/*.qmd" # folder names are YYYY-MM-DD-slug, so this sorts chronologically
+
+  # prev/next post buttons at the bottom of each post (ordered by the sidebar above)
+  page-navigation: true
+
+  # button to jump back to the top of long posts
+  back-to-top-navigation: true
+
+  page-footer:
+    center:
+      - text: "← All posts"
+        href: index.qmd
+      - text: "hanusa.xyz"
+        href: https://hanusa.xyz
 format:
   html:
     include-in-header:
