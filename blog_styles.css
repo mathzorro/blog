@@ -14,9 +14,12 @@
 /* Logo at the main site's 50px height */
 .navbar-brand img,
 .navbar-logo {
-  max-height: 50px !important;
-  height: 50px;
+  max-height: 46px !important;
+  height: 46px;
   width: auto;
+}
+@media (max-width: 599px) {
+  .navbar-brand img, .navbar-logo { max-height: 40px !important; height: 40px; }
 }
 
 /* Links: Fenix (via _brand.yml), dark, 70% opacity until hover */
@@ -52,11 +55,13 @@
   margin-right: auto !important;
 }
 
-/* Match the main site's 5% side padding */
+/* Bar edge spacing: modest gutter, no Bootstrap extras */
 .navbar .container-fluid {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
 }
+.navbar-brand { padding: 0; margin: 0; }
+.navbar-toggler { padding: 0; }
 
 /* Main-site nav never hides on scroll; disable headroom's auto-hide */
 .headroom--unpinned {
@@ -77,18 +82,41 @@
   margin-left: auto !important;
   border: none;
   box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d81b8c;
 }
 .navbar-toggler-icon { display: none; }
 .navbar-toggler::before {
-  content: "Insights \2630";
+  content: "Insights";
   font-family: Fenix, serif;
   font-weight: bold;
   font-size: 1.25rem;
-  color: #d81b8c;
+}
+.navbar-toggler::after {
+  content: "\2630";
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* Collapse at 600px like the main site: force the expanded layout
+   in Bootstrap's would-be-collapsed 600-991px range */
+@media (min-width: 600px) {
+  .navbar-expand-lg .navbar-toggler { display: none !important; }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin-left: auto;
+    max-height: none;
+  }
 }
 
 /* Collapsed (mobile) menu: right-adjusted, hairline-separated */
-@media (max-width: 991px) {
+@media (max-width: 599px) {
   .navbar-collapse .nav-item .nav-link {
     text-align: right;
     padding: 10px 0;
