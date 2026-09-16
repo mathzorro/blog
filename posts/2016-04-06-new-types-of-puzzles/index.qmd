@@ -1,0 +1,15 @@
+---
+title: "New TYPES of puzzles"
+date: 2016-04-06
+categories:
+  - "teaching"
+description: "We're over halfway done with the semester and my Games and Puzzles class has been fascinating and rewarding in many..."
+---
+
+We're over halfway done with the semester and my Games and Puzzles class has been fascinating and rewarding in many ways.
+
+As I mentioned last time, [our first foray in pencil puzzles](../2016-02-23-student-forays-into-pencil-puzzles/index.qmd) was into Battleships, after which we've explored the pencil puzzles Nurikabe, Skyscrapers, and Masyu for a few weeks each.  I was starting to become wary of the structure rut that I had been finding myself in, in which we would start with a new puzzle, investigate strategies in detail, try creating a puzzle of that type, and then the final result of the unit was the creation of a puzzle of that type given some twist.
+
+So in class on April 6, I suggested the following challenge: work in groups of 3 or 4 to create a hybrid puzzle incorporating concepts from at least two of the four puzzles we have mastered this semester.  I was encouraged by how quickly they took to the task.  The discussions remained focused on the challenge and the discussions included all members of the group.  In my other project-based classes  I have a tendency to be very hands on.  But for this challenge the students didn't need me at all---which is great!  The ideas are flowing and the students are pulling in all the expertise that they have accumulated throughout the semester.  I stepped in a few times to diffuse some concerns such as what is allowed in this new type of puzzle (Anything!) or when a group was having a heated discussion about the type of clues that they should include (What if you created two different types of puzzles?!)
+
+My students started the semester solving the logic puzzles haphazardly and moved to thinking critically about solving strategies.  They have progressed from creating puzzles of a specified type often without regard to uniqueness, to thinking critically about creating puzzles using a puzzle solver's eye.  Now they are creating new types of puzzles! These transitions have been gradual and I can see my students' confidence building.

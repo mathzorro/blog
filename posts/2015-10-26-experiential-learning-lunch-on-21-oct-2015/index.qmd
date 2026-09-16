@@ -1,0 +1,37 @@
+---
+title: "Experiential Learning Lunch on 21 Oct 2015"
+date: 2015-10-26
+categories:
+  - "teaching"
+description: "Abstract: We highlight a few of the innovative teaching techniques that were presented in October's Experiential Learning..."
+---
+
+**Abstract:** We highlight a few of the innovative teaching techniques that were presented in October's Experiential Learning Lunch.
+
+On Wednesday, October 21, 2015, twenty-eight members of the Queens College community assembled for a lunch discussion devoted to Experiential Learning. ([Learn more about our group.](../2015-10-21-the-experiential-learning-group-at-queens/index.qmd)) I had asked participants to prepare a 2-3 minute discourse about something that they tried recently and a self-evaluation of what went well and what could be improved in the future.
+
+In this post I would like to highlight some of the discussions we had.
+
+Zahra Zakeri (Biology) shared the idea of the "experimental essays" that her students are required to write on various topics throughout the semester. The students must develop an experiment that would test certain hypotheses, such as "How would we know whether two twins are monozygotic?", and justify why their experiment is a valid way to test their hypotheses. By having to design this experiment the students have to gain a deeper understanding of the material in her classes instead of simply memorizing facts.
+
+Elena Mancini (German Language and Literature) highlighted how she is taking ideas she is learning in the theater techniques workshop and integrating them into her class. She asks groups of students to analyze a text passage for tone, emotions, believability, and perspective. The gropu takes this information to create a play about the passage using props. This live reinactment of the passage infuses energy into the classroom and is widely regarded as a fun and engaging assignment. This discussion initiated a more general conversation about creative writing, which I feel merits its own blog post. So keep tuned for that!
+
+Keren Dali (Library and Information Science) was happy to share how most of the courses in their department are experiential. For example, if the students are learning cataloging, they need hands-on experience in learning how to catalog. Keren was especially proud of how she helps to take experiential education to the next level—into the community. Her class partners with libraries in the community; each student group spends time with a librarian to find challenging areas for which the libraries don't have the staff or resources to address. The students work out a solution to the problem in a group and present it to the librarian by the end of the semester. Many of these solutions are then implemented by the community libraries. The students get real-world experience and the libraries have made strides toward improving their services. It sounds like a great program!
+
+Lightning round! One-sentence summary of some other presenters:
+
+Joe Pastore (Mathematics) uses the software GeoGebra to exhibit mathematical concepts dynamically in class, which allows his high-school-teaching students to integrate this technology directly into their own classes.
+
+Adam Kapelner (Mathematics) has programmed software called Gradesly which integrates directly into Google Sheets to provide students and instructors with up-to-date information about course grades.
+
+Eva Fernandez (Provost's Office and CTL) talked about the Queens Memory Project, which collects an audio and visual history similar to Story Corps.
+
+Jack Zevin (Education) talked about this simulation game in which students play city council members and gain first-hand experience with the legislative process.
+
+It is always great to hear the ideas others are trying on campus. In many of these situations, students are initially reluctant to participate in these "non-standard" assignments but by the end of the semester these assignments are what the students rave about on their teaching evaluations.
+
+The topic that generated the most amount of buzz was about technology in the classroom. Should students be allowed to use their phones in the classroom? How can we integrate technology into the classroom in a thoughtful and educationally beneficial way? What works well in different size classes? I think we have found the topic of December's Experiential Learning Lunch!
+
+I was especially pleased and proud that three of my math department colleagues came and participated. It's nice to be building a local network supporting innovation in mathematics instruction!
+
+*This blog post is part of the [Queens College Teaching Circle blog](http://teachingcircle.qwriting.qc.cuny.edu/); it is cross-posted on my personal teaching blog, [Math Razzle](http://mathrazzle.blogspot.com/).*
