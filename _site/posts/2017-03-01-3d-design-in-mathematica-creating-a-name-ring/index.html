@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2017-03-01">
+<meta name="description" content="In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the…">
+
+<title>3D Design in Mathematica: Creating a Name Ring – Insights by Christopher R. H. Hanusa</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-552045122e6dbb5f1fc543d39550a628.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script data-goatcounter="https://hanusaxyz.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../blog_styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://hanusa.xyz" class="navbar-brand navbar-brand-logo">
+    <img src="../../hanusa-xyz.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/design.html"> 
+<span class="menu-text">Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/education.html"> 
+<span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/strategy.html"> 
+<span class="menu-text">Strategy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/blog/"> 
+<span class="menu-text">Insights</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz/contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">3D Design in Mathematica: Creating a Name Ring</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All posts</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#step-one-create-a-sketch" id="toc-step-one-create-a-sketch" class="nav-link active" data-scroll-target="#step-one-create-a-sketch">Step One: Create a sketch</a></li>
+  <li><a href="#step-two-transfer-into-mathematica" id="toc-step-two-transfer-into-mathematica" class="nav-link" data-scroll-target="#step-two-transfer-into-mathematica">Step Two: Transfer into Mathematica</a></li>
+  <li><a href="#step-three-convert-into-three-dimensions" id="toc-step-three-convert-into-three-dimensions" class="nav-link" data-scroll-target="#step-three-convert-into-three-dimensions">Step Three: Convert into three dimensions</a></li>
+  <li><a href="#step-four-add-finishing-touches" id="toc-step-four-add-finishing-touches" class="nav-link" data-scroll-target="#step-four-add-finishing-touches">Step Four: Add finishing touches</a></li>
+  <li><a href="#step-five-send-to-the-printer" id="toc-step-five-send-to-the-printer" class="nav-link" data-scroll-target="#step-five-send-to-the-printer">Step Five: Send to the printer!</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">3D Design in Mathematica: Creating a Name Ring</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">art</div>
+    <div class="quarto-category">Mathematica</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the…
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 1, 2017</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an <a href="https://en.wikipedia.org/wiki/Ambigram">ambigram</a> of the name Sara.</p>
+<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid"></a></p>
+<p>Click below to interact with a 3D rendering of the ring.</p>
+<iframe allowfullscreen="" allowvr="" frameborder="0" width="420" height="300" mozallowfullscreen="true" onmousewheel="" src="https://sketchfab.com/models/e9f0db64faa349cca1486757388ad2ba/embed" webkitallowfullscreen="true">
+</iframe>
+<p>Since I have never met a meta I didn’t like, let’s walk through the design of a new ring that says <em>Ring</em>.</p>
+<section id="step-one-create-a-sketch" class="level2">
+<h2 class="anchored" data-anchor-id="step-one-create-a-sketch">Step One: Create a sketch</h2>
+<p>Create a drawing of the word with an eye toward its style and making sure that the letters have a natural way that they can be connected. After doing a dozen sketches, I settled on this draft to guide me:</p>
+<p><a href="img02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.png" class="img-fluid"></a></p>
+<p>I made sure that the sketch has two disjoint paths from the beginning of the word to the end of the word so that the ring is stronger when it is printed.</p>
+</section>
+<section id="step-two-transfer-into-mathematica" class="level2">
+<h2 class="anchored" data-anchor-id="step-two-transfer-into-mathematica">Step Two: Transfer into Mathematica</h2>
+<p>Our next goal is to convert the drawing into a two-dimensional <code>Graphics</code> object in Mathematica. The relevant Mathematica commands for this are <code>BSplineFunction</code>, <code>BezierFunction</code>, and <code>Interpolation</code>, which take as input a set of points and give a smooth function that follows those points as output. I’ve created <code>BezierFunction</code>s manually a couple of times which was a painstaking process because the curve does not pass through the chosen points, so this time I figured that I would try to streamline the choosing and adjusting of points.</p>
+<p>When researching how to do this, I found a thread about <a href="http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path">extruding along a path</a> on StackExchange, which led me to a <a href="http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path#comment34740_3062">comment by J.M.</a> and a link in Mathematica’s Documentation Center about how to <a href="http://reference.wolfram.com/language/ref/BSplineCurve.html#968466">create a <code>BSplineCurve</code> that touches the control points</a>. I wrote a function to do this automatically, which I called <code>SplineIt</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SplineIt<span class="op">[</span><span class="at">pts_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">Module</span><span class="op">[</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="fu">n</span> <span class="ex">=</span> <span class="fu">Length</span><span class="op">[</span>pts<span class="op">],</span> dist<span class="op">,</span> param<span class="op">,</span> knots<span class="op">,</span> <span class="fu">m</span><span class="op">,</span> ctrlpts<span class="op">},</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  dist <span class="ex">=</span> <span class="fu">Accumulate</span><span class="op">[</span><span class="fu">Table</span><span class="op">[</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">EuclideanDistance</span><span class="op">[</span>pts<span class="op">[[</span><span class="fu">i</span><span class="op">]],</span> pts<span class="op">[[</span><span class="fu">i</span><span class="sc">+</span><span class="dv">1</span><span class="op">]]],</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">n</span><span class="dv">-1</span><span class="op">}]]</span>;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  param <span class="ex">=</span> <span class="fu">N</span><span class="op">[</span><span class="fu">Prepend</span><span class="op">[</span>dist<span class="sc">/</span><span class="fu">Last</span><span class="op">[</span>dist<span class="op">],</span> <span class="dv">0</span><span class="op">]]</span>;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    knots <span class="ex">=</span> <span class="fu">Flatten</span><span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">Table</span><span class="op">[</span><span class="fu">i</span><span class="sc">/</span>(<span class="fu">n</span><span class="dv">-3</span>)<span class="op">,</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">n</span><span class="dv">-4</span><span class="op">}],</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}]</span>;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">m</span> <span class="ex">=</span> <span class="fu">Table</span><span class="op">[</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">BSplineBasis</span><span class="op">[{</span><span class="dv">3</span><span class="op">,</span> knots<span class="op">},</span> <span class="fu">j</span><span class="dv">-1</span><span class="op">,</span> param<span class="op">[[</span><span class="fu">i</span><span class="op">]]],</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">n</span><span class="op">},</span> <span class="op">{</span><span class="fu">j</span><span class="op">,</span> <span class="fu">n</span><span class="op">}]</span>;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  ctrlpts <span class="ex">=</span> <span class="fu">LinearSolve</span><span class="op">[</span><span class="fu">m</span><span class="op">,</span> pts<span class="op">]</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here I have applied <code>SplineIt</code> to the sequence of points <span class="math inline">\(\{(1, 0), (0, 1), (-1, 0), (0, -1)\}\)</span></p>
+<p><a href="img03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img03.png" class="img-fluid"></a></p>
+<p>Then I wanted to move the control points (or add in new ones) and watch the shape of the curves change. Once again the Documentation Center has a relevant example about an <a href="http://reference.wolfram.com/language/ref/DynamicModule.html">application of <code>DynamicModule</code></a>, which I coupled with another StackExchange answer on <a href="http://mathematica.stackexchange.com/questions/118291/insert-new-points-at-specific-places-in-the-locator-pane">inserting points</a> in a <code>DynamicModule</code> to give the following code that allows us to move points and have a <code>BSplineCurve</code> passing through the movable points.</p>
+<p>This allowed me to create a streamlined process where I successively created piece after piece of the name plate.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>allpts <span class="ex">=</span> <span class="op">{}</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">}}</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">DynamicModule</span><span class="op">[{</span><span class="fu">i</span> <span class="ex">=</span> <span class="fu">Length</span><span class="op">[</span>pts<span class="op">],</span> <span class="fu">last</span><span class="op">},</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last</span><span class="op">[</span><span class="at">prev_</span><span class="op">,</span> <span class="at">curr_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">If</span><span class="op">[</span><span class="fu">Length</span><span class="op">[</span>prev<span class="op">]</span> !<span class="ex">=</span> <span class="fu">Length</span><span class="op">[</span>curr<span class="op">],</span> <span class="fu">Length</span><span class="op">[</span>curr<span class="op">],</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   FirstPosition<span class="op">[</span><span class="fu">SameQ</span> @@@ <span class="fu">Thread</span><span class="op">[{</span>prev<span class="op">,</span> curr<span class="op">}],</span> <span class="cn">False</span><span class="op">][[</span><span class="dv">1</span><span class="op">]]]</span>;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Column</span><span class="op">[{</span><span class="fu">Style</span><span class="op">[</span><span class="st">"Don't forget to save the points"</span><span class="op">,</span> <span class="fu">Red</span><span class="op">,</span> <span class="fu">Bold</span><span class="op">],</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>     <span class="fu">LocatorPane</span><span class="op">[</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="fu">Dynamic</span><span class="op">[</span>pts<span class="op">,</span> (<span class="fu">i</span> <span class="ex">=</span> <span class="fu">last</span><span class="op">[</span>pts<span class="op">,</span> #<span class="op">]</span>; pts <span class="ex">=</span> #) &amp;<span class="op">],</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>       <span class="fu">EventHandler</span><span class="op">[</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>         <span class="fu">Dynamic</span><span class="op">[</span><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="op">{</span><span class="fu">Graphics</span><span class="op">[{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span><span class="fu">Thick</span><span class="op">,</span> <span class="fu">Red</span><span class="op">,</span> <span class="fu">Map</span><span class="op">[</span><span class="fu">BSplineCurve</span><span class="op">[</span>SplineIt<span class="op">[</span>#<span class="op">]]</span> &amp;<span class="op">,</span> allpts<span class="op">]},</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                <span class="op">{</span><span class="fu">Thick</span><span class="op">,</span> <span class="fu">Black</span><span class="op">,</span> <span class="fu">BSplineCurve</span><span class="op">[</span>SplineIt<span class="op">[</span>pts<span class="op">]]}</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>               <span class="op">},</span> <span class="fu">ImageSize</span> <span class="ot">-&gt;</span> <span class="dv">700</span><span class="op">,</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>              <span class="fu">GridLines</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Table</span><span class="op">[</span><span class="fu">i</span><span class="op">,</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.3</span><span class="op">,</span> <span class="fl">1.3</span><span class="op">,</span> .<span class="dv">05</span><span class="op">}],</span> <span class="fu">Table</span><span class="op">[</span><span class="fu">i</span><span class="op">,</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.3</span><span class="op">,</span> <span class="fl">1.3</span><span class="op">,</span> .<span class="dv">05</span><span class="op">}]},</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>              <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="op">{{</span><span class="sc">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}]},</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>          <span class="fu">Frame</span> <span class="ot">-&gt;</span> <span class="cn">True</span><span class="op">]],</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="op">{{</span><span class="st">"MouseDown"</span><span class="op">,</span> </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span><span class="op">}</span> :&gt; (pts <span class="ex">=</span> </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>         <span class="fu">Insert</span><span class="op">[</span>pts<span class="op">,</span> <span class="fu">MousePosition</span><span class="op">[</span><span class="st">"GraphicsAbsolute"</span><span class="op">],</span> <span class="fu">i</span> <span class="sc">+</span> <span class="dv">1</span><span class="op">]</span>)<span class="op">}],</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">LocatorAutoCreate</span> <span class="ot">-&gt;</span> <span class="cn">True</span><span class="op">]},</span> <span class="fu">Alignment</span> <span class="ot">-&gt;</span> <span class="fu">Center</span><span class="op">]]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The variable <code>pts</code> keeps track of the current set of points that I am moving and sculpting. Once I get the points in the right place, I mark down what the current set of points <code>pts</code> is and append it to the list <code>allpts</code>. Here is what it looks like part of the way through when I am editing the tail of the G (which is also the bottom of the I):</p>
+<p><a href="img04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img04.png" class="img-fluid"></a></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pro Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pro Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I always tell my students to never break anything that works! If you get one piece of your code working, copy the whole working block of code into a new cell and modify the new cell.</p>
+</div>
+</div>
+<p>By the end of the process, my list of <code>allpts</code> includes all the pieces of the name plate, including the three parts of the R, the tail of the G, the circle of the I, and the two parts of the N. This process involves much trial and error to get the points just right.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>r1pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.592</span><span class="op">,</span> <span class="fl">0.86</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.328</span><span class="op">,</span> <span class="fl">1.05</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.786</span><span class="op">,</span> <span class="fl">0.98</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.64</span><span class="op">,</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.67</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.868</span><span class="op">,</span> <span class="fl">0.225</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.212</span><span class="op">,</span> <span class="fl">0.15</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.56</span><span class="op">,</span> <span class="fl">0.215</span><span class="op">}}</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>r2pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.586</span><span class="op">,</span> <span class="fl">0.87</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.55</span><span class="op">,</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.62</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.542</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.12</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.594</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.505</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.736</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.745</span><span class="op">}}</span>;</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>r3pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.534</span><span class="op">,</span> <span class="fl">0.19</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.238</span><span class="op">,</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.035</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.01</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.38</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.61</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.905</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.092</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.96</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.344</span><span class="op">,</span> <span class="sc">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.835</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.88</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.62</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.314</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.335</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.518</span><span class="op">,</span> <span class="fl">0.235</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.306</span><span class="op">,</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.75</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.676</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.612</span><span class="op">,</span> <span class="fl">0.34</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.984</span><span class="op">,</span> <span class="fl">0.13</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.282</span><span class="op">,</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.335</span><span class="op">}}</span>;</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>gpts <span class="ex">=</span> <span class="op">{{</span><span class="fl">1.298</span><span class="op">,</span> <span class="fl">0.755</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.304</span><span class="op">,</span> </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.08</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.208</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.945</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.956</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.24</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.172</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.1</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.412</span><span class="op">,</span> <span class="sc">\</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.165</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.412</span><span class="op">,</span> <span class="fl">0.33</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.818</span><span class="op">,</span> <span class="fl">0.26</span><span class="op">}}</span>;</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ipts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">0.326</span><span class="op">,</span> <span class="fl">0.82</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.6</span><span class="op">,</span> <span class="fl">0.92</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.63</span><span class="op">,</span> <span class="fl">0.735</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.466</span><span class="op">,</span> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.67</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.322</span><span class="op">,</span> <span class="fl">0.81</span><span class="op">}}</span>;</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>n1pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">0.302</span><span class="op">,</span> <span class="fl">0.805</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.092</span><span class="op">,</span> </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.83</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.018</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.045</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.096</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.79</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.278</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.97</span><span class="op">}}</span>;</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>n2pts <span class="ex">=</span> <span class="op">{{</span><span class="fl">0.064</span><span class="op">,</span> <span class="fl">0.44</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.47</span><span class="op">,</span> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.585</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.61</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.08</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.652</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.51</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.824</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.655</span><span class="op">}}</span>;</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>allpts <span class="ex">=</span> <span class="op">{</span>r1pts<span class="op">,</span> r2pts<span class="op">,</span> r3pts<span class="op">,</span> gpts<span class="op">,</span> ipts<span class="op">,</span> n1pts<span class="op">,</span> n2pts<span class="op">}</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>With these control points, we get the final two-dimensional graphic. Not bad!</p>
+<p><a href="img05.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img05.png" class="img-fluid"></a></p>
+</section>
+<section id="step-three-convert-into-three-dimensions" class="level2">
+<h2 class="anchored" data-anchor-id="step-three-convert-into-three-dimensions">Step Three: Convert into three dimensions</h2>
+<p>Now we need to take the two-dimensional <code>Graphics</code> object and make it into a three-dimensional <code>Graphics3D</code> object. We get to use some elementary trigonometry to do this! The key idea is that we can wrap a two-dimensional picture around a cylinder of radius 1 by taking a point at <span class="math inline">\((x,y)\)</span> on the plane to a point <span class="math inline">\((\sin(x),y,\cos(x))\)</span> on the cylinder.</p>
+<p>First I use a technique from a <a href="http://mathematica.stackexchange.com/questions/19229/convert-bsplinefunction-into-two-interpolating-functions?rq=1">discussion on StackExchange</a> to define the <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-components of the <code>BSplineCurve</code> commands we defined above.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>xComponent<span class="op">[</span><span class="at">t_</span>?<span class="fu">NumericQ</span><span class="op">,</span> <span class="at">f_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Module</span><span class="op">[{</span>val<span class="op">},</span> val <span class="ex">=</span> <span class="fu">f</span><span class="op">[</span><span class="fu">t</span><span class="op">]</span>; First@val<span class="op">]</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>yComponent<span class="op">[</span><span class="at">t_</span>?<span class="fu">NumericQ</span><span class="op">,</span> <span class="at">f_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Module</span><span class="op">[{</span>val<span class="op">},</span> val <span class="ex">=</span> <span class="fu">f</span><span class="op">[</span><span class="fu">t</span><span class="op">]</span>; Last@val<span class="op">]</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This means that we can recreate the two-dimensional curves shown above using <code>ParametricPlot</code> commands. Note to do that we have to convert our <code>BSplineCurve</code> commands to <code>BSplineFunction</code> commands, as shown here.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fcns <span class="ex">=</span> <span class="fu">Map</span><span class="op">[</span> <span class="fu">BSplineFunction</span><span class="op">[</span>SplineIt<span class="op">[</span>#<span class="op">]]</span> &amp;<span class="op">,</span> allpts<span class="op">]</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ParametricPlot</span><span class="op">[{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Table</span><span class="op">[{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>   xComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]],</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   yComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]]</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   <span class="op">},</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">Length</span><span class="op">[</span>fcns<span class="op">]}],</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">AspectRatio</span> <span class="ot">-&gt;</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.8</span><span class="op">,</span> <span class="fl">1.8</span><span class="op">},</span> <span class="fu">Axes</span> <span class="ot">-&gt;</span> <span class="cn">False</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To wrap these two-dimensional functions around a three-dimensional cylinder of a given radius, we first scale the <span class="math inline">\(x\)</span>-components so that they fit in the range between <span class="math inline">\(-\pi/2\)</span> and <span class="math inline">\(\pi/2\)</span>, and take the sine and cosine of this times the given radius as the 3D <span class="math inline">\(x\)</span>- and <span class="math inline">\(z\)</span>-components, respectively.</p>
+<p>We combine all the curves together using the <code>Table</code> command and use a technique I learned from <a href="http://www.ms.unimelb.edu.au/~segerman/papers/3d_printed_visualisation.pdf">a very useful article</a> by <a href="http://www.segerman.org/">Henry Segerman</a> to give these curves a specified thickness by way of the <code>Tube</code> command in the <code>PlotStyle</code> option.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>xscale <span class="ex">=</span> <span class="fl">1.5</span>; </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>radius <span class="ex">=</span> <span class="fl">1.1</span>;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">thickness</span> <span class="ex">=</span> .<span class="dv">08</span>; </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ParametricPlot3D</span><span class="op">[</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Table</span><span class="op">[{</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   radius <span class="sc">*</span> <span class="fu">Sin</span><span class="op">[</span>xComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]]</span><span class="sc">/</span>xscale <span class="sc">*</span> <span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">],</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>   yComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]],</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>   radius <span class="sc">*</span> <span class="fu">Cos</span><span class="op">[</span>xComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]]</span><span class="sc">/</span>xscale <span class="sc">*</span> <span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">]},</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">Length</span><span class="op">[</span>fcns<span class="op">]}],</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="fu">AspectRatio</span> <span class="ot">-&gt;</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.8</span><span class="op">,</span> <span class="fl">1.8</span><span class="op">},</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a> <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Tube</span><span class="op">[</span><span class="fu">thickness</span><span class="op">],</span> <span class="fu">Yellow</span><span class="op">}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="img06.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="img06.png" class="img-fluid"></a></p>
+</section>
+<section id="step-four-add-finishing-touches" class="level2">
+<h2 class="anchored" data-anchor-id="step-four-add-finishing-touches">Step Four: Add finishing touches</h2>
+<p>We now have a virtual three-dimensional version of the name plate from our original sketch, and need to do some finishing work before it is ready to be printed. We will add the strap that goes behind the finger and add a sphere to every curve endpoint.</p>
+<p>You can add the strap in multiple ways depending on the style you are going for. For example, the Sara ring above has two straps that cross in an X behind the finger. For this ring, I have decided to make a single strap connecting the beginning and the end of the name plate. All this requires is a part of a circle of given radius which I have placed at height <span class="math inline">\(y=0.1\)</span> to line up well. The range on <span class="math inline">\(t\)</span> is determined by trial and error.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ParametricPlot3D</span><span class="op">[</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span>radius<span class="sc">*</span><span class="fu">Sin</span><span class="op">[</span><span class="fu">t</span> <span class="sc">+</span> <span class="fu">Pi</span><span class="op">],</span> <span class="fl">0.1</span><span class="op">,</span> radius<span class="sc">*</span><span class="fu">Cos</span><span class="op">[</span><span class="fu">t</span> <span class="sc">+</span> <span class="fu">Pi</span><span class="op">]},</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">-</span> .<span class="dv">46</span><span class="op">,</span> <span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> .<span class="dv">45</span><span class="op">},</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">AspectRatio</span> <span class="ot">-&gt;</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.8</span><span class="op">,</span> <span class="fl">1.8</span><span class="op">},</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{{</span><span class="fu">Tube</span><span class="op">[</span><span class="fu">thickness</span><span class="op">],</span> <span class="fu">Green</span><span class="op">}}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If we were to export the file right now, we would be in for an unwelcome surprise! The exported file would not have the nice rounded ends of the curves like in the Mathematica notebook, so we need to add them manually. Compare before and after shots of the exported files:</p>
+<p><a href="img07.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="img07.png" class="img-fluid"></a></p>
+<p>Luckily this is not too difficult with Mathematica’s <code>Map</code> function. We tell Mathematica to choose the first and last points of every letter piece, and then tell Mathematica to put a sphere at the transformed image of these points. I also like to give the spheres a different color in order to see them distinctly on the image.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sphereposns <span class="ex">=</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Flatten</span><span class="op">[{</span>ptslist<span class="op">[[</span><span class="cn">All</span><span class="op">,</span> <span class="dv">1</span><span class="op">]],</span> ptslist<span class="op">[[</span><span class="cn">All</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">]]},</span> <span class="dv">1</span><span class="op">]</span>;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Graphics3D</span><span class="op">[{</span><span class="fu">Blue</span><span class="op">,</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Map</span><span class="op">[</span><span class="fu">Sphere</span><span class="op">[{</span>radius<span class="sc">*</span><span class="fu">Sin</span><span class="op">[</span>#<span class="op">[[</span><span class="dv">1</span><span class="op">]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">],</span> #<span class="op">[[</span><span class="dv">2</span><span class="op">]],</span> </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      radius<span class="sc">*</span><span class="fu">Cos</span><span class="op">[</span>#<span class="op">[[</span><span class="dv">1</span><span class="op">]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">]},</span> <span class="fu">thickness</span><span class="op">]</span> &amp;<span class="op">,</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   sphereposns<span class="op">]}]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Pro Tip">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pro Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>PlotStyle-&gt;Tube</code> option and <code>Sphere</code> command have acceptable resolution because a ring is a small object. When you want to export a larger sphere (2 in / 5 cm) or a larger curved tube, instead you would need to use a <code>ParametricPlot3D</code> command involving multiple variables in order to specify the exporting resolution.</p>
+</div>
+</div>
+<p>By combining all the pieces we have programmed, our virtual ring is complete!</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SplineIt<span class="op">[</span><span class="at">pts_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">Module</span><span class="op">[</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span><span class="fu">n</span> <span class="ex">=</span> <span class="fu">Length</span><span class="op">[</span>pts<span class="op">],</span> dist<span class="op">,</span> param<span class="op">,</span> knots<span class="op">,</span> <span class="fu">m</span><span class="op">,</span> ctrlpts<span class="op">},</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  dist <span class="ex">=</span> <span class="fu">Accumulate</span><span class="op">[</span><span class="fu">Table</span><span class="op">[</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">EuclideanDistance</span><span class="op">[</span>pts<span class="op">[[</span><span class="fu">i</span><span class="op">]],</span> pts<span class="op">[[</span><span class="fu">i</span><span class="sc">+</span><span class="dv">1</span><span class="op">]]],</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">n</span><span class="dv">-1</span><span class="op">}]]</span>;</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  param <span class="ex">=</span> <span class="fu">N</span><span class="op">[</span><span class="fu">Prepend</span><span class="op">[</span>dist<span class="sc">/</span><span class="fu">Last</span><span class="op">[</span>dist<span class="op">],</span> <span class="dv">0</span><span class="op">]]</span>;</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    knots <span class="ex">=</span> <span class="fu">Flatten</span><span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">Table</span><span class="op">[</span><span class="fu">i</span><span class="sc">/</span>(<span class="fu">n</span><span class="dv">-3</span>)<span class="op">,</span> <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">n</span><span class="dv">-4</span><span class="op">}],</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}]</span>;</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">m</span> <span class="ex">=</span> <span class="fu">Table</span><span class="op">[</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>   <span class="fu">BSplineBasis</span><span class="op">[{</span><span class="dv">3</span><span class="op">,</span> knots<span class="op">},</span> <span class="fu">j</span><span class="dv">-1</span><span class="op">,</span> param<span class="op">[[</span><span class="fu">i</span><span class="op">]]],</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="fu">n</span><span class="op">},</span> <span class="op">{</span><span class="fu">j</span><span class="op">,</span> <span class="fu">n</span><span class="op">}]</span>;</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  ctrlpts <span class="ex">=</span> <span class="fu">LinearSolve</span><span class="op">[</span><span class="fu">m</span><span class="op">,</span> pts<span class="op">]</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>xComponent<span class="op">[</span><span class="at">t_</span>?<span class="fu">NumericQ</span><span class="op">,</span> <span class="at">f_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Module</span><span class="op">[{</span>val<span class="op">},</span> val <span class="ex">=</span> <span class="fu">f</span><span class="op">[</span><span class="fu">t</span><span class="op">]</span>; First@val<span class="op">]</span>;</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>yComponent<span class="op">[</span><span class="at">t_</span>?<span class="fu">NumericQ</span><span class="op">,</span> <span class="at">f_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Module</span><span class="op">[{</span>val<span class="op">},</span> val <span class="ex">=</span> <span class="fu">f</span><span class="op">[</span><span class="fu">t</span><span class="op">]</span>; Last@val<span class="op">]</span>;</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>r1pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.592</span><span class="op">,</span> <span class="fl">0.86</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.328</span><span class="op">,</span> <span class="fl">1.05</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.786</span><span class="op">,</span> <span class="fl">0.98</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.64</span><span class="op">,</span> </span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.67</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.868</span><span class="op">,</span> <span class="fl">0.225</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.212</span><span class="op">,</span> <span class="fl">0.15</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.56</span><span class="op">,</span> <span class="fl">0.215</span><span class="op">}}</span>;</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>r2pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.586</span><span class="op">,</span> <span class="fl">0.87</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.55</span><span class="op">,</span> </span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.62</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.542</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.12</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.594</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.505</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.736</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.745</span><span class="op">}}</span>;</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>r3pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">1.534</span><span class="op">,</span> <span class="fl">0.19</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.238</span><span class="op">,</span> </span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.035</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.01</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.38</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.61</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.905</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.092</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.96</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.344</span><span class="op">,</span> <span class="sc">\</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.835</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.88</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.62</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.314</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.335</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.518</span><span class="op">,</span> <span class="fl">0.235</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.306</span><span class="op">,</span> </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.75</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.676</span><span class="op">,</span> <span class="fl">0.75</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.612</span><span class="op">,</span> <span class="fl">0.34</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.984</span><span class="op">,</span> <span class="fl">0.13</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.282</span><span class="op">,</span> </span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.335</span><span class="op">}}</span>;</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>gpts <span class="ex">=</span> <span class="op">{{</span><span class="fl">1.298</span><span class="op">,</span> <span class="fl">0.755</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.304</span><span class="op">,</span> </span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.08</span><span class="op">},</span> <span class="op">{</span><span class="fl">1.208</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.945</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.956</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.24</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.172</span><span class="op">,</span> <span class="sc">-</span><span class="fl">1.1</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.412</span><span class="op">,</span> <span class="sc">\</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fl">0.165</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.412</span><span class="op">,</span> <span class="fl">0.33</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.818</span><span class="op">,</span> <span class="fl">0.26</span><span class="op">}}</span>;</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>ipts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">0.326</span><span class="op">,</span> <span class="fl">0.82</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.6</span><span class="op">,</span> <span class="fl">0.92</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.63</span><span class="op">,</span> <span class="fl">0.735</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.466</span><span class="op">,</span> </span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.67</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.322</span><span class="op">,</span> <span class="fl">0.81</span><span class="op">}}</span>;</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>n1pts <span class="ex">=</span> <span class="op">{{</span><span class="sc">-</span><span class="fl">0.302</span><span class="op">,</span> <span class="fl">0.805</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.092</span><span class="op">,</span> </span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.83</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.018</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.045</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.096</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.79</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="fl">0.278</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.97</span><span class="op">}}</span>;</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>n2pts <span class="ex">=</span> <span class="op">{{</span><span class="fl">0.064</span><span class="op">,</span> <span class="fl">0.44</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.47</span><span class="op">,</span> </span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.585</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.61</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.08</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.652</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.51</span><span class="op">},</span> <span class="op">{</span><span class="fl">0.824</span><span class="op">,</span> <span class="sc">-</span><span class="fl">0.655</span><span class="op">}}</span>;</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>allpts <span class="ex">=</span> <span class="op">{</span>r1pts<span class="op">,</span> r2pts<span class="op">,</span> r3pts<span class="op">,</span> gpts<span class="op">,</span> ipts<span class="op">,</span> n1pts<span class="op">,</span> n2pts<span class="op">}</span>;</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>xscale <span class="ex">=</span> <span class="fl">1.5</span>; </span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>radius <span class="ex">=</span> <span class="fl">1.1</span>;</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="fu">thickness</span> <span class="ex">=</span> .<span class="dv">08</span>; </span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>stretch <span class="ex">=</span> .<span class="dv">7</span>;</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>ptslist <span class="ex">=</span> stretch <span class="sc">*</span> allpts;</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>sphereposns <span class="ex">=</span> </span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Flatten</span><span class="op">[{</span>ptslist<span class="op">[[</span><span class="cn">All</span><span class="op">,</span> <span class="dv">1</span><span class="op">]],</span> ptslist<span class="op">[[</span><span class="cn">All</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">]]},</span> <span class="dv">1</span><span class="op">]</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>fcns <span class="ex">=</span> <span class="fu">Map</span><span class="op">[</span><span class="fu">BSplineFunction</span><span class="op">[</span>SplineIt<span class="op">[</span>#<span class="op">]]</span> &amp;<span class="op">,</span> ptslist<span class="op">]</span>;</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ParametricPlot3D</span><span class="op">[</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Table</span><span class="op">[{</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>        radius<span class="sc">*</span><span class="fu">Sin</span><span class="op">[</span>xComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">],</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>        yComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]],</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>        radius<span class="sc">*</span><span class="fu">Cos</span><span class="op">[</span>xComponent<span class="op">[</span><span class="fu">t</span><span class="op">,</span> fcns<span class="op">[[</span><span class="fu">i</span><span class="op">]]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">]},</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>      <span class="op">{</span><span class="fu">i</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">Length</span><span class="op">[</span>fcns<span class="op">]}],</span> </span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="fu">AspectRatio</span> <span class="ot">-&gt;</span> <span class="dv">1</span><span class="op">,</span> <span class="fu">PlotRange</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="sc">-</span><span class="fl">1.8</span><span class="op">,</span> <span class="fl">1.8</span><span class="op">},</span> </span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>   <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Tube</span><span class="op">[</span><span class="fu">thickness</span><span class="op">],</span> <span class="fu">Yellow</span><span class="op">}],</span> </span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ParametricPlot3D</span><span class="op">[{</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span>radius<span class="sc">*</span><span class="fu">Sin</span><span class="op">[</span><span class="fu">t</span> <span class="sc">+</span> <span class="fu">Pi</span><span class="op">],</span> <span class="fl">0.1</span><span class="op">,</span> radius<span class="sc">*</span><span class="fu">Cos</span><span class="op">[</span><span class="fu">t</span> <span class="sc">+</span> <span class="fu">Pi</span><span class="op">]}},</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>   <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="sc">-</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">-</span> .<span class="dv">46</span><span class="op">,</span> <span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">+</span> .<span class="dv">45</span><span class="op">},</span> </span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">PlotStyle</span> <span class="ot">-&gt;</span> <span class="op">{{</span><span class="fu">Tube</span><span class="op">[</span><span class="fu">thickness</span><span class="op">],</span> <span class="fu">Green</span><span class="op">}}],</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Graphics3D</span><span class="op">[{</span><span class="fu">Blue</span><span class="op">,</span> </span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Map</span><span class="op">[</span><span class="fu">Sphere</span><span class="op">[{</span>radius<span class="sc">*</span><span class="fu">Sin</span><span class="op">[</span>#<span class="op">[[</span><span class="dv">1</span><span class="op">]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">],</span> #<span class="op">[[</span><span class="dv">2</span><span class="op">]],</span> </span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>      radius<span class="sc">*</span><span class="fu">Cos</span><span class="op">[</span>#<span class="op">[[</span><span class="dv">1</span><span class="op">]]</span><span class="sc">/</span>xscale<span class="sc">*</span><span class="fu">Pi</span><span class="sc">/</span><span class="dv">2</span><span class="op">]},</span> <span class="fu">thickness</span><span class="op">]</span> &amp;<span class="op">,</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>   sphereposns<span class="op">]}]</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="img08.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="img08.png" class="img-fluid"></a></p>
+</section>
+<section id="step-five-send-to-the-printer" class="level2">
+<h2 class="anchored" data-anchor-id="step-five-send-to-the-printer">Step Five: Send to the printer!</h2>
+<p>Once you are happy with your virtual ring, you’ll need to print it out. I send my files to <a href="http://www.shapeways.com/">Shapeways</a>, which is also located in Queens, NY. (<a href="https://plus.google.com/+ChristopherHanusa/posts/iukm2iugqci">I’ve taken my students there!</a>) I highly suggest printing a prototype first, probably in White Strong and Flexible Plastic since it is the fastest and cheapest material. This will help to make sure the ring is the right size and looks the way you want it to before printing it in higher-quality (and much more expensive) materials.</p>
+<p>Mathematica 11 has built in the capability to upload your model directly to Shapeways using the command <a href="https://www.wolfram.com/language/11/3d-printing/send-your-models-to-3d-printing-service-providers.html"><code>Printout3D</code></a>, but I still prefer using <code>Export</code> in order to have a copy of the exported .STL file on my own computer. I always like to put the STL file in the same directory as the Mathematica file I am working with, so I use the following command.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode mathematica code-with-copy"><code class="sourceCode mathematica"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Export</span><span class="op">[</span><span class="fu">NotebookDirectory</span><span class="op">[]</span> &lt;&gt; <span class="st">"MetaRing.stl"</span><span class="op">,</span> <span class="sc">%</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now <a href="http://www.shapeways.com">Go to Shapeways</a> and click the Upload button on the top right. Choose your model, and click the Inches option. After the file uploads, you’ll need to resize the file so that the ring is the correct size, which you can measure on the desired finger and compare against the size Shapeways gives. Realize that your finger will need to fit on the <em>inside</em> of the ring, while Shapeways is displaying the size of the <em>outside</em> of the ring.</p>
+<p>Shapeways will go through its preliminary set of checks on your ring and let you know what in materials your model is able to be printed. Even though you may be only printing your first prototype in White Strong and Flexible Plastic, make sure that your model also gets the green checkmark in the <em>final material</em> that you want to print it.</p>
+<p>Order your ring, wait <em>VERY</em> patiently, and when it arrives check to see if it looks the way you want.</p>
+<p><a href="img09.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img09.jpg" class="img-fluid"></a></p>
+<p>If it does not, you’ll need to re-edit your Mathematica file (perhaps changing the thickness of the tubes, and/or the position of the control points) or resize the file on the Shapeways website. In either case, Shapeways will have one more say about whether the new model is printable. Go through the prototyping phase once more if the changes are drastic (or even not-so-drastic). Once you are sure that your ring is the way you want it to be, order the final version in the material you think it will look best. (The Sara ring above is printed in Premium Silver, and it is stunning!)</p>
+<p><strong>Good luck! Let me know how it turns out.</strong></p>
+<div style="text-align: center;font-size:110%;">
+<p>Christopher Hanusa’s portfolio is available online at</p>
+<p><a href="http://hanusadesign.com"><img src="img10.png" class="img-fluid"></a></p>
+<p>Purchase a copy of this and other 3D printed artwork</p>
+<p>at <a href="https://www.shapeways.com/shops/mathartshop">Hanusa ≀ Design on Shapeways</a>.</p>
+<p>I also design custom jewelry. Email (hanusadesign - AT - gmail.com) for more details.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/hanusa\.xyz\/blog");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page">
+<p>← All posts</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://hanusa.xyz">
+<p>hanusa.xyz</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

@@ -2,19 +2,6 @@ project:
   type: website
   output-dir: _site
 
-listing:
-  contents: posts
-  sort: "date desc"
-  categories: true
-  feed:
-    type: metadata  # makes it so that the feed includes the metadata and not the full posts. 
-    categories:     
-      - "math"
-      - "art"  
-      - "teaching"
-      - "admin"
-      - "misc"
-      
 website:
   title: "Insights by Christopher R. H. Hanusa"
   favicon: favicon.png
@@ -52,13 +39,6 @@ website:
     contents:
       - text: "All posts"     # <--- This creates the link below search
         href: index.qmd
-      - auto: "posts/**/*.qmd" # folder names are YYYY-MM-DD-slug, so this sorts chronologically
-
-  # prev/next post buttons at the bottom of each post (ordered by the sidebar above)
-  page-navigation: true
-
-  # button to jump back to the top of long posts
-  back-to-top-navigation: true
 
   page-footer:
     center:

@@ -1,8 +1,17 @@
 ---
 title: "Recent Writings"
-listing: 
+listing:
   contents: posts
-  feed: 
+  sort: "date desc"
+  categories: true
+  feed:
     items: 10
+    type: metadata  # makes it so that the feed includes the metadata and not the full posts.
+    categories:
+      - "math"
+      - "art"
+      - "teaching"
+      - "admin"
+      - "misc"
 ---
 The blog to accompany [hanusa.xyz](https://hanusa.xyz).
