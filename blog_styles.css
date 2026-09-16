@@ -41,3 +41,61 @@
   color: #d81b8c !important;
   opacity: 1;
 }
+
+/* ============================================================
+   Closer to the main-site nav (round 2)
+   ============================================================ */
+
+/* Logo flush left (Quarto centers the brand container) */
+.navbar-brand-container {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Match the main site's 5% side padding */
+.navbar .container-fluid {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Main-site nav never hides on scroll; disable headroom's auto-hide */
+.headroom--unpinned {
+  transform: translateY(0) !important;
+}
+
+/* Hamburger: three bars in the logo colors, like the main site */
+.navbar-toggler {
+  border: none;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+}
+.navbar-toggler-icon {
+  background-image: none !important;
+  width: 28px;
+  height: 22px;
+  background:
+    linear-gradient(#e7210e, #e7210e) 0 0    / 28px 4px no-repeat,
+    linear-gradient(#13b272, #13b272) 0 9px  / 28px 4px no-repeat,
+    linear-gradient(#1d5adc, #1d5adc) 0 18px / 28px 4px no-repeat;
+  border-radius: 2px;
+}
+/* section name beside the hamburger, like the main site's mobile bar */
+.navbar-toggler::before {
+  content: "Insights";
+  font-family: Fenix, serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #d81b8c;
+  margin-right: 12px;
+}
+
+/* Collapsed (mobile) menu: right-adjusted, hairline-separated */
+@media (max-width: 991px) {
+  .navbar-collapse .nav-item .nav-link {
+    text-align: right;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .navbar-collapse .nav-item:last-child .nav-link { border-bottom: none; }
+}
