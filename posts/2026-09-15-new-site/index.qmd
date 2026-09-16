@@ -1,5 +1,5 @@
 ---
-title: "New Year, New Site"
+title: "Reimagining hanusa.xyz"
 date: "2026-09-15"
 categories: [misc,meta]
 toc: true
