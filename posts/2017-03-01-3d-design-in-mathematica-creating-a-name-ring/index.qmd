@@ -7,324 +7,300 @@ categories:
 description: "In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the..."
 ---
 
-```{=html}
-<div>
-In this post I will be going through the techniques I use to create a name ring in Mathematica.  Here is a ring I designed that is an <a href="https://en.wikipedia.org/wiki/Ambigram">ambigram</a> of the name Sara.<br />
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img01.jpg" width="320" height="189" /></a></div>
-<br />
-Click below to interact with a 3D rendering of the ring.</div>
-<div>
-<br /></div>
-<div class="sketchfab-embed-wrapper" style="clear: both; text-align: center;">
+In this post I will be going through the techniques I use to create a name ring in Mathematica.  Here is a ring I designed that is an [ambigram](https://en.wikipedia.org/wiki/Ambigram) of the name Sara.
+
+![](img01.jpg)
+
+Click below to interact with a 3D rendering of the ring.
+
 <iframe allowfullscreen="" allowvr="" frameborder="0" width="420" height="300" mozallowfullscreen="true" onmousewheel="" src="https://sketchfab.com/models/e9f0db64faa349cca1486757388ad2ba/embed" webkitallowfullscreen="true" width="640"></iframe>
-</div>
 
-<p>Since I have never met a meta I didn't like, let's walk through the design of a new ring that says <i>Ring</i>.
+Since I have never met a meta I didn't like, let's walk through the design of a new ring that says *Ring*.
 
-<h2>Step One: Create a sketch</h2> 
+## Step One: Create a sketch
 
-<p>
 Create a drawing of the word with an eye toward its style and making sure that the letters have a natural way that they can be connected.  After doing a dozen sketches, I settled on this draft to guide me:
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img02.png" width="320" height="184" /></a></div>
+![](img02.png)
 
 I made sure that the sketch has two disjoint paths from the beginning of the word to the end of the word so that the ring is stronger when it is printed.
-</p>
 
-<h2>Step Two: Transfer into Mathematica</h2> 
-<p>
-Our next goal is to convert the drawing into a two-dimensional <span style="font-family:'Courier'">Graphics</span> object in Mathematica.  The relevant Mathematica commands for this are <span style="font-family:'Courier'">BSplineFunction</span>, <span style="font-family:'Courier'">BezierFunction</span>, and <span style="font-family:'Courier'">Interpolation</span>, which take as input a set of points and give a smooth function that follows those points as output.  I've created <span style="font-family:'Courier'">BezierFunction</span>s manually a couple of times which was a painstaking process because the curve does not pass through the chosen points, so this time I figured that I would try to streamline the choosing and adjusting of points.  
+## Step Two: Transfer into Mathematica
 
-When researching how to do this, I found a thread about <a href="http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path">extruding along a path</a> on StackExchange, which led me to a <a href="http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path#comment34740_3062">comment by J.M.</a> and a link in Mathematica's Documentation Center about how to <a href="http://reference.wolfram.com/language/ref/BSplineCurve.html#968466">create a <span style="font-family:'Courier'">BSplineCurve</span> that touches the control points</a>.  I wrote a function to do this automatically, which I called <span style="font-family:'Courier'">SplineIt</span>.
+Our next goal is to convert the drawing into a two-dimensional `Graphics` object in Mathematica.  The relevant Mathematica commands for this are `BSplineFunction`, `BezierFunction`, and `Interpolation`, which take as input a set of points and give a smooth function that follows those points as output.  I've created `BezierFunction`s manually a couple of times which was a painstaking process because the curve does not pass through the chosen points, so this time I figured that I would try to streamline the choosing and adjusting of points.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+When researching how to do this, I found a thread about [extruding along a path](http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path) on StackExchange, which led me to a [comment by J.M.](http://mathematica.stackexchange.com/questions/3051/extruding-along-a-path#comment34740_3062) and a link in Mathematica's Documentation Center about how to [create a `BSplineCurve` that touches the control points](http://reference.wolfram.com/language/ref/BSplineCurve.html#968466).  I wrote a function to do this automatically, which I called `SplineIt`.
+
+```
 SplineIt[pts_] := 
  Module[
-<br>&nbsp; {n = Length[pts], dist, param, knots, m, ctrlpts},
-<br>&nbsp; dist = Accumulate[Table[
-<br>&nbsp;&nbsp;   EuclideanDistance[pts[[i]], pts[[i+1]]], {i, n-1}]];
-<br>&nbsp; param = N[Prepend[dist/Last[dist], 0]];
-<br>&nbsp;   knots = Flatten[{{0, 0, 0, 0}, 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table[i/(n-3), {i, 1, n-4}], {1, 1, 1, 1}}];
-<br>&nbsp; m = Table[
-<br>&nbsp;&nbsp; BSplineBasis[{3, knots}, j-1, param[[i]]],
-<br>&nbsp;&nbsp; {i, n}, {j, n}];
-<br>&nbsp; ctrlpts = LinearSolve[m, pts]
-<br>]
-</div>
+  {n = Length[pts], dist, param, knots, m, ctrlpts},
+  dist = Accumulate[Table[
+     EuclideanDistance[pts[[i]], pts[[i+1]]], {i, n-1}]];
+  param = N[Prepend[dist/Last[dist], 0]];
+    knots = Flatten[{{0, 0, 0, 0}, 
+      Table[i/(n-3), {i, 1, n-4}], {1, 1, 1, 1}}];
+  m = Table[
+   BSplineBasis[{3, knots}, j-1, param[[i]]],
+   {i, n}, {j, n}];
+  ctrlpts = LinearSolve[m, pts]
+]
+```
 
-Here I have applied <span style="font-family:'Courier'">SplineIt</span> to the sequence of points $\{(1, 0), (0, 1), (-1, 0), (0, -1)\}$
+Here I have applied `SplineIt` to the sequence of points $\{(1, 0), (0, 1), (-1, 0), (0, -1)\}$
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img03.png" width="200" height="183" /></a></div>
+![](img03.png)
 
-Then I wanted to move the control points (or add in new ones) and watch the shape of the curves change.  Once again the Documentation Center has a relevant example about an <a href="http://reference.wolfram.com/language/ref/DynamicModule.html">application of <span style="font-family:'Courier'">DynamicModule</span></a>, which I coupled with another StackExchange answer on <a href="http://mathematica.stackexchange.com/questions/118291/insert-new-points-at-specific-places-in-the-locator-pane">inserting points</a> in a <span style="font-family:'Courier'">DynamicModule</span> to give the following code that allows us to move points and have a <span style="font-family:'Courier'">BSplineCurve</span> passing through the movable points.
+Then I wanted to move the control points (or add in new ones) and watch the shape of the curves change.  Once again the Documentation Center has a relevant example about an [application of `DynamicModule`](http://reference.wolfram.com/language/ref/DynamicModule.html), which I coupled with another StackExchange answer on [inserting points](http://mathematica.stackexchange.com/questions/118291/insert-new-points-at-specific-places-in-the-locator-pane) in a `DynamicModule` to give the following code that allows us to move points and have a `BSplineCurve` passing through the movable points.
 
-This allowed me to create a streamlined process where I successively created piece after piece of the name plate.  
+This allowed me to create a streamlined process where I successively created piece after piece of the name plate.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 allpts = {};
-<br>pts = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {1, 0}};
-<br>DynamicModule[{i = Length[pts], last},
-<br>&nbsp; last[prev_, curr_] := 
+pts = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {1, 0}};
+DynamicModule[{i = Length[pts], last},
+  last[prev_, curr_] := 
   If[Length[prev] != Length[curr], Length[curr], 
    FirstPosition[SameQ @@@ Thread[{prev, curr}], False][[1]]];
-<br>&nbsp; Column[{Style["Don't forget to save the points", Red, Bold], 
-<br>&nbsp;&nbsp;   LocatorPane[
-<br>&nbsp;&nbsp;&nbsp;    Dynamic[pts, (i = last[pts, #]; pts = #) &],
-<br>&nbsp;&nbsp;&nbsp;    EventHandler[
-<br>&nbsp;&nbsp;&nbsp;&nbsp;     Dynamic[Show[
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       {Graphics[{
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          {Thick, Red, Map[BSplineCurve[SplineIt[#]] &, allpts]},
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          {Thick, Black, BSplineCurve[SplineIt[pts]]}
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          }, ImageSize -> 700, 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         GridLines -> {Table[i, {i, -1.3, 1.3, .05}], Table[i, {i, -1.3, 1.3, .05}]}, 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         PlotRange -> {{-2, 2}, {-2, 2}}]},
-<br>&nbsp;&nbsp;&nbsp;&nbsp;      Frame -> True]],
-<br>&nbsp;&nbsp;     {{"MouseDown", 
+  Column[{Style["Don't forget to save the points", Red, Bold], 
+     LocatorPane[
+       Dynamic[pts, (i = last[pts, #]; pts = #) &],
+       EventHandler[
+         Dynamic[Show[
+            {Graphics[{
+                {Thick, Red, Map[BSplineCurve[SplineIt[#]] &, allpts]},
+                {Thick, Black, BSplineCurve[SplineIt[pts]]}
+               }, ImageSize -> 700, 
+              GridLines -> {Table[i, {i, -1.3, 1.3, .05}], Table[i, {i, -1.3, 1.3, .05}]}, 
+              PlotRange -> {{-2, 2}, {-2, 2}}]},
+          Frame -> True]],
+       {{"MouseDown", 
         2} :> (pts = 
          Insert[pts, MousePosition["GraphicsAbsolute"], i + 1])}],
     LocatorAutoCreate -> True]}, Alignment -> Center]]
-</div>
+```
 
+The variable `pts` keeps track of the current set of points that I am moving and sculpting.  Once I get the points in the right place, I mark down what the current set of points `pts` is and append it to the list `allpts`.  Here is what it looks like part of the way through when I am editing the tail of the G (which is also the bottom of the I):
 
+![](img04.png)
 
-The variable <span style="font-family:'Courier'">pts</span> keeps track of the current set of points that I am moving and sculpting.  Once I get the points in the right place, I mark down what the current set of points <span style="font-family:'Courier'">pts</span> is and append it to the list <span style="font-family:'Courier'">allpts</span>.  Here is what it looks like part of the way through when I am editing the tail of the G (which is also the bottom of the I):
+**Pro Tip:** I always tell my students to never break anything that works!  If you get one piece of your code working, copy the whole working block of code into a new cell and modify the new cell.
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img04.png" width="320" height="318" /></a></div>
+By the end of the process, my list of `allpts` includes all the pieces of the name plate, including the three parts of the R, the tail of the G, the circle of the I, and the two parts of the N.  This process involves much trial and error to get the points just right.
 
-<b>Pro Tip:</b> I always tell my students to never break anything that works!  If you get one piece of your code working, copy the whole working block of code into a new cell and modify the new cell.
-
-<br>&nbsp;<br>
-By the end of the process, my list of <span style="font-family:'Courier'">allpts</span> includes all the pieces of the name plate, including the three parts of the R, the tail of the G, the circle of the I, and the two parts of the N.  This process involves much trial and error to get the points just right.
-
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 r1pts = {{-1.592, 0.86}, {-1.328, 1.05}, {-0.786, 0.98}, {-0.64, 
     0.67}, {-0.868, 0.225}, {-1.212, 0.15}, {-1.56, 0.215}};
-<br>r2pts = {{-1.586, 0.87}, {-1.55, 
+r2pts = {{-1.586, 0.87}, {-1.55, 
     0.62}, {-1.542, -0.12}, {-1.594, -0.505}, {-1.736, -0.745}};
 
-<br>r3pts = {{-1.534, 0.19}, {-1.238, 
+r3pts = {{-1.534, 0.19}, {-1.238, 
     0.035}, {-1.01, -0.38}, {-0.61, -0.905}, {-0.092, -0.96}, {0.344, \
 -0.835}, {0.88, -0.62}, {1.314, -0.335}, {1.518, 0.235}, {1.306, 
     0.75}, {0.676, 0.75}, {0.612, 0.34}, {0.984, 0.13}, {1.282, 
     0.335}};
 
-<br>gpts = {{1.298, 0.755}, {1.304, 
+gpts = {{1.298, 0.755}, {1.304, 
     0.08}, {1.208, -0.945}, {0.956, -1.24}, {-0.172, -1.1}, {-0.412, \
 -0.165}, {-0.412, 0.33}, {-0.818, 0.26}};
 
-<br>ipts = {{-0.326, 0.82}, {-0.6, 0.92}, {-0.63, 0.735}, {-0.466, 
+ipts = {{-0.326, 0.82}, {-0.6, 0.92}, {-0.63, 0.735}, {-0.466, 
     0.67}, {-0.322, 0.81}};
 
-<br>n1pts = {{-0.302, 0.805}, {-0.092, 
+n1pts = {{-0.302, 0.805}, {-0.092, 
     0.83}, {0.018, -0.045}, {-0.096, -0.79}, {-0.278, -0.97}};
 
-<br>n2pts = {{0.064, 0.44}, {0.47, 
+n2pts = {{0.064, 0.44}, {0.47, 
     0.585}, {0.61, -0.08}, {0.652, -0.51}, {0.824, -0.655}};
 
-<br>allpts = {r1pts, r2pts, r3pts, gpts, ipts, n1pts, n2pts};
-</div>
+allpts = {r1pts, r2pts, r3pts, gpts, ipts, n1pts, n2pts};
+```
 
 With these control points, we get the final two-dimensional graphic.  Not bad!
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img05.png" width="320" height="275" /></a></div>
+![](img05.png)
 
+## Step Three: Convert into three dimensions
 
-</p>
+Now we need to take the two-dimensional `Graphics` object and make it into a three-dimensional `Graphics3D` object.  We get to use some elementary trigonometry to do this!  The key idea is that we can wrap a two-dimensional picture around a cylinder of radius 1 by taking a point at $(x,y)$ on the plane to a point $(\sin(x),y,\cos(x))$ on the cylinder.
 
-<h2>Step Three: Convert into three dimensions</h2> 
-<p>
-Now we need to take the two-dimensional <span style="font-family:'Courier'">Graphics</span> object and make it into a three-dimensional <span style="font-family:'Courier'">Graphics3D</span> object.  We get to use some elementary trigonometry to do this!  The key idea is that we can wrap a two-dimensional picture around a cylinder of radius 1 by taking a point at $(x,y)$ on the plane to a point $(\sin(x),y,\cos(x))$ on the cylinder.
+First I use a technique from a [discussion on StackExchange](http://mathematica.stackexchange.com/questions/19229/convert-bsplinefunction-into-two-interpolating-functions?rq=1) to define the $x$- and $y$-components of the `BSplineCurve` commands we defined above.
 
-<br>&nbsp;<br>
-First I use a technique from a <a href="http://mathematica.stackexchange.com/questions/19229/convert-bsplinefunction-into-two-interpolating-functions?rq=1">discussion on StackExchange</a> to define the $x$- and $y$-components of the <span style="font-family:'Courier'">BSplineCurve</span> commands we defined above.
-
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 xComponent[t_?NumericQ, f_] := 
-<br>&nbsp;&nbsp; Module[{val}, val = f[t]; First@val];
-<br>
+   Module[{val}, val = f[t]; First@val];
+
 yComponent[t_?NumericQ, f_] := 
-<br>&nbsp;&nbsp; Module[{val}, val = f[t]; Last@val];
-</div>
+   Module[{val}, val = f[t]; Last@val];
+```
 
-This means that we can recreate the two-dimensional curves shown above using <span style="font-family:'Courier'">ParametricPlot</span> commands.  Note to do that we have to convert our <span style="font-family:'Courier'">BSplineCurve</span> commands to <span style="font-family:'Courier'">BSplineFunction</span> commands, as shown here.
+This means that we can recreate the two-dimensional curves shown above using `ParametricPlot` commands.  Note to do that we have to convert our `BSplineCurve` commands to `BSplineFunction` commands, as shown here.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 fcns = Map[ BSplineFunction[SplineIt[#]] &, allpts];
-<br>ParametricPlot[{
-<br>&nbsp; Table[{
-<br>&nbsp;&nbsp; xComponent[t, fcns[[i]]], 
-<br>&nbsp;&nbsp; yComponent[t, fcns[[i]]]
-<br>&nbsp;&nbsp; }, {i, Length[fcns]}], 
-<br>&nbsp; {t, 0, 1}, 
+ParametricPlot[{
+  Table[{
+   xComponent[t, fcns[[i]]], 
+   yComponent[t, fcns[[i]]]
+   }, {i, Length[fcns]}], 
+  {t, 0, 1}, 
  AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, Axes -> False]
-</div>
+```
 
-To wrap these two-dimensional functions around a three-dimensional cylinder of a given radius, we first scale the $x$-components so that they fit in the range between $-\pi/2$ and $\pi/2$, and take the sine and cosine of this times the given radius as the 3D $x$- and $z$-components, respectively.  
+To wrap these two-dimensional functions around a three-dimensional cylinder of a given radius, we first scale the $x$-components so that they fit in the range between $-\pi/2$ and $\pi/2$, and take the sine and cosine of this times the given radius as the 3D $x$- and $z$-components, respectively.
 
-<br>&nbsp;<br>
-We combine all the curves together using the <span style="font-family:'Courier'">Table</span> command and use a technique I learned from <a href="http://www.ms.unimelb.edu.au/~segerman/papers/3d_printed_visualisation.pdf">a very useful article</a> by <a href="http://www.segerman.org/">Henry Segerman</a> to give these curves a specified thickness by way of the <span style="font-family:'Courier'">Tube</span> command in the <span style="font-family:'Courier'">PlotStyle</span> option.
+We combine all the curves together using the `Table` command and use a technique I learned from [a very useful article](http://www.ms.unimelb.edu.au/~segerman/papers/3d_printed_visualisation.pdf) by [Henry Segerman](http://www.segerman.org/) to give these curves a specified thickness by way of the `Tube` command in the `PlotStyle` option.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 xscale = 1.5; 
-<br>radius = 1.1;
-<br>thickness = .08; 
-<br>ParametricPlot3D[
-<br>&nbsp; Table[{
-<br>&nbsp;&nbsp; radius * Sin[xComponent[t, fcns[[i]]]/xscale * Pi/2],
-<br>&nbsp;&nbsp; yComponent[t, fcns[[i]]],
-<br>&nbsp;&nbsp; radius * Cos[xComponent[t, fcns[[i]]]/xscale * Pi/2]},
-<br>&nbsp;&nbsp; {i, 1, Length[fcns]}],
-<br>&nbsp; {t, 0, 1}, AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
-<br> PlotStyle -> {Tube[thickness], Yellow}]
-</div>
+radius = 1.1;
+thickness = .08; 
+ParametricPlot3D[
+  Table[{
+   radius * Sin[xComponent[t, fcns[[i]]]/xscale * Pi/2],
+   yComponent[t, fcns[[i]]],
+   radius * Cos[xComponent[t, fcns[[i]]]/xscale * Pi/2]},
+   {i, 1, Length[fcns]}],
+  {t, 0, 1}, AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
+ PlotStyle -> {Tube[thickness], Yellow}]
+```
 
+![](img06.png)
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img06.png" width="320" height="265" /></a></div>
-</p>
+## Step Four: Add finishing touches
 
-<h2>Step Four: Add finishing touches</h2> 
-<p>
 We now have a virtual three-dimensional version of the name plate from our original sketch, and need to do some finishing work before it is ready to be printed.  We will add the strap that goes behind the finger and add a sphere to every curve endpoint.
 
-<br>&nbsp;<br>
 You can add the strap in multiple ways depending on the style you are going for.  For example, the Sara ring above has two straps that cross in an X behind the finger.  For this ring, I have decided to make a single strap connecting the beginning and the end of the name plate.  All this requires is a part of a circle of given radius which I have placed at height $y=0.1$ to line up well.  The range on $t$ is determined by trial and error.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 ParametricPlot3D[
-<br>&nbsp; {radius*Sin[t + Pi], 0.1, radius*Cos[t + Pi]},
-<br>&nbsp; {t, -Pi/2 - .46, Pi/2 + .45}, 
-<br>&nbsp;  AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
-<br>&nbsp;  PlotStyle -> {{Tube[thickness], Green}}]
-</div>
+  {radius*Sin[t + Pi], 0.1, radius*Cos[t + Pi]},
+  {t, -Pi/2 - .46, Pi/2 + .45}, 
+   AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
+   PlotStyle -> {{Tube[thickness], Green}}]
+```
 
 If we were to export the file right now, we would be in for an unwelcome surprise!  The exported file would not have the nice rounded ends of the curves like in the Mathematica notebook, so we need to add them manually.  Compare before and after shots of the exported files:
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img07.png" width="320" height="143" /></a></div>
+![](img07.png)
 
-Luckily this is not too difficult with Mathematica's <span style="font-family:'Courier'">Map</span> function.  We tell Mathematica to choose the first and last points of every letter piece, and then tell Mathematica to put a sphere at the transformed image of these points.  I also like to give the spheres a different color in order to see them distinctly on the image.
+Luckily this is not too difficult with Mathematica's `Map` function.  We tell Mathematica to choose the first and last points of every letter piece, and then tell Mathematica to put a sphere at the transformed image of these points.  I also like to give the spheres a different color in order to see them distinctly on the image.
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 sphereposns = 
-<br>&nbsp;&nbsp; Flatten[{ptslist[[All, 1]], ptslist[[All, -1]]}, 1];
-<br>Graphics3D[{Blue, 
-<br>&nbsp;&nbsp;  Map[Sphere[{radius*Sin[#[[1]]/xscale*Pi/2], #[[2]], 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; radius*Cos[#[[1]]/xscale*Pi/2]}, thickness] &,
-<br>&nbsp;&nbsp; sphereposns]}]
-</div>
+   Flatten[{ptslist[[All, 1]], ptslist[[All, -1]]}, 1];
+Graphics3D[{Blue, 
+    Map[Sphere[{radius*Sin[#[[1]]/xscale*Pi/2], #[[2]], 
+      radius*Cos[#[[1]]/xscale*Pi/2]}, thickness] &,
+   sphereposns]}]
+```
 
-<b>Pro Tip:</b> The <span style="font-family:'Courier'">PlotStyle->Tube</span> option and <span style="font-family:'Courier'">Sphere</span> command have acceptable resolution because a ring is a small object.  When you want to export a larger sphere (2 in / 5 cm) or a larger curved tube, instead you would need to use a <span style="font-family:'Courier'">ParametricPlot3D</span> command involving multiple variables in order to specify the exporting resolution.
+**Pro Tip:** The `PlotStyle->Tube` option and `Sphere` command have acceptable resolution because a ring is a small object.  When you want to export a larger sphere (2 in / 5 cm) or a larger curved tube, instead you would need to use a `ParametricPlot3D` command involving multiple variables in order to specify the exporting resolution.
 
-<br>&nbsp;<br>
 By combining all the pieces we have programmed, our virtual ring is complete!
 
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
+```
 SplineIt[pts_] := 
  Module[
-<br>&nbsp; {n = Length[pts], dist, param, knots, m, ctrlpts},
-<br>&nbsp; dist = Accumulate[Table[
-<br>&nbsp;&nbsp;   EuclideanDistance[pts[[i]], pts[[i+1]]], {i, n-1}]];
-<br>&nbsp; param = N[Prepend[dist/Last[dist], 0]];
-<br>&nbsp;   knots = Flatten[{{0, 0, 0, 0}, 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table[i/(n-3), {i, 1, n-4}], {1, 1, 1, 1}}];
-<br>&nbsp; m = Table[
-<br>&nbsp;&nbsp; BSplineBasis[{3, knots}, j-1, param[[i]]],
-<br>&nbsp;&nbsp; {i, n}, {j, n}];
-<br>&nbsp; ctrlpts = LinearSolve[m, pts]
-<br>]
-<br>xComponent[t_?NumericQ, f_] := 
-<br>&nbsp;&nbsp; Module[{val}, val = f[t]; First@val];
-<br>
+  {n = Length[pts], dist, param, knots, m, ctrlpts},
+  dist = Accumulate[Table[
+     EuclideanDistance[pts[[i]], pts[[i+1]]], {i, n-1}]];
+  param = N[Prepend[dist/Last[dist], 0]];
+    knots = Flatten[{{0, 0, 0, 0}, 
+      Table[i/(n-3), {i, 1, n-4}], {1, 1, 1, 1}}];
+  m = Table[
+   BSplineBasis[{3, knots}, j-1, param[[i]]],
+   {i, n}, {j, n}];
+  ctrlpts = LinearSolve[m, pts]
+]
+xComponent[t_?NumericQ, f_] := 
+   Module[{val}, val = f[t]; First@val];
+
 yComponent[t_?NumericQ, f_] := 
-<br>&nbsp;&nbsp; Module[{val}, val = f[t]; Last@val];
+   Module[{val}, val = f[t]; Last@val];
 
 
-<br>&nbsp;
-<br>r1pts = {{-1.592, 0.86}, {-1.328, 1.05}, {-0.786, 0.98}, {-0.64, 
+ 
+r1pts = {{-1.592, 0.86}, {-1.328, 1.05}, {-0.786, 0.98}, {-0.64, 
     0.67}, {-0.868, 0.225}, {-1.212, 0.15}, {-1.56, 0.215}};
-<br>r2pts = {{-1.586, 0.87}, {-1.55, 
+r2pts = {{-1.586, 0.87}, {-1.55, 
     0.62}, {-1.542, -0.12}, {-1.594, -0.505}, {-1.736, -0.745}};
-<br>r3pts = {{-1.534, 0.19}, {-1.238, 
+r3pts = {{-1.534, 0.19}, {-1.238, 
     0.035}, {-1.01, -0.38}, {-0.61, -0.905}, {-0.092, -0.96}, {0.344, \
 -0.835}, {0.88, -0.62}, {1.314, -0.335}, {1.518, 0.235}, {1.306, 
     0.75}, {0.676, 0.75}, {0.612, 0.34}, {0.984, 0.13}, {1.282, 
     0.335}};
-<br>gpts = {{1.298, 0.755}, {1.304, 
+gpts = {{1.298, 0.755}, {1.304, 
     0.08}, {1.208, -0.945}, {0.956, -1.24}, {-0.172, -1.1}, {-0.412, \
 -0.165}, {-0.412, 0.33}, {-0.818, 0.26}};
-<br>ipts = {{-0.326, 0.82}, {-0.6, 0.92}, {-0.63, 0.735}, {-0.466, 
+ipts = {{-0.326, 0.82}, {-0.6, 0.92}, {-0.63, 0.735}, {-0.466, 
     0.67}, {-0.322, 0.81}};
-<br>n1pts = {{-0.302, 0.805}, {-0.092, 
+n1pts = {{-0.302, 0.805}, {-0.092, 
     0.83}, {0.018, -0.045}, {-0.096, -0.79}, {-0.278, -0.97}};
-<br>n2pts = {{0.064, 0.44}, {0.47, 
+n2pts = {{0.064, 0.44}, {0.47, 
     0.585}, {0.61, -0.08}, {0.652, -0.51}, {0.824, -0.655}};
-<br>allpts = {r1pts, r2pts, r3pts, gpts, ipts, n1pts, n2pts};
+allpts = {r1pts, r2pts, r3pts, gpts, ipts, n1pts, n2pts};
 
-<br>&nbsp;
-<br>xscale = 1.5; 
-<br>radius = 1.1;
-<br>thickness = .08; 
-<br>stretch = .7;
-<br>ptslist = stretch * allpts;
-<br>sphereposns = 
-<br>&nbsp;&nbsp;&nbsp; Flatten[{ptslist[[All, 1]], ptslist[[All, -1]]}, 1]
-<br>fcns = Map[BSplineFunction[SplineIt[#]] &, ptslist];
-<br>Show[
-<br>&nbsp; ParametricPlot3D[
-<br>&nbsp;&nbsp;  Table[{
-<br>&nbsp;&nbsp;&nbsp;&nbsp;    radius*Sin[xComponent[t, fcns[[i]]]/xscale*Pi/2],
-<br>&nbsp;&nbsp;&nbsp;&nbsp;    yComponent[t, fcns[[i]]],
-<br>&nbsp;&nbsp;&nbsp;&nbsp;    radius*Cos[xComponent[t, fcns[[i]]]/xscale*Pi/2]},
-<br>&nbsp;&nbsp;&nbsp;   {i, 1, Length[fcns]}], 
-<br>&nbsp;&nbsp; {t, 0, 1}, AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
-<br>&nbsp;&nbsp; PlotStyle -> {Tube[thickness], Yellow}], 
-<br>&nbsp; ParametricPlot3D[{
-<br>&nbsp;&nbsp; {radius*Sin[t + Pi], 0.1, radius*Cos[t + Pi]}},
-<br>&nbsp;&nbsp; {t, -Pi/2 - .46, Pi/2 + .45}, 
-<br>&nbsp;&nbsp;  PlotStyle -> {{Tube[thickness], Green}}],
-<br>&nbsp; Graphics3D[{Blue, 
-<br>&nbsp;&nbsp;  Map[Sphere[{radius*Sin[#[[1]]/xscale*Pi/2], #[[2]], 
-<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; radius*Cos[#[[1]]/xscale*Pi/2]}, thickness] &,
-<br>&nbsp;&nbsp; sphereposns]}]
-<br>]
-</div>
+ 
+xscale = 1.5; 
+radius = 1.1;
+thickness = .08; 
+stretch = .7;
+ptslist = stretch * allpts;
+sphereposns = 
+    Flatten[{ptslist[[All, 1]], ptslist[[All, -1]]}, 1]
+fcns = Map[BSplineFunction[SplineIt[#]] &, ptslist];
+Show[
+  ParametricPlot3D[
+    Table[{
+        radius*Sin[xComponent[t, fcns[[i]]]/xscale*Pi/2],
+        yComponent[t, fcns[[i]]],
+        radius*Cos[xComponent[t, fcns[[i]]]/xscale*Pi/2]},
+      {i, 1, Length[fcns]}], 
+   {t, 0, 1}, AspectRatio -> 1, PlotRange -> {-1.8, 1.8}, 
+   PlotStyle -> {Tube[thickness], Yellow}], 
+  ParametricPlot3D[{
+   {radius*Sin[t + Pi], 0.1, radius*Cos[t + Pi]}},
+   {t, -Pi/2 - .46, Pi/2 + .45}, 
+    PlotStyle -> {{Tube[thickness], Green}}],
+  Graphics3D[{Blue, 
+    Map[Sphere[{radius*Sin[#[[1]]/xscale*Pi/2], #[[2]], 
+      radius*Cos[#[[1]]/xscale*Pi/2]}, thickness] &,
+   sphereposns]}]
+]
+```
 
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img08.png" width="400" height="340" /></a></div>
+![](img08.png)
 
-</p>
+## Step Five: Send to the printer!
 
-<h2>Step Five: Send to the printer!</h2> 
+Once you are happy with your virtual ring, you'll need to print it out.  I send my files to [Shapeways](http://www.shapeways.com/), which is also located in Queens, NY. ([I've taken my students there!](https://plus.google.com/+ChristopherHanusa/posts/iukm2iugqci)) I highly suggest printing a prototype first, probably in White Strong and Flexible Plastic since it is the fastest and cheapest material.  This will help to make sure the ring is the right size and looks the way you want it to before printing it in higher-quality (and much more expensive) materials.
 
-<p>
-Once you are happy with your virtual ring, you'll need to print it out.  I send my files to <a href="http://www.shapeways.com/">Shapeways</a>, which is also located in Queens, NY. (<a href="https://plus.google.com/+ChristopherHanusa/posts/iukm2iugqci">I've taken my students there!</a>) I highly suggest printing a prototype first, probably in White Strong and Flexible Plastic since it is the fastest and cheapest material.  This will help to make sure the ring is the right size and looks the way you want it to before printing it in higher-quality (and much more expensive) materials. 
-
-<br>&nbsp;<br>
-Mathematica 11 has built in the capability to upload your model directly to Shapeways using the command <a href="https://www.wolfram.com/language/11/3d-printing/send-your-models-to-3d-printing-service-providers.html"><span style="font-family:'Courier'">Printout3D</span></a>, but I still prefer using <span style="font-family:'Courier'">Export</span> in order to have a copy of the exported .STL file on my own computer. I always like to put the STL file in the same directory as the Mathematica file I am working with, so I use the following command.
-
-<div style="font-family:'Courier';padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:10px;margin-top:10px;margin-bottom:10px;background-color:#aaffaa;">
-Export[NotebookDirectory[] <> "MetaRing.stl", %]</div>
-
-Now <a href="http://www.shapeways.com">Go to Shapeways</a> and click the Upload button on the top right.  Choose your model, and click the Inches option.  After the file uploads, you'll need to resize the file so that the ring is the correct size, which you can measure on the desired finger and compare against the size Shapeways gives.  Realize that your finger will need to fit on the <i>inside</i> of the ring, while Shapeways is displaying the size of the <i>outside</i> of the ring.
-
-<br>&nbsp;<br>
-Shapeways will go through its preliminary set of checks on your ring and let you know what in materials your model is able to be printed.  Even though you may be only printing your first prototype in White Strong and Flexible Plastic, make sure that your model also gets the green checkmark in the <i>final material</i> that you want to print it.  
-
-<br>&nbsp;<br>
-Order your ring, wait *VERY* patiently, and when it arrives check to see if it looks the way you want.
-
-<div class="separator" style="clear: both; text-align: center;"><a href="img01.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img09.JPG" width="320" height="240" /></a></div>
-  If it does not, you'll need to re-edit your Mathematica file (perhaps changing the thickness of the tubes, and/or the position of the control points) or resize the file on the Shapeways website.  In either case, Shapeways will have one more say about whether the new model is printable.  Go through the prototyping phase once more if the changes are drastic (or even not-so-drastic).  Once you are sure that your ring is the way you want it to be, order the final version in the material you think it will look best. (The Sara ring above is printed in Premium Silver, and it is stunning!)  
-
-<br>&nbsp;<br>
-<b>Good luck!  Let me know how it turns out.</b>
-</p>
-
-<p><div style="text-align: center;font-size:110%">Christopher Hanusa's portfolio is available online at
-<br />
-<div class="separator" style="clear: both; text-align: center;"><a href="http://hanusadesign.com" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="img10.png" width="320" height="49" data-original-width="698" data-original-height="107" /></a></div>Purchase a copy of this and other 3D printed artwork<br />
-at <a href="https://www.shapeways.com/shops/mathartshop" target="_blank">Hanusa&thinsp;≀&thinsp;Design on Shapeways</a>.
-<br>I also design custom jewelry.  Email (hanusadesign - AT - gmail.com) for more details.</div>
-</p>
-
+Mathematica 11 has built in the capability to upload your model directly to Shapeways using the command [`Printout3D`](https://www.wolfram.com/language/11/3d-printing/send-your-models-to-3d-printing-service-providers.html), but I still prefer using `Export` in order to have a copy of the exported .STL file on my own computer. I always like to put the STL file in the same directory as the Mathematica file I am working with, so I use the following command.
 
 ```
+Export[NotebookDirectory[] <> "MetaRing.stl", %]
+```
+
+Now [Go to Shapeways](http://www.shapeways.com) and click the Upload button on the top right.  Choose your model, and click the Inches option.  After the file uploads, you'll need to resize the file so that the ring is the correct size, which you can measure on the desired finger and compare against the size Shapeways gives.  Realize that your finger will need to fit on the *inside* of the ring, while Shapeways is displaying the size of the *outside* of the ring.
+
+Shapeways will go through its preliminary set of checks on your ring and let you know what in materials your model is able to be printed.  Even though you may be only printing your first prototype in White Strong and Flexible Plastic, make sure that your model also gets the green checkmark in the *final material* that you want to print it.
+
+Order your ring, wait *VERY* patiently, and when it arrives check to see if it looks the way you want.
+
+![](img09.jpg)
+
+  If it does not, you'll need to re-edit your Mathematica file (perhaps changing the thickness of the tubes, and/or the position of the control points) or resize the file on the Shapeways website.  In either case, Shapeways will have one more say about whether the new model is printable.  Go through the prototyping phase once more if the changes are drastic (or even not-so-drastic).  Once you are sure that your ring is the way you want it to be, order the final version in the material you think it will look best. (The Sara ring above is printed in Premium Silver, and it is stunning!)
+
+**Good luck!  Let me know how it turns out.**
+
+Christopher Hanusa's portfolio is available online at
+
+[![](img10.png)](http://hanusadesign.com)
+
+Purchase a copy of this and other 3D printed artwork
+
+at [Hanusa ≀ Design on Shapeways](https://www.shapeways.com/shops/mathartshop).
+
+I also design custom jewelry.  Email (hanusadesign - AT - gmail.com) for more details.
