@@ -17,6 +17,7 @@ listing:
       
 website:
   title: "Insights by Christopher R. H. Hanusa"
+  favicon: favicon.png
   site-url: "https://hanusa.xyz/blog"  # <--- This is required for RSS
   description: "Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics"
   
@@ -53,6 +54,10 @@ website:
         href: index.qmd              
 format:
   html:
+    include-in-header:
+      text: |
+        <script data-goatcounter="https://hanusaxyz.goatcounter.com/count"
+                async src="//gc.zgo.at/count.js"></script>
     toc: true          
     toc-location: left 
     toc-title: "Contents" # Fallback if title is missing
