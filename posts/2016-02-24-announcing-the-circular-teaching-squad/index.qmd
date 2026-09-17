@@ -1,6 +1,9 @@
 ---
 title: "Announcing the Circular Teaching Squad"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 date: 2016-02-24
 categories:
   - "teaching"

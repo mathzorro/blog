@@ -1,6 +1,9 @@
 ---
 title: "Simultaneous core partitions"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img01.gif
 date: 2013-08-27
 categories:

@@ -1,6 +1,9 @@
 ---
 title: "3D Design in Mathematica: Costa Rica Keychain"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img15.jpg
 date: 2017-05-01
 categories:

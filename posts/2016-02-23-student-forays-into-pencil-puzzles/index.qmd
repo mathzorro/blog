@@ -1,6 +1,9 @@
 ---
 title: "Student Forays into Pencil Puzzles"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img01.png
 date: 2016-02-23
 categories:

@@ -1,6 +1,9 @@
 ---
 title: "New TYPES of puzzles"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 date: 2016-04-06
 categories:
   - "teaching"

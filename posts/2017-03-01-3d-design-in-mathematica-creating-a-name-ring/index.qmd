@@ -1,6 +1,9 @@
 ---
 title: "3D Design in Mathematica: Creating a Name Ring"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img09.jpg
 date: 2017-03-01
 categories:

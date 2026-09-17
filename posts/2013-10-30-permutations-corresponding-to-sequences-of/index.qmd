@@ -1,6 +1,9 @@
 ---
 title: "Permutations corresponding to sequences of reflections."
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img01.gif
 date: 2013-10-30
 categories:

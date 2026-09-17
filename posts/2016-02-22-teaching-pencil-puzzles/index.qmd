@@ -1,6 +1,9 @@
 ---
 title: "Teaching Pencil Puzzles"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 image: img01.jpg
 date: 2016-02-22
 categories:

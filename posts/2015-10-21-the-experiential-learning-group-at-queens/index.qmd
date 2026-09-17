@@ -1,6 +1,9 @@
 ---
 title: "The Experiential Learning Group at Queens College"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 date: 2015-10-21
 categories:
   - "teaching"

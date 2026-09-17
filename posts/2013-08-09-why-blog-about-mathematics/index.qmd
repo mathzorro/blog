@@ -1,6 +1,9 @@
 ---
 title: "Why blog about mathematics?"
-author: "Christopher R. H. Hanusa"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
 date: 2013-08-09
 categories:
   - "math"
