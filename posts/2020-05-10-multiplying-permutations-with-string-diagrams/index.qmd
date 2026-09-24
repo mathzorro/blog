@@ -4,18 +4,17 @@ author:
   - name:
       given: Christopher R. H.
       family: Hanusa
-image: img01.jpg
+image: img03.jpg
+image-alt: "String diagram of 24135 stacked on top of 54321, showing the product 54321 × 24135 = 42531"
 date: 2020-05-10
 categories:
   - "math"
-description: "Sure, let's talk about multiplying two permutations. I'll use the example from Wikipedia, where our two permutations are P=24135 and Q=54321..."
+description: "A discussion of how to visually multiply permutations using string diagrams."
 ---
 
 *This post was originally a [Twitter thread](https://x.com/mathzorro/status/1259537489393524737) replying to Annie Perkins's [#MathArtChallenge Day 54: Permutations](https://arbitrarilyclosecom.wordpress.com/2020/05/10/mathartchallenge-day-54-permutations/).*
 
-String diagrams are the best way to multiply permutations.
-
-Sure, let's talk about multiplying two permutations. I'll use the example from [Wikipedia](https://en.wikipedia.org/wiki/Permutation_group#Composition_of_permutations%E2%80%93the_group_product), where our two permutations are P=24135 and Q=54321.
+[L]et's talk about multiplying two permutations. I'll use the example from [Wikipedia](https://en.wikipedia.org/wiki/Permutation_group#Composition_of_permutations%E2%80%93the_group_product), where our two permutations are P=24135 and Q=54321.
 
 We can think about these permutations as functions that move around a set of five objects: P moves the first object to the second position, the second object to the fourth position etc. So another way to represent P would be its two-line notation
 

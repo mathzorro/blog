@@ -1,0 +1,38 @@
+---
+title: "Packing 16 Tetrahedra in Mathematica"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2022-10-05
+categories:
+  - "math"
+  - "Mathematica"
+description: "Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1577495580858875904).*
+
+Thanks to a suggestion from Ed Pegg, I explored the optimal packing of tetrahedra. (<https://blog.wolfram.com/2010/08/30/tetrahedra-packing/>)
+
+Here is the best way to pack 16 tetrahedra: <https://sketchfab.com/3d-models/tetrahedron-packing-original-7d331456fc0c4b6781fcad4df862d216>
+
+```{=html}
+<div style="position:relative; width:100%; aspect-ratio:16/9; margin:1rem 0;">
+<iframe title="Tetrahedron Packing Original" src="https://sketchfab.com/models/7d331456fc0c4b6781fcad4df862d216/embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+And here is a cleaned version where I've gotten rid of some of the coplanar faces so that the viewer can better see the interior structure: <https://sketchfab.com/3d-models/tetrahedron-packing-cleaned-a8cc7cce9b9c42a398cf7236d006f3e7>
+
+```{=html}
+<div style="position:relative; width:100%; aspect-ratio:16/9; margin:1rem 0;">
+<iframe title="Tetrahedron Packing Cleaned" src="https://sketchfab.com/models/a8cc7cce9b9c42a398cf7236d006f3e7/embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+The cleaning process itself was rather difficult.
+
+It required finding the overlapping faces (Using Normal vectors!) and finding their boundary. But Mathematica didn't allow me to do this for two-dimensional faces embedded in three dimensions! So I had to rotate the faces into a coordinate plane.
+
+Then I could project into 2D, apply RegionUnion and extract the region boundary. After 3D-ifying the boundaries, they were re-rotated into space and thickened using the Tube command. They would be nice earrings...

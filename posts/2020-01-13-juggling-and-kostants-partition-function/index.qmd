@@ -1,0 +1,57 @@
+---
+title: "Juggling and Kostant's Partition Function"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2020-01-13
+categories:
+  - "math"
+description: "Counting juggling sequences turns out to be the same as counting the ways to break a weight of a Lie algebra into positive roots."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1216710644013113344).*
+
+Our latest paper is now on the [\@arxiv](https://x.com/arxiv) - Kostant's partition function and magic multiplex juggling sequences. <https://arxiv.org/abs/2001.03219>.  We show there is an equivalence between breaking down a weight of a Lie algebra into positive roots and a sequence of juggling balls. #mathchat
+
+Let's give an illustrative example. Let's say you are #juggling one ball for three seconds and you start and end with the ball in your hand.  How many ways are there to do that?
+
+To count this we keep track of how "high" the balls are at each second. At times 0 and 3, the balls are about to fall into your hand, so they're at height 1.  At each time step, balls can be thrown to any height (1, 2, 3,...) and as time advances each ball fall one unit. #gravity
+
+So if the ball that starts in our hand is thrown to height 2 (at time 1), it will return to our hand at time 3. We would write this as <1>,<0,1>,<1> because the ball started out at height 1 (t=0), was thrown to height 2 (t=1), and fell to height 1 (t=2).
+
+So count the sequences (showing times 0,1,2,3):
+
+```
+<1>,<0,0,1>,<0,1>,<1>
+<1>,<0,1>,<1>,<1>
+<1>,<1>,<0,1>,<1>
+<1>,<1>,<1>,<1>.
+```
+
+There are four. The last sequence represents throwing the ball so that it comes back to you every second.
+
+Now what's this "weight of a Lie algebra into positive roots" thing? We have vectors e1, e2, e3, e4 and we take linear combinations of them like 3e1+2e3-5e4.  We're going to make sure the numbers in front add up to zero.  (3+2-5=0) This is "type A"; B, C, D are also in the paper.
+
+Here the positive roots are e1-e2, e1-e3, e1-e4, e2-e3, e2-e4, e3-e4.  The general question is: In how many ways can we write a weight (like 3e1+2e3-5e4) as a sum of these positive roots? This one might be written as
+
+```
+2(e1-e2)+(e1-e3)+2(e2-e4)+3(e3-e4).
+```
+
+(There are many more ways to partition this weight into positive roots.  In general, this is called Kostant's partition function, which is where the first half of the paper title comes from.)
+
+Our paper shows these counting questions are equivalent. The weight corresponding to the juggling example above is e1-e4 and the partitions are:
+
+```
+(e1-e4)
+(e1-e3)+(e3-e4)
+(e1-e2)+(e2-e4)
+(e1-e2)+(e2-e3)+(e3-e4).
+```
+
+There are four, just like above.
+
+The key insight of our paper is that \<A throw of a ball at time i to height j\> corresponds to \<the positive root (e_i-e_{i+j})\> and we develop from there.  We share connections to #polytopes, #posets, #positroids and weight multiplicities.
+
+This work is joint with [\@Caro_Benedetti](https://x.com/Caro_Benedetti) [\@PamHarris1128](https://x.com/PamHarris1128) Alejandro Morales, and Anthony Simpson.  It was a fun write and it should be a fun read!
