@@ -22,6 +22,16 @@
   <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>Multiplying Permutations with String Diagrams</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
+  <description><![CDATA[ Sure, let’s talk about multiplying two permutations. I’ll use the example from Wikipedia, where our two permutations are P=24135 and Q=54321… ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</guid>
+  <pubDate>Sun, 10 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
   <title>3D Design in Mathematica: Generative Jewelry</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
@@ -103,16 +113,6 @@
   <guid>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</guid>
   <pubDate>Tue, 23 Feb 2016 00:00:00 GMT</pubDate>
   <media:content url="https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/img01.png" medium="image" type="image/png" height="222" width="144"/>
-</item>
-<item>
-  <title>Teaching Pencil Puzzles</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/</link>
-  <description><![CDATA[ This semester I am teaching Math 555: Games and Puzzles for the first time. The class does not serve as a prerequisite for any other class and it… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/</guid>
-  <pubDate>Mon, 22 Feb 2016 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/img01.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

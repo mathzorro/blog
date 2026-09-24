@@ -10,7 +10,17 @@
 <atom:link href="https://hanusa.xyz/blog/index-math.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Wed, 30 Oct 2013 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 10 May 2020 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Multiplying Permutations with String Diagrams</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
+  <description><![CDATA[ Sure, let’s talk about multiplying two permutations. I’ll use the example from Wikipedia, where our two permutations are P=24135 and Q=54321… ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</guid>
+  <pubDate>Sun, 10 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Permutations corresponding to sequences of reflections.</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
