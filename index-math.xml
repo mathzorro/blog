@@ -10,16 +10,35 @@
 <atom:link href="https://hanusa.xyz/blog/index-math.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Sun, 10 May 2020 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 05 Oct 2022 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Packing 16 Tetrahedra in Mathematica</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/</link>
+  <description><![CDATA[ Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure. ]]></description>
+  <category>math</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/</guid>
+  <pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Multiplying Permutations with String Diagrams</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
-  <description><![CDATA[ Sure, let’s talk about multiplying two permutations. I’ll use the example from Wikipedia, where our two permutations are P=24135 and Q=54321… ]]></description>
+  <description><![CDATA[ A discussion of how to visually multiply permutations using string diagrams. ]]></description>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</guid>
   <pubDate>Sun, 10 May 2020 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img01.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Juggling and Kostant’s Partition Function</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</link>
+  <description><![CDATA[ Counting juggling sequences turns out to be the same as counting the ways to break a weight of a Lie algebra into positive roots. ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</guid>
+  <pubDate>Mon, 13 Jan 2020 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Permutations corresponding to sequences of reflections.</title>

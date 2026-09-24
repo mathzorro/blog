@@ -22,14 +22,54 @@
   <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>Mathematical Design with Desmos and the AxiDraw</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</link>
+  <description><![CDATA[ How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</guid>
+  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Packing 16 Tetrahedra in Mathematica</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/</link>
+  <description><![CDATA[ Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure. ]]></description>
+  <category>math</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/</guid>
+  <pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Riemondrian and Calculus Art</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/</link>
+  <description><![CDATA[ A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/</guid>
+  <pubDate>Sat, 11 Jun 2022 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png" medium="image" type="image/png" height="144" width="144"/>
+</item>
+<item>
   <title>Multiplying Permutations with String Diagrams</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
-  <description><![CDATA[ Sure, let’s talk about multiplying two permutations. I’ll use the example from Wikipedia, where our two permutations are P=24135 and Q=54321… ]]></description>
+  <description><![CDATA[ A discussion of how to visually multiply permutations using string diagrams. ]]></description>
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</guid>
   <pubDate>Sun, 10 May 2020 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img01.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Juggling and Kostant’s Partition Function</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</link>
+  <description><![CDATA[ Counting juggling sequences turns out to be the same as counting the ways to break a weight of a Lie algebra into positive roots. ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</guid>
+  <pubDate>Mon, 13 Jan 2020 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>3D Design in Mathematica: Generative Jewelry</title>
@@ -74,45 +114,6 @@
   <guid>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</guid>
   <pubDate>Mon, 03 Apr 2017 00:00:00 GMT</pubDate>
   <media:content url="https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/img10.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>3D Design in Mathematica: Creating a Name Ring</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
-  <description><![CDATA[ In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the… ]]></description>
-  <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</guid>
-  <pubDate>Wed, 01 Mar 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/img09.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>New TYPES of puzzles</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2016-04-06-new-types-of-puzzles/</link>
-  <description><![CDATA[ We’re over halfway done with the semester and my Games and Puzzles class has been fascinating and rewarding in many… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2016-04-06-new-types-of-puzzles/</guid>
-  <pubDate>Wed, 06 Apr 2016 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Announcing the Circular Teaching Squad</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2016-02-24-announcing-the-circular-teaching-squad/</link>
-  <description><![CDATA[ Abstract: I discuss the rationale for changing the name of our lunch discussion group. Join us March… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2016-02-24-announcing-the-circular-teaching-squad/</guid>
-  <pubDate>Wed, 24 Feb 2016 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Student Forays into Pencil Puzzles</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</link>
-  <description><![CDATA[ Abstract: In the first six days of my pencil puzzles class, my students have had to think deeply about solving and creating Battleships puzzles. This… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/</guid>
-  <pubDate>Tue, 23 Feb 2016 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2016-02-23-student-forays-into-pencil-puzzles/img01.png" medium="image" type="image/png" height="222" width="144"/>
 </item>
 </channel>
 </rss>

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Christopher R. H. Hanusa">
-<meta name="dcterms.date" content="2020-05-10">
-<meta name="description" content="A discussion of how to visually multiply permutations using string diagrams.">
+<meta name="dcterms.date" content="2022-06-11">
+<meta name="description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
 
-<title>Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa</title>
+<title>Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,15 +86,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../blog_styles.css">
-<meta property="og:title" content="Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa">
-<meta property="og:description" content="A discussion of how to visually multiply permutations using string diagrams.">
-<meta property="og:image" content="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg">
+<meta property="og:title" content="Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa">
+<meta property="og:description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
+<meta property="og:image" content="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png">
 <meta property="og:site_name" content="Insights by Christopher R. H. Hanusa">
-<meta property="og:image:alt" content="String diagram of 24135 stacked on top of 54321, showing the product 54321 × 24135 = 42531">
-<meta name="twitter:title" content="Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa">
-<meta name="twitter:description" content="A discussion of how to visually multiply permutations using string diagrams.">
-<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg">
-<meta name="twitter:image:alt" content="String diagram of 24135 stacked on top of 54321, showing the product 54321 × 24135 = 42531">
+<meta property="og:image:height" content="1000">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:alt" content="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles, with a wavy curve whose Riemann sum rectangles form the grid">
+<meta name="twitter:title" content="Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa">
+<meta name="twitter:description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
+<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png">
+<meta name="twitter:image-height" content="1000">
+<meta name="twitter:image-width" content="1000">
+<meta name="twitter:image:alt" content="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles, with a wavy curve whose Riemann sum rectangles form the grid">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -150,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multiplying Permutations with String Diagrams</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Riemondrian and Calculus Art</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,15 +193,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multiplying Permutations with String Diagrams</h1>
+<h1 class="title">Riemondrian and Calculus Art</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">math</div>
+    <div class="quarto-category">art</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A discussion of how to visually multiply permutations using string diagrams.
+    A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.
   </div>
 </div>
 
@@ -214,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 10, 2020</p>
+      <p class="date">June 11, 2022</p>
     </div>
   </div>
   
@@ -226,50 +230,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1259537489393524737">Twitter thread</a> replying to Annie Perkins’s <a href="https://arbitrarilyclosecom.wordpress.com/2020/05/10/mathartchallenge-day-54-permutations/">#MathArtChallenge Day 54: Permutations</a>.</em></p>
-<p>[L]et’s talk about multiplying two permutations. I’ll use the example from <a href="https://en.wikipedia.org/wiki/Permutation_group#Composition_of_permutations%E2%80%93the_group_product">Wikipedia</a>, where our two permutations are P=24135 and Q=54321.</p>
-<p>We can think about these permutations as functions that move around a set of five objects: P moves the first object to the second position, the second object to the fourth position etc. So another way to represent P would be its two-line notation</p>
-<pre><code>12345
-24135.</code></pre>
-<p>And Q is</p>
-<pre><code>12345
-54321</code></pre>
-<p>Multiplying P and Q can be thought of as applying the P function then applying the Q function. So P moves object 1 to position 2 and Q moves it from position 2 to position 4.</p>
-<p>All in all, P then Q takes</p>
-<pre><code>1-&gt;2-&gt;4,
-2-&gt;4-&gt;2,
-3-&gt;1-&gt;5,
-4-&gt;3-&gt;3,
-5-&gt;5-&gt;1,</code></pre>
-<p>which means Q*P=42531. Here we’re writing the product in the “reverse” order, just like we write g(f(x)) for the composition that first applies f then g.</p>
-<p>(It’s important to note that permutations don’t commute, so P*Q is not the same as Q*P)</p>
-<p>OK. Now for the string diagrams. Above we discussed the two-line notation for permutations. Instead of putting 12345 on the top and the one-line permutation on the bottom, put 12345 on the top and 12345 on the bottom and connect the origin and destination placements with a line.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid" alt="String diagram of the permutation P=24135"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img02.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.jpg" class="img-fluid" alt="String diagram of the permutation Q=54321"></a></p>
-</div>
-</div>
-</div>
-<p>Because both P and Q have the top and bottom in the order 12345, we can multiply Q*P by putting P on top of Q and following the strings to see that Q*P=42531. (The string that starts at 1 ends at 4, 2-&gt;2, 3-&gt;5, 4-&gt;3, 5-&gt;1.)</p>
-<p><a href="img03.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img03.jpg" class="img-fluid" alt="String diagram of P stacked on top of Q, showing the product Q*P=42531"></a></p>
-<p>I love how much more visual the whole process is.🙂</p>
+<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1535452653928472582">Twitter thread</a>.</em></p>
+<p>Here’s a throwback to my 2017 artwork #Riemondrian, a mashup of #Riemann sums and #Mondrian’s #destijl, visible on my portfolio at <a href="http://christopherhanusa.com" class="uri">http://christopherhanusa.com</a>. #mathart #generativeart</p>
+<p><a href="img01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.png" class="img-fluid" alt="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles with thick black borders. A wavy black curve runs across it, and the rectangles are the Riemann sum rectangles under the curve."></a></p>
+<p>Recently Riemondrian inspired beautiful work by <a href="https://x.com/TheErickLee">@TheErickLee</a> <a href="https://x.com/Mathematicspro">@Mathematicspro</a>, and their students <a href="https://x.com/Mathematicspro/status/1535271011863625728" class="uri">https://x.com/Mathematicspro/status/1535271011863625728</a>. #steam #mathart</p>
+<p>Riemondrian also inspired laser cut acrylic jewelry, joint work with Uyen Nguyen (<a href="https://x.com/winorigami">@winorigami</a>). This jewelry was featured in the <a href="https://x.com/BridgesMathart">@BridgesMathart</a> Math Fashion show in 2019. <a href="https://gallery.bridgesmathart.org/exhibitions/2019-bridges-conference-fashion-show/riemondrian" class="uri">https://gallery.bridgesmathart.org/exhibitions/2019-bridges-conference-fashion-show/riemondrian</a>. Visit <a href="http://hanusadesign.com" class="uri">http://hanusadesign.com</a> or follow <a href="https://x.com/hanusadesign">@hanusadesign</a> for more #mathjewelry.</p>
+<p>Two limited edition prints of Riemondrian were part of my recent solo show “Existence and Uniqueness” at <a href="https://x.com/Gallery1064">@Gallery1064</a>. <a href="https://gallery1064.com/collections/christopher-hanusa-solo-show" class="uri">https://gallery1064.com/collections/christopher-hanusa-solo-show</a></p>
+<p>If you’re looking for more #calculus #mathart, visit <a href="https://christopherhanusa.com/calculus" class="uri">https://christopherhanusa.com/calculus</a>. Another Riemann sum inspired print is “Riemann Valley” (2017) which shows successive Riemann sums that approach the area under the curve. (Another student project, hint hint?)</p>
+<p><a href="img02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.png" class="img-fluid" alt="Riemann Valley: an S-shaped white curve on a navy background, with nested rectangles in shades of blue, teal, and green showing successively finer Riemann sums that approach the curve."></a></p>
+<p>Fun fact: Riemann Valley is actually my most popular print on <a href="https://x.com/redbubble">@redbubble</a>. Here’s the notebook <a href="https://www.redbubble.com/i/notebook/Riemann-Valley-by-hanusadesign/29629892.WX3NH" class="uri">https://www.redbubble.com/i/notebook/Riemann-Valley-by-hanusadesign/29629892.WX3NH</a></p>
+<p>Anyone else have any fun calculus art?</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2020,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2022,
   author = {Hanusa, Christopher R. H.},
-  title = {Multiplying {Permutations} with {String} {Diagrams}},
-  date = {2020-05-10},
-  url = {https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/},
+  title = {Riemondrian and {Calculus} {Art}},
+  date = {2022-06-11},
+  url = {https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2020" class="csl-entry quarto-appendix-citeas" role="listitem">
-Hanusa, Christopher R. H. 2020. <span>“Multiplying Permutations with
-String Diagrams.”</span> May 10. <a href="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/">https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Hanusa, Christopher R. H. 2022. <span>“Riemondrian and Calculus
+Art.”</span> June 11. <a href="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/">https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

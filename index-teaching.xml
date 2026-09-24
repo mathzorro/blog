@@ -10,7 +10,18 @@
 <atom:link href="https://hanusa.xyz/blog/index-teaching.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Wed, 06 Apr 2016 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 28 Sep 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Mathematical Design with Desmos and the AxiDraw</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</link>
+  <description><![CDATA[ How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</guid>
+  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>New TYPES of puzzles</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>

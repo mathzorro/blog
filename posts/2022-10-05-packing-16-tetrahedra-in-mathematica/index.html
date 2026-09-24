@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Christopher R. H. Hanusa">
-<meta name="dcterms.date" content="2020-05-10">
-<meta name="description" content="A discussion of how to visually multiply permutations using string diagrams.">
+<meta name="dcterms.date" content="2022-10-05">
+<meta name="description" content="Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure.">
 
-<title>Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa</title>
+<title>Packing 16 Tetrahedra in Mathematica – Insights by Christopher R. H. Hanusa</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -53,9 +53,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-4ee3f14ebb9e204e2436aa93aa1c1434.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark-4ee3f14ebb9e204e2436aa93aa1c1434.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-4ee3f14ebb9e204e2436aa93aa1c1434.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,16 +83,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../blog_styles.css">
-<meta property="og:title" content="Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa">
-<meta property="og:description" content="A discussion of how to visually multiply permutations using string diagrams.">
-<meta property="og:image" content="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg">
+<meta property="og:title" content="Packing 16 Tetrahedra in Mathematica – Insights by Christopher R. H. Hanusa">
+<meta property="og:description" content="Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure.">
 <meta property="og:site_name" content="Insights by Christopher R. H. Hanusa">
-<meta property="og:image:alt" content="String diagram of 24135 stacked on top of 54321, showing the product 54321 × 24135 = 42531">
-<meta name="twitter:title" content="Multiplying Permutations with String Diagrams – Insights by Christopher R. H. Hanusa">
-<meta name="twitter:description" content="A discussion of how to visually multiply permutations using string diagrams.">
-<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg">
-<meta name="twitter:image:alt" content="String diagram of 24135 stacked on top of 54321, showing the product 54321 × 24135 = 42531">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Packing 16 Tetrahedra in Mathematica – Insights by Christopher R. H. Hanusa">
+<meta name="twitter:description" content="Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -150,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Multiplying Permutations with String Diagrams</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Packing 16 Tetrahedra in Mathematica</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,15 +182,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Multiplying Permutations with String Diagrams</h1>
+<h1 class="title">Packing 16 Tetrahedra in Mathematica</h1>
   <div class="quarto-categories">
     <div class="quarto-category">math</div>
+    <div class="quarto-category">Mathematica</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A discussion of how to visually multiply permutations using string diagrams.
+    Exploring the optimal packing of 16 tetrahedra, and cleaning up the model in Mathematica to reveal its interior structure.
   </div>
 </div>
 
@@ -214,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 10, 2020</p>
+      <p class="date">October 5, 2022</p>
     </div>
   </div>
   
@@ -226,50 +220,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1259537489393524737">Twitter thread</a> replying to Annie Perkins’s <a href="https://arbitrarilyclosecom.wordpress.com/2020/05/10/mathartchallenge-day-54-permutations/">#MathArtChallenge Day 54: Permutations</a>.</em></p>
-<p>[L]et’s talk about multiplying two permutations. I’ll use the example from <a href="https://en.wikipedia.org/wiki/Permutation_group#Composition_of_permutations%E2%80%93the_group_product">Wikipedia</a>, where our two permutations are P=24135 and Q=54321.</p>
-<p>We can think about these permutations as functions that move around a set of five objects: P moves the first object to the second position, the second object to the fourth position etc. So another way to represent P would be its two-line notation</p>
-<pre><code>12345
-24135.</code></pre>
-<p>And Q is</p>
-<pre><code>12345
-54321</code></pre>
-<p>Multiplying P and Q can be thought of as applying the P function then applying the Q function. So P moves object 1 to position 2 and Q moves it from position 2 to position 4.</p>
-<p>All in all, P then Q takes</p>
-<pre><code>1-&gt;2-&gt;4,
-2-&gt;4-&gt;2,
-3-&gt;1-&gt;5,
-4-&gt;3-&gt;3,
-5-&gt;5-&gt;1,</code></pre>
-<p>which means Q*P=42531. Here we’re writing the product in the “reverse” order, just like we write g(f(x)) for the composition that first applies f then g.</p>
-<p>(It’s important to note that permutations don’t commute, so P*Q is not the same as Q*P)</p>
-<p>OK. Now for the string diagrams. Above we discussed the two-line notation for permutations. Instead of putting 12345 on the top and the one-line permutation on the bottom, put 12345 on the top and 12345 on the bottom and connect the origin and destination placements with a line.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid" alt="String diagram of the permutation P=24135"></a></p>
+<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1577495580858875904">Twitter thread</a>.</em></p>
+<p>Thanks to a suggestion from Ed Pegg, I explored the optimal packing of tetrahedra. (<a href="https://blog.wolfram.com/2010/08/30/tetrahedra-packing/" class="uri">https://blog.wolfram.com/2010/08/30/tetrahedra-packing/</a>)</p>
+<p>Here is the best way to pack 16 tetrahedra: <a href="https://sketchfab.com/3d-models/tetrahedron-packing-original-7d331456fc0c4b6781fcad4df862d216" class="uri">https://sketchfab.com/3d-models/tetrahedron-packing-original-7d331456fc0c4b6781fcad4df862d216</a></p>
+<div style="position:relative; width:100%; aspect-ratio:16/9; margin:1rem 0;">
+<iframe title="Tetrahedron Packing Original" src="https://sketchfab.com/models/7d331456fc0c4b6781fcad4df862d216/embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen="" loading="lazy"></iframe>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img02.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.jpg" class="img-fluid" alt="String diagram of the permutation Q=54321"></a></p>
+<p>And here is a cleaned version where I’ve gotten rid of some of the coplanar faces so that the viewer can better see the interior structure: <a href="https://sketchfab.com/3d-models/tetrahedron-packing-cleaned-a8cc7cce9b9c42a398cf7236d006f3e7" class="uri">https://sketchfab.com/3d-models/tetrahedron-packing-cleaned-a8cc7cce9b9c42a398cf7236d006f3e7</a></p>
+<div style="position:relative; width:100%; aspect-ratio:16/9; margin:1rem 0;">
+<iframe title="Tetrahedron Packing Cleaned" src="https://sketchfab.com/models/a8cc7cce9b9c42a398cf7236d006f3e7/embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen="" loading="lazy"></iframe>
 </div>
-</div>
-</div>
-<p>Because both P and Q have the top and bottom in the order 12345, we can multiply Q*P by putting P on top of Q and following the strings to see that Q*P=42531. (The string that starts at 1 ends at 4, 2-&gt;2, 3-&gt;5, 4-&gt;3, 5-&gt;1.)</p>
-<p><a href="img03.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img03.jpg" class="img-fluid" alt="String diagram of P stacked on top of Q, showing the product Q*P=42531"></a></p>
-<p>I love how much more visual the whole process is.🙂</p>
+<p>The cleaning process itself was rather difficult.</p>
+<p>It required finding the overlapping faces (Using Normal vectors!) and finding their boundary. But Mathematica didn’t allow me to do this for two-dimensional faces embedded in three dimensions! So I had to rotate the faces into a coordinate plane.</p>
+<p>Then I could project into 2D, apply RegionUnion and extract the region boundary. After 3D-ifying the boundaries, they were re-rotated into space and thickened using the Tube command. They would be nice earrings…</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2020,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2022,
   author = {Hanusa, Christopher R. H.},
-  title = {Multiplying {Permutations} with {String} {Diagrams}},
-  date = {2020-05-10},
-  url = {https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/},
+  title = {Packing 16 {Tetrahedra} in {Mathematica}},
+  date = {2022-10-05},
+  url = {https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2020" class="csl-entry quarto-appendix-citeas" role="listitem">
-Hanusa, Christopher R. H. 2020. <span>“Multiplying Permutations with
-String Diagrams.”</span> May 10. <a href="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/">https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Hanusa, Christopher R. H. 2022. <span>“Packing 16 Tetrahedra in
+Mathematica.”</span> October 5. <a href="https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/">https://hanusa.xyz/blog/posts/2022-10-05-packing-16-tetrahedra-in-mathematica/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -696,38 +672,6 @@ String Diagrams.”</span> May 10. <a href="https://hanusa.xyz/blog/posts/2020-0
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 
