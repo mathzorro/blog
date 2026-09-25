@@ -10,17 +10,67 @@
 <atom:link href="https://hanusa.xyz/blog/index-teaching.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Thu, 28 Sep 2023 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 25 Sep 2023 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Mathematical Design with Desmos and the AxiDraw</title>
+  <title>A Talk on Mathematical Design</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</link>
-  <description><![CDATA[ How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</link>
+  <description><![CDATA[ My talk on the Mathematical Design course in the math art minisymposium of the German Mathematical Society’s annual meeting. ]]></description>
   <category>teaching</category>
   <category>art</category>
-  <guid>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</guid>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</guid>
+  <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Teaching Mathematical Design</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</link>
+  <description><![CDATA[ A semester of Mathematical Design, where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</guid>
+  <pubDate>Wed, 25 Jan 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Teaching 3D Design and 3D Printing</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2022-12-16-teaching-3d-design-and-3d-printing/</link>
+  <description><![CDATA[ An article on teaching 3D design and 3D printing in the classroom, with a case study and an appendix of Mathematica design techniques. ]]></description>
+  <category>teaching</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-12-16-teaching-3d-design-and-3d-printing/</guid>
+  <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Creating a Mathematical Design Course</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-09-16-creating-a-mathematical-design-course/</link>
+  <description><![CDATA[ Planning a Mathematical Design course for non-majors, with Desmos projects, tutorial videos, and an AxiDraw pen plotter. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-09-16-creating-a-mathematical-design-course/</guid>
+  <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Peer Praise</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2019-12-20-peer-praise/</link>
+  <description><![CDATA[ Asking students to praise two favorite projects by their classmates, and why forwarding that praise is a win for everyone. ]]></description>
+  <category>teaching</category>
+  <guid>https://hanusa.xyz/blog/posts/2019-12-20-peer-praise/</guid>
+  <pubDate>Fri, 20 Dec 2019 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>The Hot Seat</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2019-08-21-the-hot-seat/</link>
+  <description><![CDATA[ An idea for a five-minute programming challenge at the front of class, and a question about how to make it welcoming rather than intimidating. ]]></description>
+  <category>teaching</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2019-08-21-the-hot-seat/</guid>
+  <pubDate>Wed, 21 Aug 2019 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>New TYPES of puzzles</title>
@@ -59,52 +109,6 @@
   <guid>https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/</guid>
   <pubDate>Mon, 22 Feb 2016 00:00:00 GMT</pubDate>
   <media:content url="https://hanusa.xyz/blog/posts/2016-02-22-teaching-pencil-puzzles/img01.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Creative Writing is Experiential Learning!</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2015-11-02-creative-writing-is-experiential-learning/</link>
-  <description><![CDATA[ Abstract: Creative writing gives students a chance to experience a topic in a new way and lets students try on an alternate persona. Also, I muse… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2015-11-02-creative-writing-is-experiential-learning/</guid>
-  <pubDate>Mon, 02 Nov 2015 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Experiential Learning Lunch on 21 Oct 2015</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2015-10-26-experiential-learning-lunch-on-21-oct-2015/</link>
-  <description><![CDATA[ Abstract: We highlight a few of the innovative teaching techniques that were presented in October’s Experiential Learning… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2015-10-26-experiential-learning-lunch-on-21-oct-2015/</guid>
-  <pubDate>Mon, 26 Oct 2015 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>The Experiential Learning Group at Queens College</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2015-10-21-the-experiential-learning-group-at-queens/</link>
-  <description><![CDATA[ Abstract: This post is a quick introduction to our college’s experiential learning group. What is experiential learning? What happens in a group… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2015-10-21-the-experiential-learning-group-at-queens/</guid>
-  <pubDate>Wed, 21 Oct 2015 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Announcing The MathZorro Podcast</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2015-07-16-announcing-the-mathzorro-podcast/</link>
-  <description><![CDATA[ Abstract: In Fall 2014, I recorded podcasts with my Combinatorics students and they are now ready for consumption. You can read descriptions of the… ]]></description>
-  <category>teaching</category>
-  <guid>https://hanusa.xyz/blog/posts/2015-07-16-announcing-the-mathzorro-podcast/</guid>
-  <pubDate>Thu, 16 Jul 2015 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Teaching students Mathematica</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2015-04-02-teaching-students-mathematica/</link>
-  <description><![CDATA[ Abstract: Mathematica has amazing capabilities, and my students have started to harness its power to investigate and create… ]]></description>
-  <category>teaching</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2015-04-02-teaching-students-mathematica/</guid>
-  <pubDate>Thu, 02 Apr 2015 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

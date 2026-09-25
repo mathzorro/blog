@@ -22,6 +22,16 @@
   <pubDate>Wed, 05 Oct 2022 00:00:00 GMT</pubDate>
 </item>
 <item>
+  <title>From Parametric to Polar in Desmos</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/</link>
+  <description><![CDATA[ How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation. ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/</guid>
+  <pubDate>Tue, 06 Jul 2021 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/img02.png" medium="image" type="image/png" height="115" width="144"/>
+</item>
+<item>
   <title>Multiplying Permutations with String Diagrams</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
   <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
@@ -39,6 +49,16 @@
   <category>math</category>
   <guid>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</guid>
   <pubDate>Mon, 13 Jan 2020 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Alternating Billiards</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/</link>
+  <description><![CDATA[ A new version of billiards where the ball bounces by alternating between two fixed directions, from my research on placements of chess pieces. ]]></description>
+  <category>math</category>
+  <guid>https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/</guid>
+  <pubDate>Tue, 08 Jan 2019 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/img01.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Permutations corresponding to sequences of reflections.</title>

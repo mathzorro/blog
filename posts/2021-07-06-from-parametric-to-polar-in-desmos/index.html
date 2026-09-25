@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Christopher R. H. Hanusa">
-<meta name="dcterms.date" content="2022-06-11">
-<meta name="description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
+<meta name="dcterms.date" content="2021-07-06">
+<meta name="description" content="How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation.">
 
-<title>Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa</title>
+<title>From Parametric to Polar in Desmos – Insights by Christopher R. H. Hanusa</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,19 +86,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../blog_styles.css">
-<meta property="og:title" content="Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa">
-<meta property="og:description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
-<meta property="og:image" content="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png">
+<meta property="og:title" content="From Parametric to Polar in Desmos – Insights by Christopher R. H. Hanusa">
+<meta property="og:description" content="How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation.">
+<meta property="og:image" content="https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/img02.png">
 <meta property="og:site_name" content="Insights by Christopher R. H. Hanusa">
-<meta property="og:image:height" content="1000">
-<meta property="og:image:width" content="1000">
-<meta property="og:image:alt" content="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles, with a wavy curve whose Riemann sum rectangles form the grid">
-<meta name="twitter:title" content="Riemondrian and Calculus Art – Insights by Christopher R. H. Hanusa">
-<meta name="twitter:description" content="A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.">
-<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png">
-<meta name="twitter:image-height" content="1000">
-<meta name="twitter:image-width" content="1000">
-<meta name="twitter:image:alt" content="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles, with a wavy curve whose Riemann sum rectangles form the grid">
+<meta property="og:image:height" content="620">
+<meta property="og:image:width" content="776">
+<meta property="og:image:alt" content="A purple Desmos graph of a row of looping heart shapes wrapped around into a circular ring">
+<meta name="twitter:title" content="From Parametric to Polar in Desmos – Insights by Christopher R. H. Hanusa">
+<meta name="twitter:description" content="How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation.">
+<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/img02.png">
+<meta name="twitter:image-height" content="620">
+<meta name="twitter:image-width" content="776">
+<meta name="twitter:image:alt" content="A purple Desmos graph of a row of looping heart shapes wrapped around into a circular ring">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -154,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Riemondrian and Calculus Art</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">From Parametric to Polar in Desmos</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,15 +193,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Riemondrian and Calculus Art</h1>
+<h1 class="title">From Parametric to Polar in Desmos</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">art</div>
+    <div class="quarto-category">math</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A look back at Riemondrian, a mashup of Riemann sums and Mondrian, and the student work, jewelry, and prints it has inspired.
+    How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation.
   </div>
 </div>
 
@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2022</p>
+      <p class="date">July 6, 2021</p>
     </div>
   </div>
   
@@ -230,30 +230,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1535452653928472582">Twitter thread</a>.</em></p>
-<p>Here’s a throwback to my 2017 artwork #Riemondrian, a mashup of #Riemann sums and #Mondrian’s #destijl, visible on my portfolio at <a href="http://christopherhanusa.com" class="uri">http://christopherhanusa.com</a>. #mathart #generativeart</p>
-<p><a href="img01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.png" class="img-fluid" alt="Riemondrian: a Mondrian-style grid of red, yellow, blue, and white rectangles with thick black borders. A wavy black curve runs across it, and the rectangles are the Riemann sum rectangles under the curve."></a></p>
-<p>Recently Riemondrian inspired beautiful work by <a href="https://x.com/TheErickLee">@TheErickLee</a> <a href="https://x.com/Mathematicspro">@Mathematicspro</a>, and their students <a href="https://x.com/Mathematicspro/status/1535271011863625728" class="uri">https://x.com/Mathematicspro/status/1535271011863625728</a>. #steam #mathart</p>
-<p>Riemondrian also inspired laser cut acrylic jewelry, joint work with Uyen Nguyen (<a href="https://x.com/winorigami">@winorigami</a>). This jewelry was featured in the <a href="https://x.com/BridgesMathart">@BridgesMathart</a> Math Fashion show in 2019. <a href="https://gallery.bridgesmathart.org/exhibitions/2019-bridges-conference-fashion-show/riemondrian" class="uri">https://gallery.bridgesmathart.org/exhibitions/2019-bridges-conference-fashion-show/riemondrian</a>. Visit <a href="http://hanusadesign.com" class="uri">http://hanusadesign.com</a> or follow <a href="https://x.com/hanusadesign">@hanusadesign</a> for more #mathjewelry.</p>
-<p><a href="img03.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img03.jpg" class="img-fluid" alt="A model wearing the Riemondrian jewelry set of laser-cut acrylic earrings, ring, pendant necklace, and bracelet, each with a Mondrian pattern of red, yellow, blue, and white blocks with black lines"></a></p>
-<p>Two limited edition prints of Riemondrian were part of my recent solo show “Existence and Uniqueness” at <a href="https://x.com/Gallery1064">@Gallery1064</a>. <a href="https://gallery1064.com/collections/christopher-hanusa-solo-show" class="uri">https://gallery1064.com/collections/christopher-hanusa-solo-show</a></p>
-<p>If you’re looking for more #calculus #mathart, visit <a href="https://christopherhanusa.com/calculus" class="uri">https://christopherhanusa.com/calculus</a>. Another Riemann sum inspired print is “Riemann Valley” (2017) which shows successive Riemann sums that approach the area under the curve. (Another student project, hint hint?)</p>
-<p><a href="img02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img02.png" class="img-fluid" alt="Riemann Valley: an S-shaped white curve on a navy background, with nested rectangles in shades of blue, teal, and green showing successively finer Riemann sums that approach the curve."></a></p>
-<p>Fun fact: Riemann Valley is actually my most popular print on <a href="https://x.com/redbubble">@redbubble</a>. Here’s the notebook <a href="https://www.redbubble.com/i/notebook/Riemann-Valley-by-hanusadesign/29629892.WX3NH" class="uri">https://www.redbubble.com/i/notebook/Riemann-Valley-by-hanusadesign/29629892.WX3NH</a></p>
-<p>Anyone else have any fun calculus art?</p>
+<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1412353674098229249">Twitter thread</a>. It started with a <a href="https://x.com/DailyDesmos">@DailyDesmos</a>-style challenge from <a href="https://x.com/CmonMattTHINK">@CmonMattTHINK</a>. I replied with <a href="https://x.com/mathzorro/status/1411796872461754374">a slight modification</a> and then with <a href="https://x.com/mathzorro/status/1411887204482355203">a version after some additional parametric machinations</a>, both shown below. Then <a href="https://x.com/matheser">@matheser</a> asked how I transformed the curve circlewise, and this thread was my answer.</em></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid" alt="A red Desmos graph of a parametric curve that loops into a row of heart shapes, alternating above and below a center line"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img02.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.png" class="img-fluid" alt="A purple Desmos graph of the same row of looping hearts wrapped around into a circular ring"></a></p>
+</div>
+</div>
+</div>
+<p><a href="https://x.com/matheser">@matheser</a> <a href="https://x.com/CmonMattTHINK">@CmonMattTHINK</a> <a href="https://x.com/DailyDesmos">@DailyDesmos</a> Sure! Step 1: I started with my original parametric function (x(t),y(t)), applied a vertical translation to get (x(t), y(t)+h) so that the entire graph lies above the x-axis.</p>
+<p>Step 2: Apply a polar transformation (r,theta) -&gt; (r cos(theta), r sin(theta)). In effect, think of the x-coordinate above as the angle and the y-coordinate above as the radius. (That is why you want to do the vertical shift.)</p>
+<p>This results in the function ((y(t)+h) cos(x(t)), (y(t)+h) sin(x(t))). Hope this helps!</p>
+<p>(Realizing now that many people would write k instead of h. I hope this isn’t a source of confusion.)</p>
 
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2022,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2021,
   author = {Hanusa, Christopher R. H.},
-  title = {Riemondrian and {Calculus} {Art}},
-  date = {2022-06-11},
-  url = {https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/},
+  title = {From {Parametric} to {Polar} in {Desmos}},
+  date = {2021-07-06},
+  url = {https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2022" class="csl-entry quarto-appendix-citeas" role="listitem">
-Hanusa, Christopher R. H. 2022. <span>“Riemondrian and Calculus
-Art.”</span> June 11. <a href="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/">https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2021" class="csl-entry quarto-appendix-citeas" role="listitem">
+Hanusa, Christopher R. H. 2021. <span>“From Parametric to Polar in
+Desmos.”</span> July 6. <a href="https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/">https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

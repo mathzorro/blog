@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Christopher R. H. Hanusa">
-<meta name="dcterms.date" content="2023-09-28">
-<meta name="description" content="How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters.">
+<meta name="dcterms.date" content="2019-01-08">
+<meta name="description" content="A new version of billiards where the ball bounces by alternating between two fixed directions, from my research on placements of chess pieces.">
 
-<title>Mathematical Design with Desmos and the AxiDraw – Insights by Christopher R. H. Hanusa</title>
+<title>Alternating Billiards – Insights by Christopher R. H. Hanusa</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,15 +86,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../blog_styles.css">
-<meta property="og:title" content="Mathematical Design with Desmos and the AxiDraw – Insights by Christopher R. H. Hanusa">
-<meta property="og:description" content="How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters.">
-<meta property="og:image" content="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg">
+<meta property="og:title" content="Alternating Billiards – Insights by Christopher R. H. Hanusa">
+<meta property="og:description" content="A new version of billiards where the ball bounces by alternating between two fixed directions, from my research on placements of chess pieces.">
+<meta property="og:image" content="https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/img01.jpg">
 <meta property="og:site_name" content="Insights by Christopher R. H. Hanusa">
-<meta property="og:image:alt" content="A table covered with a dozen pieces of student artwork drawn by a pen plotter, including string-art curves, spirographs, a sailboat, and a pair of laser-cut glasses">
-<meta name="twitter:title" content="Mathematical Design with Desmos and the AxiDraw – Insights by Christopher R. H. Hanusa">
-<meta name="twitter:description" content="How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters.">
-<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg">
-<meta name="twitter:image:alt" content="A table covered with a dozen pieces of student artwork drawn by a pen plotter, including string-art curves, spirographs, a sailboat, and a pair of laser-cut glasses">
+<meta property="og:image:alt" content="Numbered colored circles placed around a dotted square, joined by line segments that show the path of an alternating billiard ball">
+<meta name="twitter:title" content="Alternating Billiards – Insights by Christopher R. H. Hanusa">
+<meta name="twitter:description" content="A new version of billiards where the ball bounces by alternating between two fixed directions, from my research on placements of chess pieces.">
+<meta name="twitter:image" content="https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/img01.jpg">
+<meta name="twitter:image:alt" content="Numbered colored circles placed around a dotted square, joined by line segments that show the path of an alternating billiard ball">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Mathematical Design with Desmos and the AxiDraw</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Alternating Billiards</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,15 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
-   
-  <ul>
-  <li><a href="#september-2020" id="toc-september-2020" class="nav-link active" data-scroll-target="#september-2020">September 2020</a></li>
-  <li><a href="#spring-2023" id="toc-spring-2023" class="nav-link" data-scroll-target="#spring-2023">Spring 2023</a></li>
-  <li><a href="#september-2023" id="toc-september-2023" class="nav-link" data-scroll-target="#september-2023">September 2023</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -197,16 +189,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Mathematical Design with Desmos and the AxiDraw</h1>
+<h1 class="title">Alternating Billiards</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">teaching</div>
-    <div class="quarto-category">art</div>
+    <div class="quarto-category">math</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters.
+    A new version of billiards where the ball bounces by alternating between two fixed directions, from my research on placements of chess pieces.
   </div>
 </div>
 
@@ -223,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 28, 2023</p>
+      <p class="date">January 8, 2019</p>
     </div>
   </div>
   
@@ -235,92 +226,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><em>This post combines three Twitter threads: one from <a href="https://x.com/mathzorro/status/1306354402505224192">September 2020</a> when I was creating the course, one from <a href="https://x.com/mathzorro/status/1618326275223089152">Spring 2023</a> when I taught it, and one from <a href="https://x.com/mathzorro/status/1706126524036808928">September 2023</a> when I gave a talk about it.</em></p>
-<section id="september-2020" class="level2">
-<h2 class="anchored" data-anchor-id="september-2020">September 2020</h2>
-<p>Interested in the Mathematical Design class for non-majors that I am creating this semester? The course webpage is <a href="https://hanusa.xyz/courses/128/20/" class="uri">https://hanusa.xyz/courses/128/20/</a>. Topics so far: sequences, functions, parent functions, transformations, and visualizing function addition and multiplication. #MTBoS</p>
-<p>The first #mathart medium is <a href="https://x.com/Desmos">@Desmos</a> where students will graph a family of functions and their transformations. Details here: <a href="https://hanusa.xyz/courses/128/20/project.html" class="uri">https://hanusa.xyz/courses/128/20/project.html</a>. After that we’ll explore parametric and polar functions and graphs.</p>
-<p>I am recording <a href="https://x.com/Desmos">@Desmos</a> tutorial videos for the class and assembling them here: <a href="https://www.youtube.com/playlist?list=PLj76nfNlZz156Sp5W_5SKy-q1UYgowLKp" class="uri">https://www.youtube.com/playlist?list=PLj76nfNlZz156Sp5W_5SKy-q1UYgowLKp</a>. The latest involves exporting to .svg so that they can be realized on an <a href="https://x.com/EMSL">@EMSL</a> #AxiDraw #mathart #plottertwitter.</p>
-<p>Due to covid, we’re fully online this semester so going to the <a href="https://x.com/qcmakerspace">@qcmakerspace</a> is complex and we may stick with creating digital artwork, although I’ll be trying out the #AxiDraw. In any case, I can’t wait to see what my students create! Updates sure to follow!</p>
-</section>
-<section id="spring-2023" class="level2">
-<h2 class="anchored" data-anchor-id="spring-2023">Spring 2023</h2>
-<p>I am so excited to teach Mathematical Design!! It’s a class for non-math majors focusing on the creative and artistic aspects of functions. We lean heavily on <a href="https://x.com/Desmos">@Desmos</a> for the learning and exploration and on <a href="https://x.com/EMSL">@EMSL</a> Axidraw machines in the <a href="https://x.com/qcmakerspace">@qcmakerspace</a> to realize student artwork.</p>
-<p>Looking forward to sharing what my students create this semester and sharing an OER curriculum for replication at other institutions.</p>
-<p>After building point, lists, graphing, and translation skills in <a href="https://x.com/Desmos">@Desmos</a>, we talked last week about intentionality in art. Today we introduced students to the <a href="https://x.com/qcmakerspace">@qcmakerspace</a> and the <a href="https://x.com/EMSL">@EMSL</a> AxiDraw machines. Next up - Exploration, design, and development. 🎉🎉🎉</p>
-<p>The first project was due last week and here are some of my students’ artwork. I am so proud of them!</p>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid" alt="Two pen-plotter drawings on black paper: a diamond framing a moon over waves drawn in light blue, and a series of nested chevrons in pink and white"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="img02.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.jpg" class="img-fluid" alt="Three pen-plotter drawings on white paper: concentric dotted circles, a spiral of broken circular arcs, and a red star inside an oval crossed by lines"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="img03.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img03.jpg" class="img-fluid" alt="Three pen-plotter drawings on white paper: a composition of lines, circles, and zigzags, a green dinosaur made of line segments, and a large circle filled with smaller hatched blue circles"></a></p>
-</div>
-</div>
-</div>
-<p>The stealth <a href="https://x.com/Desmos">@Desmos</a> command that was extremely powerful was the function to restrict the output of a graph. Not only can you use it to restrict the domain of a variable {-2&lt;x&lt;2}, you can use it to restrict the graph to lie in a particular region {x²+y²&lt;4}.</p>
-<p>Shout out to the <a href="https://x.com/qcmakerspace">@qcmakerspace</a>, <a href="https://x.com/EMSL">@EMSL</a>, and <a href="https://x.com/inkscape">@inkscape</a> for making it all possible. Next we start work on dilations and then polar plotting.</p>
-<p>Finally getting to read my students’ lab reports about their process. One student writes “This is the first time I have ever enjoyed and had fun in a math class” 🥰</p>
-<p>Another student writes “Collaborating with peers has provided me with different perspectives and ideas, making it possible for me to approach the challenges in a more innovative and effective way and come out with this final piece.”</p>
-<p>Another student writes “The experience I had with this Axidraw machine was quite a remarkable experience. Yes I had some trials and tribulations along the way, but the end result is amazing. … The reality that a machine can make math and art come together is wonderful.”</p>
-<p>I just installed the artwork in a display in the <a href="https://x.com/QC_News">@QC_News</a> Math Department. The second project is well on its way.</p>
-<p><a href="img04.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img04.jpg" class="img-fluid" alt="A glass display case in a hallway labeled Student Artwork, MATH 128 Spring 2023, holding about fifteen pen-plotter drawings"></a></p>
-<p>The second module of the class is on dilations, combining functions (+ × ⚬), and polar functions. The focus of the second project is to use more advanced mathematical techniques and being intentional with materials on the AxiDraw.</p>
-<p>Here are the second projects. Students were asked to push their mathematical skills, their <a href="https://x.com/Desmos">@Desmos</a> programming skills, and their <a href="https://x.com/EMSL">@EMSL</a> Axidraw technical skills further. You can see that they took this mandate seriously!</p>
-<p><a href="img05.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img05.jpg" class="img-fluid" alt="A table covered with a dozen pieces of student artwork, including string-art curves, spirographs, a watercolor sailboat, a paper star, and a pair of laser-cut glasses"></a></p>
-<p>For example, these students developed techniques to draw their designs with multiple colors on a dark background.</p>
-<p><a href="img06.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="img06.jpg" class="img-fluid" alt="Three multicolor pen-plotter drawings on black paper: a smiling face made of flower rosettes, a cartoon figure standing on a spiral, and two orange flowers inside a looping white ring"></a></p>
-<p>These students explored a different medium for their designs.</p>
-<p><a href="img07.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="img07.jpg" class="img-fluid" alt="A pair of laser-cut acrylic glasses in blue and green, two folded paper sailboats in red and black, and a plotted rosette design on fabric"></a></p>
-<p>These students pushed the limits of their mathematical expressions.</p>
-<p><a href="img08.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="img08.jpg" class="img-fluid" alt="Three dense pen-plotter drawings: a brown hyperbolic X shape made of many curves, overlapping green and navy curve envelopes, and a multicolor star polygon surrounded by a looping pattern"></a></p>
-<p>And these students decided to work with watercolors! The watercolor was added to the piece on the left after the initial drawing was made, and in the piece on the right, the AxiDraw drew the design directly with a paintbrush!</p>
-<p><a href="img09.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img09.jpg" class="img-fluid" alt="Two watercolor pieces: on the left, a plotted sailboat with mountains, sun, and waves inside a circle, colored in after drawing; on the right, gray circles of different sizes painted by the AxiDraw on a blue background"></a></p>
-</section>
-<section id="september-2023" class="level2">
-<h2 class="anchored" data-anchor-id="september-2023">September 2023</h2>
-<p>I’m giving a talk on Thursday about my <a href="https://x.com/Desmos">@Desmos</a> -&gt; <a href="https://x.com/EMSL">@EMSL</a> #AxiDraw class in the #MathArt minisymposium in the annual meeting of German Mathematical Society (<a href="https://x.com/dmv_mathematik">@dmv_mathematik</a>). Starts at 14:30 Central Euro Time or 8:30am Eastern USA Time. All are welcome; DM for the zoom link.</p>
-<p><a href="img10.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="img10.jpg" class="img-fluid" alt="Title slide reading Mathematical Art on the AxiDraw Pen Plotter, Christopher Hanusa, Queens College of the City University of New York, next to a line drawing of overlapping polygons"></a></p>
-<p>Abridged Abstract: I discuss the project-based course “Mathematical Design” I developed to give non-math students a glimpse into the beauty of mathematics. I share information about implementation, best practices for student success, lessons learned, and pictures of student work.</p>
-<p>Sneak Preview of slides from tomorrow’s talk!</p>
+<p><em>This post was originally a <a href="https://x.com/mathzorro/status/1082470898869903366">Twitter thread</a>.</em></p>
+<p>I am excited to share with you an article that I posted to the arXiv today. My collaborator and I worked on an interesting question related to my long-running research in counting placements of chess pieces. 1/3</p>
+<p>We ended up creating a new version of billiards with a different rule for bouncing off a wall: instead of obeying the law of reflection, the ball “bounces” by alternating between two fixed directions.</p>
+<p>I’m very pleased by its arXiv number: <a href="https://arxiv.org/abs/1901.01917" class="uri">https://arxiv.org/abs/1901.01917</a></p>
+<p>Even if you don’t read it for its math, do check out our pictures. :)</p>
+<p>Oh, and here are two pictures. (4/3)</p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img11.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="img11.jpg" class="img-fluid" alt="Slide titled MATH 128: Mathematical Design, describing a new course for students not studying mathematics, with the tools Desmos Classroom and AxiDraw Pen Plotter"></a></p>
+<p><a href="img01.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img01.jpg" class="img-fluid" alt="An alternating billiard path in a square table: colored circles numbered from -2 to 7 sit on the dotted edges of the square, joined in order by line segments that zigzag up the table"></a></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img12.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="img12.jpg" class="img-fluid" alt="Slide titled Project-Based Learning, listing three projects and showing photos of students using 3D printers, a sewing machine, and a laser cutter in the makerspace"></a></p>
-</div>
-</div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img13.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="img13.jpg" class="img-fluid" alt="Slide titled Explorer Mindset, about moving students from afraid of math to making mathematical art through support and productive failure"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><a href="img14.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="img14.jpg" class="img-fluid" alt="Slide titled Reflection and Celebration, about the final portfolio project and an art exhibition, with photos of the display case and a gallery show"></a></p>
+<p><a href="img02.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img02.jpg" class="img-fluid" alt="An alternating billiard path on an elliptical table: six colored circles numbered 1 to 6 on a dotted ellipse, joined by line segments that form a closed path"></a></p>
 </div>
 </div>
 </div>
-<p>Starting in a little over an hour!</p>
-<p>Slides from the talk and the links discussed therein are available on my website: <a href="https://hanusa.xyz/talks.html" class="uri">https://hanusa.xyz/talks.html</a></p>
 
 
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2023,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{hanusa2019,
   author = {Hanusa, Christopher R. H.},
-  title = {Mathematical {Design} with {Desmos} and the {AxiDraw}},
-  date = {2023-09-28},
-  url = {https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/},
+  title = {Alternating {Billiards}},
+  date = {2019-01-08},
+  url = {https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2023" class="csl-entry quarto-appendix-citeas" role="listitem">
-Hanusa, Christopher R. H. 2023. <span>“Mathematical Design with Desmos
-and the AxiDraw.”</span> September 28. <a href="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/">https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-hanusa2019" class="csl-entry quarto-appendix-citeas" role="listitem">
+Hanusa, Christopher R. H. 2019. <span>“Alternating Billiards.”</span>
+January 8. <a href="https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/">https://hanusa.xyz/blog/posts/2019-01-08-alternating-billiards/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

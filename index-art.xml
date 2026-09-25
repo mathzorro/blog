@@ -10,17 +10,38 @@
 <atom:link href="https://hanusa.xyz/blog/index-art.xml" rel="self" type="application/rss+xml"/>
 <description>Writings by Christopher R. H. Hanusa about math, art, coding, teaching, leadership, academia, and other miscellaneous topics</description>
 <generator>quarto-1.10.18</generator>
-<lastBuildDate>Thu, 28 Sep 2023 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 30 Jul 2024 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Mathematical Design with Desmos and the AxiDraw</title>
+  <title>Bridges 2024</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</link>
-  <description><![CDATA[ How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/</link>
+  <description><![CDATA[ Hyperbolic Emergence in the Bridges 2024 art exhibition, a talk on Fractal Emergence, and Apollonian jewelry on the fashion show runway. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/</guid>
+  <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>A Talk on Mathematical Design</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</link>
+  <description><![CDATA[ My talk on the Mathematical Design course in the math art minisymposium of the German Mathematical Society’s annual meeting. ]]></description>
   <category>teaching</category>
   <category>art</category>
-  <guid>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</guid>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</guid>
+  <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Teaching Mathematical Design</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</link>
+  <description><![CDATA[ A semester of Mathematical Design, where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</guid>
+  <pubDate>Wed, 25 Jan 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Riemondrian and Calculus Art</title>
@@ -33,59 +54,63 @@
   <media:content url="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
-  <title>3D Design in Mathematica: Generative Jewelry</title>
+  <title>Existence and Uniqueness: A Solo Show</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
-  <description><![CDATA[ Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And… ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/</link>
+  <description><![CDATA[ My solo show at Gallery 1064, featuring three collections of 3D-printed sculptures: Riemannscapes, Window Evolution, and Streamlines. ]]></description>
   <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</guid>
-  <pubDate>Sat, 01 Jul 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/img06.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/</guid>
+  <pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/img03.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>3D Design in Mathematica: Custom Dice</title>
+  <title>Streamlines Sculptures at JMM 2022</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</link>
-  <description><![CDATA[ Today we continue our series in 3D Design in Mathematica. I’ll teach you how to use the RegionPlot3D command to create custom dice. Let’s first start… ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/</link>
+  <description><![CDATA[ My 3D-printed Streamlines sculptures, which trace the paths of particles through vector fields, at the JMM 2022 art exhibition. ]]></description>
   <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</guid>
-  <pubDate>Thu, 01 Jun 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/img13.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/</guid>
+  <pubDate>Sat, 11 Dec 2021 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/img02.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>3D Design in Mathematica: Costa Rica Keychain</title>
+  <title>Creating a Mathematical Design Course</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</link>
-  <description><![CDATA[ Hi everyone Welcome back to another 3D Design in Mathematica Tutorial. Last time I showed how to create a polyhedral terrarium . Today I will use… ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2020-09-16-creating-a-mathematical-design-course/</link>
+  <description><![CDATA[ Planning a Mathematical Design course for non-majors, with Desmos projects, tutorial videos, and an AxiDraw pen plotter. ]]></description>
+  <category>teaching</category>
   <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</guid>
-  <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/img15.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2020-09-16-creating-a-mathematical-design-course/</guid>
+  <pubDate>Wed, 16 Sep 2020 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>3D Design in Mathematica: Polyhedral Terrarium</title>
+  <title>An Apollonian Necklace</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</link>
-  <description><![CDATA[ Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a custom-designed name ring . In this post I… ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2020-05-02-an-apollonian-necklace/</link>
+  <description><![CDATA[ The favorite Apollonian earring designs from the Twitter polls, plus a matching Apollonian necklace. ]]></description>
   <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</guid>
-  <pubDate>Mon, 03 Apr 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/img10.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2020-05-02-an-apollonian-necklace/</guid>
+  <pubDate>Sat, 02 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-02-an-apollonian-necklace/img01.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
-  <title>3D Design in Mathematica: Creating a Name Ring</title>
+  <title>Designing Apollonian Earrings</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</link>
-  <description><![CDATA[ In this post I will be going through the techniques I use to create a name ring in Mathematica. Here is a ring I designed that is an ambigram of the… ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2020-05-01-designing-apollonian-earrings/</link>
+  <description><![CDATA[ Coding Apollonian circle packings into 3D-printed earrings, and asking Twitter to vote on the final design. ]]></description>
   <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/</guid>
-  <pubDate>Wed, 01 Mar 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-03-01-3d-design-in-mathematica-creating-a-name-ring/img09.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2020-05-01-designing-apollonian-earrings/</guid>
+  <pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2020-05-01-designing-apollonian-earrings/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>More Interesting Math Jewelry</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2020-04-10-more-interesting-math-jewelry/</link>
+  <description><![CDATA[ A reply to Annie Perkins’s golden spiral math art challenge, and a first hint of the Apollonian jewelry to come. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2020-04-10-more-interesting-math-jewelry/</guid>
+  <pubDate>Fri, 10 Apr 2020 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

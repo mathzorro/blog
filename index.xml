@@ -22,15 +22,46 @@
   <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Mathematical Design with Desmos and the AxiDraw</title>
+  <title>Bridges 2024</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</link>
-  <description><![CDATA[ How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/</link>
+  <description><![CDATA[ Hyperbolic Emergence in the Bridges 2024 art exhibition, a talk on Fractal Emergence, and Apollonian jewelry on the fashion show runway. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/</guid>
+  <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2024-07-30-bridges-2024/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>A Talk on Mathematical Design</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</link>
+  <description><![CDATA[ My talk on the Mathematical Design course in the math art minisymposium of the German Mathematical Society’s annual meeting. ]]></description>
   <category>teaching</category>
   <category>art</category>
-  <guid>https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/</guid>
-  <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2023-09-28-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/</guid>
+  <pubDate>Mon, 25 Sep 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-09-25-a-talk-on-mathematical-design/img01.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Teaching Mathematical Design</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</link>
+  <description><![CDATA[ A semester of Mathematical Design, where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters. ]]></description>
+  <category>teaching</category>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/</guid>
+  <pubDate>Wed, 25 Jan 2023 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2023-01-25-teaching-mathematical-design/img05.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Teaching 3D Design and 3D Printing</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2022-12-16-teaching-3d-design-and-3d-printing/</link>
+  <description><![CDATA[ An article on teaching 3D design and 3D printing in the classroom, with a case study and an appendix of Mathematica design techniques. ]]></description>
+  <category>teaching</category>
+  <category>Mathematica</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-12-16-teaching-3d-design-and-3d-printing/</guid>
+  <pubDate>Fri, 16 Dec 2022 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Packing 16 Tetrahedra in Mathematica</title>
@@ -53,67 +84,34 @@
   <media:content url="https://hanusa.xyz/blog/posts/2022-06-11-riemondrian-and-calculus-art/img01.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
-  <title>Multiplying Permutations with String Diagrams</title>
+  <title>Existence and Uniqueness: A Solo Show</title>
   <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</link>
-  <description><![CDATA[ A discussion of how to visually multiply permutations using string diagrams. ]]></description>
+  <link>https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/</link>
+  <description><![CDATA[ My solo show at Gallery 1064, featuring three collections of 3D-printed sculptures: Riemannscapes, Window Evolution, and Streamlines. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/</guid>
+  <pubDate>Sat, 05 Mar 2022 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2022-03-05-existence-and-uniqueness-solo-show/img03.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Streamlines Sculptures at JMM 2022</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/</link>
+  <description><![CDATA[ My 3D-printed Streamlines sculptures, which trace the paths of particles through vector fields, at the JMM 2022 art exhibition. ]]></description>
+  <category>art</category>
+  <guid>https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/</guid>
+  <pubDate>Sat, 11 Dec 2021 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2021-12-11-streamlines-sculptures-at-jmm-2022/img02.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>From Parametric to Polar in Desmos</title>
+  <dc:creator>Christopher R. H. Hanusa</dc:creator>
+  <link>https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/</link>
+  <description><![CDATA[ How to wrap a parametric curve around a circle in Desmos, by shifting it up and applying a polar transformation. ]]></description>
   <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/</guid>
-  <pubDate>Sun, 10 May 2020 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2020-05-10-multiplying-permutations-with-string-diagrams/img03.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Juggling and Kostant’s Partition Function</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</link>
-  <description><![CDATA[ Counting juggling sequences turns out to be the same as counting the ways to break a weight of a Lie algebra into positive roots. ]]></description>
-  <category>math</category>
-  <guid>https://hanusa.xyz/blog/posts/2020-01-13-juggling-and-kostants-partition-function/</guid>
-  <pubDate>Mon, 13 Jan 2020 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>3D Design in Mathematica: Generative Jewelry</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</link>
-  <description><![CDATA[ Happy July everyone. This month I’ll share a bit of Mathematica code that has helped me to add some ordered randomness to my art and jewelry. And… ]]></description>
-  <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/</guid>
-  <pubDate>Sat, 01 Jul 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-07-01-3d-design-in-mathematica-generative-jewelry/img06.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>3D Design in Mathematica: Custom Dice</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</link>
-  <description><![CDATA[ Today we continue our series in 3D Design in Mathematica. I’ll teach you how to use the RegionPlot3D command to create custom dice. Let’s first start… ]]></description>
-  <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/</guid>
-  <pubDate>Thu, 01 Jun 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-06-01-3d-design-in-mathematica-custom-dice/img13.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>3D Design in Mathematica: Costa Rica Keychain</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</link>
-  <description><![CDATA[ Hi everyone Welcome back to another 3D Design in Mathematica Tutorial. Last time I showed how to create a polyhedral terrarium . Today I will use… ]]></description>
-  <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/</guid>
-  <pubDate>Mon, 01 May 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-05-01-3d-design-in-mathematica-costa-rica-keychain/img15.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>3D Design in Mathematica: Polyhedral Terrarium</title>
-  <dc:creator>Christopher R. H. Hanusa</dc:creator>
-  <link>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</link>
-  <description><![CDATA[ Today I continue my series of Mathematica Tutorials for 3D printing. Last time I showed how to create a custom-designed name ring . In this post I… ]]></description>
-  <category>art</category>
-  <category>Mathematica</category>
-  <guid>https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/</guid>
-  <pubDate>Mon, 03 Apr 2017 00:00:00 GMT</pubDate>
-  <media:content url="https://hanusa.xyz/blog/posts/2017-04-03-3d-design-in-mathematica-polyhedral-terrarium/img10.jpg" medium="image" type="image/jpeg"/>
+  <guid>https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/</guid>
+  <pubDate>Tue, 06 Jul 2021 00:00:00 GMT</pubDate>
+  <media:content url="https://hanusa.xyz/blog/posts/2021-07-06-from-parametric-to-polar-in-desmos/img02.png" medium="image" type="image/png" height="115" width="144"/>
 </item>
 </channel>
 </rss>
