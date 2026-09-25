@@ -1,0 +1,22 @@
+---
+title: "Teaching 3D Design and 3D Printing"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2022-12-16
+categories:
+  - "teaching"
+  - "Mathematica"
+description: "An article on teaching 3D design and 3D printing in the classroom, with a case study and an appendix of Mathematica design techniques."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1603599969029689345).*
+
+I wrote an article about teaching 3D Design and #3Dprinting in the classroom for an [\@amermathsoc](https://x.com/amermathsoc) proceedings. I am happy to be able to share it with you; please share widely. <https://arxiv.org/abs/2212.07926> (1/4)
+
+The article has two halves - 1⃣ is a case study discussing content organization, implementation, project grading, and includes a personal reflection. There is an emphasis on lessons learned and how to encourage student creativity and artistic expression. (2/4)
+
+2⃣ is a detailed appendix containing 3D design techniques in [\@WolframResearch](https://x.com/WolframResearch) #Mathematica. It shares a lot of the knowledge needed to get students and instructors up and started with the software. The techniques are the same ones I use to design [\@hanusadesign](https://x.com/hanusadesign) #mathjewelry. (3/4)
+
+I hope interested parties can use these ideas in their own courses. My focus this year has been on developing and sharing out college-level mathematical curricula; we don't do nearly enough of that as a community! (4/4)

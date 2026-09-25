@@ -1,0 +1,18 @@
+---
+title: "More Interesting Math Jewelry"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2020-04-10
+categories:
+  - "art"
+description: "A reply to Annie Perkins's golden spiral math art challenge, and a first hint of the Apollonian jewelry to come."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1248656214478766081). It started when Annie Perkins shared [#MathArtChallenge Day 26: Golden Spiral](https://arbitrarilyclosecom.wordpress.com/2020/04/10/mathartchallenge-day-26-golden-spiral/). I replied that it could be turned into wearable art, and she pointed out that golden spiral jewelry is decidedly available. The Apollonian jewelry followed in [Designing Apollonian Earrings](../2020-05-01-designing-apollonian-earrings/index.qmd) and [An Apollonian Necklace](../2020-05-02-an-apollonian-necklace/index.qmd).*
+
+[\@anniek_p](https://x.com/anniek_p) I try to create more interesting jewelry.  Like these discrete dynamical systems.
+<https://hanusadesign.com/products/cobweb-earrings-metal>
+
+I have been developing some Apollonian jewelry.  I'd been wanting to do so for a long time and the code shared by one of the #mathartchallenge responses allowed me to develop it.  I'll share it soon.

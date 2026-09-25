@@ -1,31 +1,19 @@
 ---
-title: "Mathematical Design with Desmos and the AxiDraw"
+title: "Teaching Mathematical Design"
 author:
   - name:
       given: Christopher R. H.
       family: Hanusa
 image: img05.jpg
 image-alt: "A table covered with a dozen pieces of student artwork drawn by a pen plotter, including string-art curves, spirographs, a sailboat, and a pair of laser-cut glasses"
-date: 2023-09-28
+date: 2023-01-25
 categories:
   - "teaching"
   - "art"
-description: "How I created and taught Mathematical Design, a course where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters."
+description: "A semester of Mathematical Design, where non-math majors learn functions in Desmos and turn them into art on AxiDraw pen plotters."
 ---
 
-*This post combines three Twitter threads: one from [September 2020](https://x.com/mathzorro/status/1306354402505224192) when I was creating the course, one from [Spring 2023](https://x.com/mathzorro/status/1618326275223089152) when I taught it, and one from [September 2023](https://x.com/mathzorro/status/1706126524036808928) when I gave a talk about it.*
-
-## September 2020
-
-Interested in the Mathematical Design class for non-majors that I am creating this semester? The course webpage is <https://hanusa.xyz/courses/128/20/>. Topics so far: sequences, functions, parent functions, transformations, and visualizing function addition and multiplication. #MTBoS
-
-The first #mathart medium is [\@Desmos](https://x.com/Desmos) where students will graph a family of functions and their transformations. Details here: <https://hanusa.xyz/courses/128/20/project.html>. After that we'll explore parametric and polar functions and graphs.
-
-I am recording [\@Desmos](https://x.com/Desmos) tutorial videos for the class and assembling them here: <https://www.youtube.com/playlist?list=PLj76nfNlZz156Sp5W_5SKy-q1UYgowLKp>. The latest involves exporting to .svg so that they can be realized on an [\@EMSL](https://x.com/EMSL) #AxiDraw #mathart #plottertwitter.
-
-Due to covid, we're fully online this semester so going to the [\@qcmakerspace](https://x.com/qcmakerspace) is complex and we may stick with creating digital artwork, although I'll be trying out the #AxiDraw. In any case, I can't wait to see what my students create! Updates sure to follow!
-
-## Spring 2023
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1618326275223089152). See also [creating the course](../2020-09-16-creating-a-mathematical-design-course/index.qmd) and [a talk about it](../2023-09-25-a-talk-on-mathematical-design/index.qmd).*
 
 I am so excited to teach Mathematical Design!! It's a class for non-math majors focusing on the creative and artistic aspects of functions. We lean heavily on [\@Desmos](https://x.com/Desmos) for the learning and exploration and on [\@EMSL](https://x.com/EMSL) Axidraw machines in the [\@qcmakerspace](https://x.com/qcmakerspace) to realize student artwork.
 
@@ -78,27 +66,3 @@ These students pushed the limits of their mathematical expressions.
 And these students decided to work with watercolors! The watercolor was added to the piece on the left after the initial drawing was made, and in the piece on the right, the AxiDraw drew the design directly with a paintbrush!
 
 ![](img09.jpg){fig-alt="Two watercolor pieces: on the left, a plotted sailboat with mountains, sun, and waves inside a circle, colored in after drawing; on the right, gray circles of different sizes painted by the AxiDraw on a blue background"}
-
-## September 2023
-
-I'm giving a talk on Thursday about my [\@Desmos](https://x.com/Desmos) -> [\@EMSL](https://x.com/EMSL) #AxiDraw class in the #MathArt minisymposium in the annual meeting of German Mathematical Society ([\@dmv_mathematik](https://x.com/dmv_mathematik)). Starts at 14:30 Central Euro Time or 8:30am Eastern USA Time. All are welcome; DM for the zoom link.
-
-![](img10.jpg){fig-alt="Title slide reading Mathematical Art on the AxiDraw Pen Plotter, Christopher Hanusa, Queens College of the City University of New York, next to a line drawing of overlapping polygons"}
-
-Abridged Abstract: I discuss the project-based course "Mathematical Design" I developed to give non-math students a glimpse into the beauty of mathematics. I share information about implementation, best practices for student success, lessons learned, and pictures of student work.
-
-Sneak Preview of slides from tomorrow's talk!
-
-::: {layout-ncol=2}
-![](img11.jpg){fig-alt="Slide titled MATH 128: Mathematical Design, describing a new course for students not studying mathematics, with the tools Desmos Classroom and AxiDraw Pen Plotter"}
-
-![](img12.jpg){fig-alt="Slide titled Project-Based Learning, listing three projects and showing photos of students using 3D printers, a sewing machine, and a laser cutter in the makerspace"}
-
-![](img13.jpg){fig-alt="Slide titled Explorer Mindset, about moving students from afraid of math to making mathematical art through support and productive failure"}
-
-![](img14.jpg){fig-alt="Slide titled Reflection and Celebration, about the final portfolio project and an art exhibition, with photos of the display case and a gallery show"}
-:::
-
-Starting in a little over an hour!
-
-Slides from the talk and the links discussed therein are available on my website: <https://hanusa.xyz/talks.html>

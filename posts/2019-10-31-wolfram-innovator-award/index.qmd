@@ -1,0 +1,21 @@
+---
+title: "2019 Wolfram Innovator Award"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2019-10-31
+categories:
+  - "Mathematica"
+description: "Receiving a 2019 Wolfram Innovator Award for using Mathematica in teaching, 3D design and jewelry, and mathematical art."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1189968436149080064).*
+
+I am humbled and honored to receive the 2019 #Wolfram Innovator award alongside these other amazingly creative people at the #WolframTechConf. Thank you to the selection committee! 1/4 <https://x.com/WolframResearch/status/1189576902920589314>
+
+I was recognized for my integration of #Mathematica into the classes I teach at [\@QC_News](https://x.com/QC_News). My coursework is freely available at <https://hanusa.xyz/>. #MTBoS 2/4
+
+I was also recognized for my proficiency in using #Mathematica for 3D design and 3D printing, which launched my mathematical jewelry business. Follow [\@hanusadesign](https://x.com/hanusadesign) and visit <http://hanusadesign.com> #mathjewelry 3/4
+
+I was further recognized for being a mathematical artist who uses #Mathematica as a medium. My #mathart has appeared in exhibitions worldwide including through [\@BridgesMathArt](https://x.com/BridgesMathArt) and [\@SciArtInitiativ](https://x.com/SciArtInitiativ). See my portfolio at <http://christopherhanusa.com> 4/4

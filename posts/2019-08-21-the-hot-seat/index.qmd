@@ -1,0 +1,22 @@
+---
+title: "The Hot Seat"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2019-08-21
+categories:
+  - "teaching"
+  - "Mathematica"
+description: "An idea for a five-minute programming challenge at the front of class, and a question about how to make it welcoming rather than intimidating."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1164168046581374978).*
+
+I am teaching Mathematica again this semester. I'd like to try something that a colleague used last year when he taught R: a student is chosen to be at the front of the class and is in charge of solving a 5 minute programming task based on previously learned content.
+
+The task would be a small stretch from the previous day.  Even though there is only one student in front of the class, that student is welcome/expected to take hints from the audience. By the end of the five minutes the whole class will feel like they have solved the puzzle.
+
+As always I aim to foster a welcoming environment, and I know such a task can be intimidating. I am wondering how to "brand" this experience. My colleague calls it the "hot seat", which is fun (and apropos?) but also seems to induce extra anxiety.
+
+Any thoughts on what would make this a positive experience for students? I know that the beginning of the semester sets the tone for the rest of the semester. Is there a better name than "hot seat"? Royalty for a day?

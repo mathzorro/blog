@@ -1,0 +1,22 @@
+---
+title: "Creating a Mathematical Design Course"
+author:
+  - name:
+      given: Christopher R. H.
+      family: Hanusa
+date: 2020-09-16
+categories:
+  - "teaching"
+  - "art"
+description: "Planning a Mathematical Design course for non-majors, with Desmos projects, tutorial videos, and an AxiDraw pen plotter."
+---
+
+*This post was originally a [Twitter thread](https://x.com/mathzorro/status/1306354402505224192). I later wrote about [teaching the course](../2023-01-25-teaching-mathematical-design/index.qmd) and [giving a talk about it](../2023-09-25-a-talk-on-mathematical-design/index.qmd).*
+
+Interested in the Mathematical Design class for non-majors that I am creating this semester? The course webpage is <https://hanusa.xyz/courses/128/20/>. Topics so far: sequences, functions, parent functions, transformations, and visualizing function addition and multiplication. #MTBoS
+
+The first #mathart medium is [\@Desmos](https://x.com/Desmos) where students will graph a family of functions and their transformations. Details here: <https://hanusa.xyz/courses/128/20/project.html>. After that we'll explore parametric and polar functions and graphs.
+
+I am recording [\@Desmos](https://x.com/Desmos) tutorial videos for the class and assembling them here: <https://www.youtube.com/playlist?list=PLj76nfNlZz156Sp5W_5SKy-q1UYgowLKp>. The latest involves exporting to .svg so that they can be realized on an [\@EMSL](https://x.com/EMSL) #AxiDraw #mathart #plottertwitter.
+
+Due to covid, we're fully online this semester so going to the [\@qcmakerspace](https://x.com/qcmakerspace) is complex and we may stick with creating digital artwork, although I'll be trying out the #AxiDraw. In any case, I can't wait to see what my students create! Updates sure to follow!
